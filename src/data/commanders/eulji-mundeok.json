@@ -1,0 +1,9 @@
+{
+  "id": "eulji-mundeok",
+  "name": "Eulji Mundeok",
+  "slug": "eulji-mundeok", "rarity": "Epic", "civilization": "Korea", "troopType": "infantry",
+  "specialties": ["Infantry", "Garrison", "Attack"], "tags": ["Defense reduction", "Early game"],
+  "bestUses": ["Open field", "Early infantry", "Early garrison"],
+  "description": { "en": "An epic infantry commander whose active skill lowers one target's defense, helping a damage-focused secondary and nearby allied marches capitalize on the window.", "vi": "Chỉ huy bộ binh sử thi có kỹ năng chủ động giảm phòng thủ một mục tiêu, mở khoảng thời gian gây sát thương tốt cho tướng phụ và đồng minh gần đó.", "es": "Un épico de infantería cuya habilidad activa reduce la defensa de un objetivo, creando una ventana para que el secundario y las marchas aliadas hagan más daño." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/eulji-mundeok/", "type": "community-guide" }], "verifiedAt": "2026-08-30"
+}

@@ -1,0 +1,147 @@
+---
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  section: 'battle-guide' | 'kvk-guide';
+  category: string;
+}
+
+interface Brief {
+  heading: string;
+  intro: string;
+  checklistTitle: string;
+  checklist: string[];
+  ruleTitle: string;
+  rule: string;
+}
+
+const { locale, section, category } = Astro.props;
+const key = `${section}:${category}`;
+
+const briefs: Record<Locale, Record<string, Brief>> = {
+  en: {
+    'kvk-guide:preparation': {
+      heading: '2026 operational brief',
+      intro: 'Preparation is a budget and coordination problem, not a single power target. Your kingdom calendar and assigned role should decide when resources, speedups and action points are spent.',
+      checklistTitle: 'Before entering the Lost Kingdom',
+      checklist: ['Confirm the season rules, entry requirement and alliance schedule in game.', 'Choose one primary troop type and finish one dependable march before widening the roster.', 'Keep resource tokens closed; separate a healing reserve from building and training budgets.', 'Save action-point items for Pre-KvK and honor objectives that reward coordinated activity.', 'Record the alliance marker, voice channel, teleport order and rally/garrison fill rules.'],
+      ruleTitle: 'Decision rule',
+      rule: 'If an upgrade does not improve your assigned KvK role before the next objective window, delay it and preserve flexibility.',
+    },
+    'kvk-guide:zones-and-passes': {
+      heading: '2026 map-control brief',
+      intro: 'Zones and passes turn the map into timed funnels. Winning the first contact matters less than arriving staged, reinforced and able to hold territory after the pass opens.',
+      checklistTitle: 'Pass-operation checklist',
+      checklist: ['Read the current season map and Lost Kingdom Chronicle; timings vary by scenario.', 'Move to the assigned staging fort early and keep marches inside alliance territory when possible.', 'Do not block the pass with idle marches; leave lanes for rallies, reinforcements and retreats.', 'Use territorial teleports only after leadership confirms the flag network is active and safe.', 'After capture, refill the structure, extend flags and establish a fallback marker before chasing.'],
+      ruleTitle: 'Decision rule',
+      rule: 'A pass is secure only when your alliance can reinforce it, heal nearby and protect the territory behind it.',
+    },
+    'kvk-guide:open-field': {
+      heading: '2026 KvK field brief',
+      intro: 'KvK field value comes from favorable trades, objective pressure and survival over repeated fights. Raw kills without hospital or resource control can lose the campaign.',
+      checklistTitle: 'Fight cycle',
+      checklist: ['Stage as a compact ball and identify the focus caller before contact.', 'Attack exposed, low-health or isolated marches; avoid feeding damage into the enemy tank line.', 'Keep every march within support range and cancel long pursuits beyond friendly territory.', 'Withdraw yellow marches before they become red, refill troops and return as a group.', 'Review reports by severely wounded, resources spent and objective gained—not kill count alone.'],
+      ruleTitle: 'Decision rule',
+      rule: 'Leave a fight when reinforcement distance, hospital space or march health makes the next skill cycle unfavorable.',
+    },
+    'kvk-guide:rally-and-garrison': {
+      heading: '2026 structure-war brief',
+      intro: 'Rallies and garrisons are kingdom assets. Commander ownership, technology, equipment, troop type and reinforcement discipline must be decided before troops are committed.',
+      checklistTitle: 'Structure operation',
+      checklist: ['Use the designated captain; never replace a tested build with a higher-power but weaker account.', 'Send only the requested troop type and remove mixed or obsolete units from presets.', 'Assign separate players to reinforcement, counter-rally, field cover and report tracking.', 'Stop swarm attacks unless leadership calls them; open-field casualty rules may not apply.', 'After every report, compare remaining capacity, counter type and trade before continuing.'],
+      ruleTitle: 'Decision rule',
+      rule: 'Cancel or rotate when the trade stays negative after reinforcements and counterplay are accounted for.',
+    },
+    'kvk-guide:resource-management': {
+      heading: '2026 logistics brief',
+      intro: 'Resources are combat endurance. A strong account with no healing stockpile becomes inactive exactly when the kingdom needs it most.',
+      checklistTitle: 'Reserve model',
+      checklist: ['Create separate reserves for healing, troop training and emergency teleports.', 'Open resource tokens in small batches only when spending is immediate.', 'Farm inside protected territory and recall gatherers before pass or altar fights begin.', 'Use gathering presets and load bonuses; do not expose expensive combat marches on nodes.', 'Track daily net resources after healing so leadership expectations stay realistic.'],
+      ruleTitle: 'Decision rule',
+      rule: 'Never spend the final healing reserve on an upgrade that can wait until after the active fighting window.',
+    },
+    'kvk-guide:hospital-management': {
+      heading: '2026 casualty-control brief',
+      intro: 'Hospital capacity changes the risk of every fight. When capacity is full, additional severely wounded troops can die instead of entering treatment.',
+      checklistTitle: 'Hospital discipline',
+      checklist: ['Check total free capacity before leaving the city and again after every major trade.', 'Know the casualty rule for the exact context: open field, structure defense, rally or city attack.', 'Heal in batches sized to alliance helps during quiet periods; use speedups only when the next fight requires it.', 'Keep food, wood, stone and gold reserved for the troop tier you actually field.', 'Stop fighting before overflow, not after the warning appears.'],
+      ruleTitle: 'Decision rule',
+      rule: 'If one more full march can overflow the hospital, heal or stand down before re-engaging.',
+    },
+    'battle-guide:open-field': {
+      heading: 'Open-field combat brief',
+      intro: 'Field fighting is a repeated decision loop: enter together, focus one target, protect damaged marches and reset before the next engagement.',
+      checklistTitle: 'Execution checklist',
+      checklist: ['Use one movement marker and one focus caller.', 'Keep tanks forward, damage dealers protected and support marches inside skill range.', 'Select isolated or low-health targets and change calls when a target escapes.', 'Do not cross the enemy ball to chase; retreat through friendly territory or cities.', 'Measure trades by severely wounded and resources, not the animation on screen.'],
+      ruleTitle: 'Decision rule',
+      rule: 'A march that cannot receive support within a few seconds is already out of formation.',
+    },
+    'battle-guide:rally': {
+      heading: 'Rally execution brief',
+      intro: 'A rally is a timed, reinforced army under one captain. Its strength depends on capacity, troop purity, arrival timing and field protection.',
+      checklistTitle: 'Captain and filler checklist',
+      checklist: ['Scout the target and identify garrison, reinforcements and counter-rally risk.', 'Match the captain pair, equipment and troop type to the target.', 'Set launch time so fillers can arrive without exposing the rally early.', 'Refresh with the requested troop type and keep the path clear.', 'Cancel before a bad trade becomes an expensive habit.'],
+      ruleTitle: 'Decision rule',
+      rule: 'If the target changes its garrison or receives a decisive counter, reassess before the next impact.',
+    },
+    'battle-guide:garrison': {
+      heading: 'Garrison defense brief',
+      intro: 'A garrison wins through the correct captain, continuous troop quality and protected reinforcement lanes—not by stacking random troops in a structure.',
+      checklistTitle: 'Defense checklist',
+      checklist: ['Confirm the structure, season and enemy rally type before choosing the pair.', 'Lock the captain and equipment before contact.', 'Feed only requested troops and remove mismatched units when possible.', 'Cover reinforcement routes with a field ball and monitor swarm pressure.', 'Rotate or abandon according to reports and strategic value, not pride.'],
+      ruleTitle: 'Decision rule',
+      rule: 'Do not defend a low-value structure when the hospital and dead-troop cost exceeds the time or territory it buys.',
+    },
+    'battle-guide:march-management': {
+      heading: 'Multi-march control brief',
+      intro: 'More marches increase both damage and control burden. A fifth unfinished march can reduce the value of four strong ones by breaking formation and draining healing resources.',
+      checklistTitle: 'Control checklist',
+      checklist: ['Build presets with correct troops, equipment, formation and armaments.', 'Give each march a role: front line, area damage, support, control or cleanup.', 'Sort deployment order so slow marches do not trail behind the ball.', 'Retreat damaged marches individually while keeping the healthy core together.', 'Expand from one complete march only when the next march adds a clear function.'],
+      ruleTitle: 'Decision rule',
+      rule: 'Field fewer marches when you cannot move, target and withdraw all of them without delay.',
+    },
+  },
+  es: {
+    'kvk-guide:preparation': { heading: 'Informe operativo 2026', intro: 'La preparación es un problema de presupuesto y coordinación, no una cifra única de poder. El calendario del reino y tu función asignada deben decidir cuándo gastar recursos, aceleradores y puntos de acción.', checklistTitle: 'Antes de entrar al Reino Perdido', checklist: ['Confirma dentro del juego las reglas de temporada, el requisito de entrada y el horario de la alianza.', 'Elige un tipo de tropa principal y termina una marcha fiable antes de ampliar el plantel.', 'Mantén cerrados los objetos de recursos y separa la reserva de curación del presupuesto de construcción.', 'Guarda puntos de acción para Pre-KvK y objetivos de honor coordinados.', 'Anota marcador, canal de voz, orden de teletransporte y reglas para llenar rallies y guarniciones.'], ruleTitle: 'Regla de decisión', rule: 'Si una mejora no fortalece tu función antes del siguiente objetivo, aplázala y conserva flexibilidad.' },
+    'kvk-guide:zones-and-passes': { heading: 'Control del mapa 2026', intro: 'Las zonas y los pasos convierten el mapa en embudos temporizados. No basta con ganar el primer choque: hay que llegar preparado, reforzar y sostener el territorio.', checklistTitle: 'Operación de paso', checklist: ['Lee el mapa y las Crónicas de la temporada actual; los tiempos cambian entre escenarios.', 'Muévete temprano a la fortaleza de preparación asignada.', 'No bloquees el paso con marchas inactivas; deja carriles para rallies, refuerzos y retirada.', 'Usa teletransportes territoriales solo cuando la red de banderas esté activa.', 'Tras capturar, llena la estructura, extiende banderas y marca una retirada antes de perseguir.'], ruleTitle: 'Regla de decisión', rule: 'Un paso solo está seguro si la alianza puede reforzarlo, curar cerca y proteger el territorio posterior.' },
+    'kvk-guide:open-field': { heading: 'Campo abierto KvK 2026', intro: 'El valor en campo abierto proviene de intercambios favorables, presión sobre objetivos y supervivencia durante peleas repetidas.', checklistTitle: 'Ciclo de combate', checklist: ['Reúnete en una bola compacta e identifica al llamador de objetivos.', 'Ataca marchas expuestas, aisladas o con poca salud.', 'Mantén todas las marchas en rango de apoyo y cancela persecuciones largas.', 'Retira marchas amarillas antes de que se vuelvan rojas; rellena y regresa en grupo.', 'Evalúa heridos graves, recursos gastados y objetivo conseguido, no solo bajas.'], ruleTitle: 'Regla de decisión', rule: 'Retírate cuando la distancia de refuerzo, el hospital o la salud vuelvan desfavorable el siguiente ciclo de habilidad.' },
+    'kvk-guide:rally-and-garrison': { heading: 'Guerra de estructuras 2026', intro: 'Rallies y guarniciones son activos del reino. Capitán, tecnología, equipo, tipo de tropa y disciplina de refuerzo deben decidirse antes de comprometer tropas.', checklistTitle: 'Operación de estructura', checklist: ['Usa al capitán designado; más poder no sustituye una configuración probada.', 'Envía solo el tipo de tropa solicitado.', 'Asigna responsables de refuerzo, contrarrally, cobertura y lectura de informes.', 'No hagas swarm salvo orden expresa.', 'Compara capacidad restante, counter e intercambio después de cada informe.'], ruleTitle: 'Regla de decisión', rule: 'Cancela o rota cuando el intercambio siga negativo después de considerar refuerzos y contrajuego.' },
+    'kvk-guide:resource-management': { heading: 'Logística 2026', intro: 'Los recursos son resistencia de combate. Una cuenta fuerte sin reserva de curación deja de participar cuando más se la necesita.', checklistTitle: 'Modelo de reservas', checklist: ['Separa reservas para curación, entrenamiento y teletransportes de emergencia.', 'Abre objetos de recursos en lotes pequeños y solo al gastar.', 'Recolecta en territorio protegido y retira recolectores antes de combates importantes.', 'Usa presets y bonos de carga; no expongas marchas de combate en nodos.', 'Registra el balance diario después de curar.'], ruleTitle: 'Regla de decisión', rule: 'No gastes la última reserva de curación en una mejora que puede esperar.' },
+    'kvk-guide:hospital-management': { heading: 'Control de bajas 2026', intro: 'La capacidad hospitalaria cambia el riesgo de cada pelea. Cuando está llena, nuevos heridos graves pueden morir en vez de recibir tratamiento.', checklistTitle: 'Disciplina hospitalaria', checklist: ['Comprueba la capacidad libre antes de salir y después de cada intercambio.', 'Conoce la regla de bajas del contexto exacto: campo, estructura, rally o ciudad.', 'Cura en lotes adaptados a las ayudas de alianza.', 'Reserva cada recurso para el nivel de tropas que realmente utilizas.', 'Detén el combate antes del desbordamiento.'], ruleTitle: 'Regla de decisión', rule: 'Si otra marcha completa puede desbordar el hospital, cura o deja de luchar.' },
+    'battle-guide:open-field': { heading: 'Informe de combate abierto', intro: 'El combate abierto es un ciclo repetido: entrar juntos, enfocar un objetivo, proteger marchas dañadas y reiniciar.', checklistTitle: 'Ejecución', checklist: ['Usa un marcador de movimiento y un llamador de objetivos.', 'Mantén tanques delante y daño/soporte dentro del rango de habilidades.', 'Elige objetivos aislados o con poca salud y cambia cuando escapen.', 'No cruces la bola enemiga para perseguir.', 'Mide heridos graves y recursos, no la animación.'], ruleTitle: 'Regla de decisión', rule: 'Una marcha que no puede recibir apoyo en segundos ya está fuera de formación.' },
+    'battle-guide:rally': { heading: 'Ejecución de rally', intro: 'Un rally es un ejército temporizado y reforzado bajo un capitán. Depende de capacidad, pureza de tropa, sincronización y cobertura.', checklistTitle: 'Capitán y participantes', checklist: ['Explora el objetivo y detecta guarnición, refuerzos y contrarrally.', 'Adapta pareja, equipo y tropas al objetivo.', 'Fija una salida que permita llenar sin avisar demasiado pronto.', 'Refuerza con la tropa solicitada y despeja la ruta.', 'Cancela antes de convertir un mal intercambio en hábito.'], ruleTitle: 'Regla de decisión', rule: 'Si cambia la guarnición o aparece un counter decisivo, reevalúa antes del impacto.' },
+    'battle-guide:garrison': { heading: 'Defensa de guarnición', intro: 'La guarnición gana con capitán correcto, tropas de calidad y rutas de refuerzo protegidas, no acumulando unidades aleatorias.', checklistTitle: 'Defensa', checklist: ['Confirma estructura, temporada y tipo de rally enemigo.', 'Bloquea capitán y equipo antes del contacto.', 'Introduce solo tropas solicitadas.', 'Protege las rutas con una bola de campo y vigila el swarm.', 'Rota o abandona según informes y valor estratégico.'], ruleTitle: 'Regla de decisión', rule: 'No defiendas una estructura de poco valor si el coste supera el tiempo o territorio obtenido.' },
+    'battle-guide:march-management': { heading: 'Control de múltiples marchas', intro: 'Más marchas aumentan daño y carga de control. Una quinta marcha incompleta puede reducir el valor de cuatro buenas.', checklistTitle: 'Control', checklist: ['Guarda presets de tropas, equipo, formación y armamentos.', 'Asigna función: frente, área, soporte, control o remate.', 'Ordena el despliegue para que las marchas lentas no queden atrás.', 'Retira individualmente las dañadas manteniendo unido el núcleo.', 'Amplía desde una marcha completa solo si la siguiente aporta una función.'], ruleTitle: 'Regla de decisión', rule: 'Usa menos marchas si no puedes moverlas, enfocarlas y retirarlas sin demora.' },
+  },
+  vi: {
+    'kvk-guide:preparation': { heading: 'Bản tác chiến 2026', intro: 'Chuẩn bị KvK là bài toán ngân sách và phối hợp, không phải chỉ đạt một mốc lực chiến. Lịch vương quốc và vai trò được giao phải quyết định thời điểm dùng tài nguyên, tăng tốc và AP.', checklistTitle: 'Trước khi vào Lost Kingdom', checklist: ['Kiểm tra luật mùa, điều kiện vào map và lịch liên minh ngay trong game.', 'Chọn một loại quân chính và hoàn thiện một đạo quân đáng tin cậy trước khi mở rộng.', 'Giữ vật phẩm tài nguyên chưa mở; tách quỹ chữa trị khỏi quỹ xây dựng.', 'Giữ AP cho Pre-KvK và mục tiêu danh dự cần phối hợp.', 'Ghi lại marker, kênh thoại, thứ tự teleport và quy tắc nhồi rally/trấn thủ.'], ruleTitle: 'Quy tắc quyết định', rule: 'Nếu nâng cấp không cải thiện vai trò của bạn trước mục tiêu kế tiếp, hãy hoãn và giữ tính linh hoạt.' },
+    'kvk-guide:zones-and-passes': { heading: 'Kiểm soát bản đồ 2026', intro: 'Khu vực và cửa ải biến bản đồ thành các điểm nghẽn theo thời gian. Thắng giao tranh đầu chưa đủ; liên minh phải dàn quân, tiếp viện và giữ được lãnh thổ.', checklistTitle: 'Tác chiến cửa ải', checklist: ['Đọc bản đồ và Biên niên sử của mùa hiện tại vì thời gian mỗi kịch bản khác nhau.', 'Di chuyển sớm tới pháo đài tập kết được chỉ định.', 'Không chặn cửa ải bằng đạo quân đứng yên; để lối cho rally, tiếp viện và rút lui.', 'Chỉ dùng teleport lãnh thổ khi mạng cờ đã hoạt động và an toàn.', 'Sau khi chiếm, nhồi công trình, nối cờ và đặt marker rút lui trước khi truy đuổi.'], ruleTitle: 'Quy tắc quyết định', rule: 'Cửa ải chỉ an toàn khi liên minh có thể tiếp viện, chữa gần đó và bảo vệ vùng phía sau.' },
+    'kvk-guide:open-field': { heading: 'Open field KvK 2026', intro: 'Giá trị open field đến từ trao đổi có lời, gây áp lực mục tiêu và sống sót qua nhiều lượt giao tranh.', checklistTitle: 'Chu kỳ chiến đấu', checklist: ['Tập hợp thành ball gọn và xác định người gọi mục tiêu.', 'Đánh đạo quân cô lập, lộ vị trí hoặc ít máu.', 'Giữ mọi đạo quân trong tầm hỗ trợ và hủy truy đuổi dài.', 'Rút đạo quân vàng trước khi đỏ; bổ sung lính rồi quay lại cùng nhóm.', 'Đánh giá thương nặng, tài nguyên và mục tiêu đạt được, không chỉ số hạ gục.'], ruleTitle: 'Quy tắc quyết định', rule: 'Rút khi khoảng cách tiếp viện, bệnh viện hoặc máu khiến vòng kỹ năng tiếp theo bất lợi.' },
+    'kvk-guide:rally-and-garrison': { heading: 'Tác chiến công trình 2026', intro: 'Rally và trấn thủ là tài sản của vương quốc. Chủ tướng, công nghệ, trang bị, loại quân và kỷ luật tiếp viện phải được chốt trước khi gửi lính.', checklistTitle: 'Vận hành công trình', checklist: ['Dùng captain được chỉ định; lực chiến cao không thay thế build đã kiểm chứng.', 'Chỉ gửi đúng loại quân được yêu cầu.', 'Phân người tiếp viện, counter-rally, bảo vệ field và đọc báo cáo.', 'Không swarm nếu chưa có lệnh.', 'Sau mỗi báo cáo, so sánh sức chứa, khắc chế và trao đổi.'], ruleTitle: 'Quy tắc quyết định', rule: 'Hủy hoặc đổi captain khi trao đổi vẫn âm sau khi tính tiếp viện và counter.' },
+    'kvk-guide:resource-management': { heading: 'Hậu cần 2026', intro: 'Tài nguyên là sức bền chiến đấu. Tài khoản mạnh nhưng hết quỹ chữa trị sẽ ngừng hoạt động đúng lúc vương quốc cần nhất.', checklistTitle: 'Mô hình dự trữ', checklist: ['Tách quỹ chữa trị, huấn luyện và teleport khẩn cấp.', 'Chỉ mở vật phẩm tài nguyên theo từng đợt nhỏ khi sắp dùng.', 'Farm trong lãnh thổ an toàn và thu quân trước trận cửa ải/đền.', 'Dùng preset thu thập và tải trọng; không để đạo quân chiến đấu trên mỏ.', 'Theo dõi tài nguyên ròng hằng ngày sau chữa trị.'], ruleTitle: 'Quy tắc quyết định', rule: 'Không dùng quỹ chữa trị cuối cùng cho nâng cấp có thể chờ.' },
+    'kvk-guide:hospital-management': { heading: 'Kiểm soát thương vong 2026', intro: 'Sức chứa bệnh viện thay đổi rủi ro của mọi trận đánh. Khi đầy, thương nặng mới có thể chết thay vì vào chữa trị.', checklistTitle: 'Kỷ luật bệnh viện', checklist: ['Kiểm tra chỗ trống trước khi xuất quân và sau mỗi lần trao đổi lớn.', 'Hiểu đúng luật thương vong của open field, công trình, rally hoặc đánh thành.', 'Chữa theo đợt phù hợp với Alliance Help.', 'Dự trữ đúng loại tài nguyên cho cấp lính đang dùng.', 'Dừng chiến đấu trước khi tràn viện.'], ruleTitle: 'Quy tắc quyết định', rule: 'Nếu thêm một đạo quân đầy có thể làm tràn viện, hãy chữa hoặc ngừng giao tranh.' },
+    'battle-guide:open-field': { heading: 'Bản tác chiến open field', intro: 'Open field là vòng lặp: vào cùng nhau, focus một mục tiêu, bảo vệ đạo quân yếu và reset trước lượt kế.', checklistTitle: 'Thực thi', checklist: ['Dùng một marker di chuyển và một người gọi mục tiêu.', 'Để tank phía trước, damage/support trong tầm kỹ năng.', 'Chọn mục tiêu cô lập hoặc ít máu và đổi khi mục tiêu thoát.', 'Không xuyên qua ball địch để truy đuổi.', 'Đo thương nặng và tài nguyên, không nhìn hiệu ứng.'], ruleTitle: 'Quy tắc quyết định', rule: 'Đạo quân không nhận được hỗ trợ trong vài giây đã ra khỏi đội hình.' },
+    'battle-guide:rally': { heading: 'Thực thi rally', intro: 'Rally là đạo quân có thời điểm và tiếp viện dưới một captain. Hiệu quả phụ thuộc sức chứa, độ thuần quân, thời gian và bảo vệ field.', checklistTitle: 'Captain và người nhồi', checklist: ['Trinh sát mục tiêu, trấn thủ, tiếp viện và nguy cơ counter-rally.', 'Ghép captain, trang bị và loại quân theo mục tiêu.', 'Đặt giờ xuất phát để đủ thời gian nhồi mà không lộ sớm.', 'Tiếp viện đúng quân và giữ đường đi thông thoáng.', 'Hủy trước khi trao đổi xấu thành thói quen.'], ruleTitle: 'Quy tắc quyết định', rule: 'Nếu đối thủ đổi trấn thủ hoặc có counter quyết định, đánh giá lại trước khi chạm.' },
+    'battle-guide:garrison': { heading: 'Phòng thủ trấn thủ', intro: 'Trấn thủ thắng nhờ captain đúng, quân tiếp viện chất lượng và đường tiếp viện an toàn, không phải nhồi quân ngẫu nhiên.', checklistTitle: 'Phòng thủ', checklist: ['Xác định công trình, mùa và loại rally địch.', 'Chốt captain và trang bị trước khi chạm.', 'Chỉ nhồi loại quân được yêu cầu.', 'Bảo vệ đường tiếp viện bằng field ball và theo dõi swarm.', 'Đổi hoặc bỏ theo báo cáo và giá trị chiến lược.'], ruleTitle: 'Quy tắc quyết định', rule: 'Không giữ công trình ít giá trị nếu chi phí viện và lính chết cao hơn thời gian/lãnh thổ nhận được.' },
+    'battle-guide:march-management': { heading: 'Điều khiển nhiều đạo quân', intro: 'Nhiều đạo tăng sát thương nhưng cũng tăng gánh điều khiển. Đạo thứ năm chưa hoàn thiện có thể làm giảm giá trị bốn đạo tốt.', checklistTitle: 'Điều khiển', checklist: ['Lưu preset đúng quân, trang bị, đội hình và vũ trang.', 'Giao vai trò: tuyến trước, AOE, hỗ trợ, khống chế hoặc dọn mục tiêu.', 'Sắp thứ tự xuất quân để đạo chậm không tụt lại.', 'Rút riêng đạo yếu nhưng giữ lõi khỏe đi cùng nhau.', 'Chỉ mở rộng từ một đạo hoàn chỉnh khi đạo tiếp theo có chức năng rõ.'], ruleTitle: 'Quy tắc quyết định', rule: 'Dùng ít đạo hơn nếu bạn không thể di chuyển, focus và rút tất cả không chậm trễ.' },
+  },
+};
+
+const brief = briefs[locale]?.[key] ?? briefs.en[key];
+---
+
+{brief && (
+  <section class="mt-8 rounded-xl border border-gold/25 bg-gold/5 p-5" aria-labelledby="research-brief-heading">
+    <h2 id="research-brief-heading" class="!mt-0 font-display text-xl font-semibold text-gold-light">{brief.heading}</h2>
+    <p>{brief.intro}</p>
+    <h3 class="mt-5 font-display text-base font-semibold text-text-primary">{brief.checklistTitle}</h3>
+    <ul>
+      {brief.checklist.map((item) => <li>{item}</li>)}
+    </ul>
+    <div class="mt-4 rounded-lg border border-line bg-surface/70 px-4 py-3">
+      <strong class="text-text-primary">{brief.ruleTitle}:</strong>
+      <span class="ml-1 text-text-muted">{brief.rule}</span>
+    </div>
+  </section>
+)}

@@ -1,0 +1,8 @@
+{
+  "id": "thutmose",
+  "name": "Thutmose III", "slug": "thutmose", "rarity": "Legendary", "civilization": "Egypt", "troopType": "archer",
+  "specialties": ["Archer", "Versatility", "Support"], "tags": ["Healing reduction", "Early game", "Gold key"],
+  "bestUses": ["Early open field", "Anti-heal support", "Archer march"],
+  "description": { "en": "A legendary archer with support and anti-heal utility that is especially relevant against early healing-heavy marches; avoid assuming that this makes him a universal late-game answer.", "vi": "Tướng cung huyền thoại có hỗ trợ và giảm hồi máu, đặc biệt hữu ích trước các đạo hồi phục mạnh đầu game; không nên xem đây là lời giải phổ quát cho late game.", "es": "Un legendario arquero con apoyo y anti-curación, especialmente relevante contra marchas de mucha curación al inicio; no debe presentarse como respuesta universal de juego tardío." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/thutmose-iii-talent-tree-build-and-guide/", "type": "community-guide" }, { "name": "Rise of Kingdoms Wiki", "url": "https://riseofkingdoms.fandom.com/wiki/Thutmose_III", "type": "community-wiki" }], "verifiedAt": "2026-08-30"
+}

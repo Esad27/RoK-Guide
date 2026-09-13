@@ -1,0 +1,27 @@
+---
+import { LOCALES, LOCALE_LABELS, localizedPath, stripLocalePrefix, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  path?: string;
+}
+
+const { locale, path } = Astro.props;
+const basePath = path ?? stripLocalePrefix(Astro.url.pathname);
+---
+
+<div class="flex items-center gap-1 rounded-full border border-line p-1 text-sm">
+  {
+    LOCALES.map((l) => (
+      <a
+        href={localizedPath(l, basePath)}
+        class={`rounded-full px-2.5 py-1 transition-colors ${
+          l === locale ? 'bg-gold text-black font-semibold' : 'text-text-muted hover:text-text-primary'
+        }`}
+        aria-current={l === locale ? 'true' : undefined}
+      >
+        {LOCALE_LABELS[l]}
+      </a>
+    ))
+  }
+</div>

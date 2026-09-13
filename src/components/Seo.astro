@@ -1,0 +1,98 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  locale: 'en' | 'vi' | 'es';
+  alternates?: boolean;
+  noIndex?: boolean;
+  image?: string;
+  schemaType?: 'WebPage' | 'Article';
+  modifiedTime?: string;
+}
+
+import { LOCALES, localizedPath, stripLocalePrefix, useTranslations } from '../i18n';
+
+const {
+  title,
+  description,
+  canonical,
+  locale,
+  alternates = true,
+  noIndex = false,
+  image,
+  schemaType = 'WebPage',
+  modifiedTime,
+} = Astro.props;
+const t = useTranslations(locale);
+const siteName = t('site.shortName');
+const titleBrand = t('seo.titleBrand');
+const longBrandSuffix = ` | ${t('site.name')}`;
+const documentTitle = title.endsWith(longBrandSuffix)
+  ? `${title.slice(0, -longBrandSuffix.length)} | ${titleBrand}`
+  : title;
+const compactDescription = description?.replace(/\s+/g, ' ').trim();
+const metaDescription = compactDescription && compactDescription.length > 160
+  ? `${compactDescription.slice(0, 157).replace(/\s+\S*$/, '')}…`
+  : compactDescription;
+const canonicalUrl = canonical ? new URL(canonical, Astro.site ?? Astro.url.origin) : Astro.url;
+const siteUrl = new URL('/', Astro.site ?? Astro.url.origin);
+const imageUrl = image ? new URL(image, Astro.site ?? Astro.url.origin) : undefined;
+const basePath = stripLocalePrefix(Astro.url.pathname);
+const isHomePage = basePath === '/';
+const ogLocales = {
+  en: 'en_US',
+  vi: 'vi_VN',
+  es: 'es_ES',
+} as const;
+const structuredData = isHomePage
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: siteName,
+      alternateName: 'Legends of Titan Guide',
+      url: siteUrl.href,
+      inLanguage: locale,
+      description: metaDescription,
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': schemaType,
+      name: documentTitle,
+      headline: schemaType === 'Article' ? documentTitle : undefined,
+      description: metaDescription,
+      url: canonicalUrl.href,
+      inLanguage: locale,
+      dateModified: modifiedTime,
+      author: schemaType === 'Article' ? { '@type': 'Person', name: 'WhoScare' } : undefined,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: siteName,
+        url: siteUrl.href,
+      },
+    };
+---
+
+<title>{documentTitle}</title>
+{metaDescription && <meta name="description" content={metaDescription} />}
+<meta name="author" content="WhoScare" />
+<meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
+<link rel="canonical" href={canonicalUrl} />
+{alternates && LOCALES.map((language) => <link rel="alternate" hreflang={language} href={new URL(localizedPath(language, basePath), Astro.site ?? Astro.url.origin)} />)}
+{alternates && <link rel="alternate" hreflang="x-default" href={new URL(localizedPath('en', basePath), Astro.site ?? Astro.url.origin)} />}
+<meta property="og:type" content={schemaType === 'Article' ? 'article' : 'website'} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content={ogLocales[locale]} />
+{LOCALES.filter((language) => language !== locale).map((language) => <meta property="og:locale:alternate" content={ogLocales[language]} />)}
+<meta property="og:title" content={documentTitle} />
+{metaDescription && <meta property="og:description" content={metaDescription} />}
+<meta property="og:url" content={canonicalUrl} />
+{schemaType === 'Article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+{imageUrl && <meta property="og:image" content={imageUrl} />}
+{imageUrl && <meta property="og:image:alt" content={documentTitle} />}
+<meta name="twitter:card" content={imageUrl ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:title" content={documentTitle} />
+{metaDescription && <meta name="twitter:description" content={metaDescription} />}
+{imageUrl && <meta name="twitter:image" content={imageUrl} />}
+{imageUrl && <meta name="twitter:image:alt" content={documentTitle} />}
+<script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')} />

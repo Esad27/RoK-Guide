@@ -1,0 +1,40 @@
+---
+import type { Locale } from '../../i18n';
+import { useTranslations } from '../../i18n';
+import { getResources } from '../../data/loaders';
+import ResourceCard from '../ResourceCard.astro';
+import FilterBar from '../FilterBar.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const resources = getResources();
+
+const categoryOptions = [
+  { value: 'all', label: t('resources.filterAll') },
+  { value: 'official', label: t('resources.filterOfficial') },
+  { value: 'guides', label: t('resources.filterGuides') },
+  { value: 'meta', label: t('resources.filterMeta') },
+  { value: 'tools', label: t('resources.filterTools') },
+  { value: 'wiki', label: t('resources.filterWiki') },
+  { value: 'community', label: t('resources.filterCommunity') },
+  { value: 'calculators', label: t('resources.filterCalculators') },
+  { value: 'events', label: t('resources.filterEvents') },
+];
+---
+
+<div class="mx-auto max-w-7xl px-4 py-10">
+  <h1 class="font-display text-3xl font-bold text-text-primary">{t('resources.title')}</h1>
+  <p class="mt-2 max-w-2xl text-text-muted">{t('resources.subtitle')}</p>
+
+  <div class="mt-6 overflow-x-auto">
+    <FilterBar target="[data-resource-grid]" attr="category" options={categoryOptions} label={t('resources.filterAll')} />
+  </div>
+
+  <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" data-resource-grid>
+    {resources.map((r) => <ResourceCard resource={r} locale={locale} />)}
+  </div>
+</div>

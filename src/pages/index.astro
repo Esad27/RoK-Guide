@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomePage from '../components/pages/HomePage.astro';
+import { useTranslations } from '../i18n';
+
+const locale = 'en' as const;
+const t = useTranslations(locale);
+---
+
+<BaseLayout locale={locale} title={t('site.name')} description={t('home.heroSubtitle')} canonical="/">
+  <HomePage locale={locale} />
+</BaseLayout>

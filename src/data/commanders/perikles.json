@@ -1,0 +1,8 @@
+{
+  "id": "perikles",
+  "name": "Pericles", "slug": "perikles", "rarity": "Epic", "civilization": "Greece", "troopType": "infantry",
+  "specialties": ["Infantry", "Garrison", "Support"], "tags": ["Shield", "Early game", "Garrison"],
+  "bestUses": ["Early garrison", "Early infantry", "Secondary commander"],
+  "description": { "en": "Greece's epic starting commander, oriented toward infantry support and early garrison duty rather than long-term field investment.", "vi": "Tướng khởi đầu sử thi của Hy Lạp, thiên về hỗ trợ bộ binh và đồn trú đầu game hơn là đầu tư lâu dài cho open field.", "es": "El comandante épico inicial de Grecia, orientado al apoyo de infantería y a la guarnición temprana más que a una inversión duradera de campo abierto." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/pericles-talent-tree-build-and-guide/", "type": "community-guide" }, { "name": "Rise of Kingdoms Wiki", "url": "https://riseofkingdoms.fandom.com/wiki/Civilizations", "type": "community-wiki" }], "verifiedAt": "2026-08-30"
+}

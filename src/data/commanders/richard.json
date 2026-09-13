@@ -1,0 +1,8 @@
+{
+  "id": "richard",
+  "name": "Richard I", "slug": "richard", "rarity": "Legendary", "civilization": "Britain", "troopType": "infantry",
+  "specialties": ["Infantry", "Garrison", "Defense"], "tags": ["Healing", "Slow", "Defense"],
+  "bestUses": ["Early open field", "Barbarian chaining", "Defensive infantry"],
+  "description": { "en": "A durable early legendary infantry commander built around healing, damage reduction and slows. Healing can create hospital pressure, and later-season anti-heal reduces his PvP value.", "vi": "Tướng bộ binh huyền thoại bền bỉ đầu game nhờ hồi phục, giảm sát thương và làm chậm. Hồi phục có thể gây áp lực bệnh viện và chống hồi máu làm giảm giá trị PvP về sau.", "es": "Un legendario de infantería resistente al inicio, basado en curación, reducción de daño y ralentización. La curación presiona el hospital y el antiheal reduce su valor PvP más adelante." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/richard/", "type": "community-guide" }, { "name": "Rise of Kingdoms Wiki", "url": "https://riseofkingdoms.fandom.com/wiki/Commander_Guide", "type": "community-wiki" }], "verifiedAt": "2026-08-30"
+}

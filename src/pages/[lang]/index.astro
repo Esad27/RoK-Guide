@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomePage from '../../components/pages/HomePage.astro';
+import { useTranslations, type Locale } from '../../i18n';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'vi' } }, { params: { lang: 'es' } }];
+}
+
+const locale = Astro.params.lang as Locale;
+const t = useTranslations(locale);
+---
+
+<BaseLayout locale={locale} title={t('site.name')} description={t('home.heroSubtitle')} canonical={`/${locale}`}>
+  <HomePage locale={locale} />
+</BaseLayout>

@@ -1,0 +1,246 @@
+{
+  "auditDate": "2026-08-30",
+  "scope": "Phase 1 local-material inventory; no external fact verification performed yet",
+  "statusVocabulary": [
+    "not-started",
+    "researching",
+    "sources-found",
+    "cross-checked",
+    "drafted",
+    "translated",
+    "qa-approved",
+    "blocked"
+  ],
+  "summary": {
+    "trackedItems": 79,
+    "commanders": 18,
+    "pairings": 26,
+    "multilingualGuideTopics": 10,
+    "guideFiles": 30,
+    "videoCandidates": 10,
+    "videosInProductionDataset": 10,
+    "channels": 8,
+    "resources": 7,
+    "productionImages": 0,
+    "suppliedEvidenceImages": 4,
+    "qaApprovedItems": 0
+  },
+  "commonMissingFields": {
+    "commander-core-research": [
+      "portrait and provenance",
+      "rarity",
+      "civilization or origin",
+      "specialties and troop specialization",
+      "roles and acquisition",
+      "skills and verified investment order",
+      "mode and game-stage relevance",
+      "F2P and spender context",
+      "strengths, weaknesses, mistakes, pairings, videos, sources",
+      "natural EN, VI, and ES copy"
+    ],
+    "pairing-research": [
+      "why it works",
+      "primary/secondary rationale",
+      "skill interaction",
+      "game stage and investment context",
+      "mode-specific uses and limitations",
+      "alternatives, videos, sources",
+      "natural EN, VI, and ES copy"
+    ],
+    "video-verification": [
+      "claim-level cross-check before citing advice",
+      "manual transcript or creator chapter review when available",
+      "periodic title/channel/link re-verification"
+    ]
+  },
+  "items": [
+    {
+      "id": "commander:aethelflaed",
+      "type": "commander",
+      "title": "Aethelflaed",
+      "language": "multilingual",
+      "researchStatus": "not-started",
+      "sources": [],
+      "videoSources": [],
+      "transcriptChecked": false,
+      "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked",
+      "missingInformation": ["commander-core-research", "accepted display-name verification"]
+    },
+    {
+      "id": "commander:baibars",
+      "type": "commander",
+      "title": "Baibars",
+      "language": "multilingual",
+      "researchStatus": "not-started",
+      "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research"]
+    },
+    {
+      "id": "commander:bjorn-ironside",
+      "type": "commander", "title": "Bjorn Ironside", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": ["chisgule-commander-pairs-2025"],
+      "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research", "accepted diacritic/display-name verification"]
+    },
+    {
+      "id": "commander:cao-cao", "type": "commander", "title": "Cao Cao", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research"]
+    },
+    {
+      "id": "commander:charles-martel", "type": "commander", "title": "Charles Martel", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research"]
+    },
+    {
+      "id": "commander:el-cid", "type": "commander", "title": "El Cid", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research"]
+    },
+    {
+      "id": "commander:eulji-mundeok", "type": "commander", "title": "Eulji Mundeok", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research"]
+    },
+    {
+      "id": "commander:hermann", "type": "commander", "title": "Hermann", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": ["chisgule-commander-pairs-2025"], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research"]
+    },
+    {
+      "id": "commander:kusunoki", "type": "commander", "title": "Kusunoki", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research", "accepted full-name verification"]
+    },
+    {
+      "id": "commander:mehmed", "type": "commander", "title": "Mehmed", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research", "accepted full-name verification"]
+    },
+    {
+      "id": "commander:minamoto", "type": "commander", "title": "Minamoto", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": ["chisgule-commander-pairs-2025"], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research", "accepted full-name verification"]
+    },
+    {
+      "id": "commander:pelagius", "type": "commander", "title": "Pelagius", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research"]
+    },
+    {
+      "id": "commander:perikles", "type": "commander", "title": "Perikles", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research", "English spelling verification"]
+    },
+    {
+      "id": "commander:pyrrhos", "type": "commander", "title": "Pyrrhos", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": ["chisgule-commander-pairs-2025"], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research", "accepted spelling verification"]
+    },
+    {
+      "id": "commander:richard", "type": "commander", "title": "Richard", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research", "accepted full-name verification"]
+    },
+    {
+      "id": "commander:sun-tzu", "type": "commander", "title": "Sun Tzu", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": ["chisgule-commander-pairs-2025"], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research"]
+    },
+    {
+      "id": "commander:thutmose", "type": "commander", "title": "Thutmose", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": ["chisgule-commander-pairs-2025"], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research", "accepted full-name verification"]
+    },
+    {
+      "id": "commander:yi-seong-gye", "type": "commander", "title": "Yi-Seong Gye", "language": "multilingual",
+      "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false,
+      "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" },
+      "qaStatus": "blocked", "missingInformation": ["commander-core-research", "accepted spacing/hyphenation verification"]
+    },
+
+    { "id": "pairing:sun-tzu-bjorn-ironside", "type": "pairing", "title": "Sun Tzu + Bjorn Ironside", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": ["chisgule-commander-pairs-2025"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research", "rating conflict: screenshot 4 vs JSON 5"] },
+    { "id": "pairing:charles-martel-pyrrhos", "type": "pairing", "title": "Charles Martel + Pyrrhos", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:pyrrhos-richard", "type": "pairing", "title": "Pyrrhos + Richard", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:sun-tzu-charles-martel", "type": "pairing", "title": "Sun Tzu + Charles Martel", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:sun-tzu-pyrrhos", "type": "pairing", "title": "Sun Tzu or Bjorn Ironside + Pyrrhos", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": ["chisgule-commander-pairs-2025"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:sun-tzu-perikles", "type": "pairing", "title": "Sun Tzu + Perikles", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:richard-yi-seong-gye", "type": "pairing", "title": "Richard + Yi-Seong Gye", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:eulji-mundeok-sun-tzu", "type": "pairing", "title": "Eulji Mundeok + Sun Tzu", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:richard-mehmed", "type": "pairing", "title": "Richard + Mehmed", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:richard-aethelflaed", "type": "pairing", "title": "Richard + Aethelflaed", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:richard-sun-tzu", "type": "pairing", "title": "Richard + Sun Tzu", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research", "rating conflict: screenshot 4 vs JSON 5"] },
+    { "id": "pairing:charles-martel-aethelflaed", "type": "pairing", "title": "Charles Martel + Aethelflaed", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:charles-martel-yi-seong-gye", "type": "pairing", "title": "Charles Martel + Yi-Seong Gye", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:charles-martel-sun-tzu", "type": "pairing", "title": "Charles Martel + Sun Tzu", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:sun-tzu-yi-seong-gye", "type": "pairing", "title": "Sun Tzu + Yi-Seong Gye", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:bjorn-ironside-sun-tzu", "type": "pairing", "title": "Bjorn Ironside + Sun Tzu", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-infantry.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:minamoto-cao-cao", "type": "pairing", "title": "Minamoto + Cao Cao", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-cavalry-archer.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:minamoto-aethelflaed", "type": "pairing", "title": "Minamoto + Aethelflaed", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-cavalry-archer.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:minamoto-mehmed", "type": "pairing", "title": "Minamoto + Mehmed", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-cavalry-archer.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:pelagius-minamoto", "type": "pairing", "title": "Pelagius + Minamoto", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-cavalry-archer.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:baibars-pelagius", "type": "pairing", "title": "Baibars + Pelagius", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-cavalry-archer.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:el-cid-yi-seong-gye", "type": "pairing", "title": "El Cid + Yi-Seong Gye", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-cavalry-archer.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research", "meaning of owner annotation BrokenDMG"] },
+    { "id": "pairing:thutmose-yi-seong-gye", "type": "pairing", "title": "Thutmose + Yi-Seong Gye", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-cavalry-archer.png"], "videoSources": ["chisgule-commander-pairs-2025"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:yi-seong-gye-mehmed", "type": "pairing", "title": "Yi-Seong Gye + Mehmed", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-cavalry-archer.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:hermann-el-cid", "type": "pairing", "title": "Hermann + El Cid", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-cavalry-archer.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+    { "id": "pairing:kusunoki-yi-seong-gye", "type": "pairing", "title": "Kusunoki + Yi-Seong Gye", "language": "multilingual", "researchStatus": "sources-found", "sources": ["research/evidence/pairings-cavalry-archer.png"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["pairing-research"] },
+
+    { "id": "guide:battle-open-field", "type": "guide", "title": "Battle Guide — Open Field", "language": ["en", "vi", "es"], "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["source metadata", "RoK-specific mechanic verification", "stage/F2P/spender context", "several absolute meta claims"] },
+    { "id": "guide:battle-rally", "type": "guide", "title": "Battle Guide — Rally", "language": ["en", "vi", "es"], "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["source metadata", "mechanics cross-check", "target-specific rally guidance", "reinforcement and swarm caveats"] },
+    { "id": "guide:battle-garrison", "type": "guide", "title": "Battle Guide — Garrison", "language": ["en", "vi", "es"], "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["source metadata", "structure-specific mechanics", "garrison captain and reinforcement rules", "season context"] },
+    { "id": "guide:battle-march-management", "type": "guide", "title": "Battle Guide — March Management", "language": ["en", "vi", "es"], "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["source metadata", "RoK-specific controls and targeting behavior", "march queue mechanics", "suspicious generic scouting/recall wording"] },
+    { "id": "guide:kvk-preparation", "type": "guide", "title": "KvK Guide — Preparation", "language": ["en", "vi", "es"], "researchStatus": "sources-found", "sources": [], "videoSources": ["musagaming-pre-kvk-2025"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["incorrect KvK expansion", "video transcript/caption verification", "source metadata", "KvK1 vs later-season separation", "unsupported build/research/gem advice"] },
+    { "id": "guide:kvk-zones-and-passes", "type": "guide", "title": "KvK Guide — Zones & Passes", "language": ["en", "vi", "es"], "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["source metadata", "season/map differences", "pass occupation and access mechanics", "objective terminology"] },
+    { "id": "guide:kvk-open-field", "type": "guide", "title": "KvK Guide — Open Field", "language": ["en", "vi", "es"], "researchStatus": "not-started", "sources": [], "videoSources": ["rok-f2p-five-marches-2025"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["source metadata", "KvK1 vs KvK3/SoC separation", "targeting/positioning specifics", "hospital pressure cross-check"] },
+    { "id": "guide:kvk-rally-and-garrison", "type": "guide", "title": "KvK Guide — Rally & Garrison", "language": ["en", "vi", "es"], "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["source metadata", "season and target distinctions", "rally/garrison mechanics cross-check", "swarm/reinforcement caveats"] },
+    { "id": "guide:kvk-resource-management", "type": "guide", "title": "KvK Guide — Resource Management", "language": ["en", "vi", "es"], "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["source metadata", "healing/training cost workflow", "resource items and transfer mechanics", "gathering commanders/farm accounts/alliance territory", "prohibited generic warehouse/protection wording"] },
+    { "id": "guide:kvk-hospital-management", "type": "guide", "title": "KvK Guide — Hospital Management", "language": ["en", "vi", "es"], "researchStatus": "not-started", "sources": [], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["source metadata", "wounded/dead/overflow rules by combat context", "alliance Help workflow", "healing batch practices", "unsupported claim about players sending healing-speed buffs"] },
+
+    { "id": "video:chisgule-commander-pairs-2025", "type": "video", "title": "Beginner Guide: Work on these commander pairs first | Rise of Kingdoms", "language": "en", "researchStatus": "cross-checked", "sources": ["rok_source.txt", "research/VIDEO_AUDIT.md"], "videoSources": ["https://www.youtube.com/watch?v=8nZRXBOBR08"], "transcriptChecked": true, "captionStatus": "auto-generated", "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["claim-level review; full transcript unavailable"] },
+    { "id": "video:musagaming-pre-kvk-2025", "type": "video", "title": "Rise of Kingdoms PRE-KvK GUIDE for Players in 2025", "language": "en", "researchStatus": "cross-checked", "sources": ["rok_source.txt", "research/VIDEO_AUDIT.md"], "videoSources": ["https://www.youtube.com/watch?v=_G2IO3urcaE"], "transcriptChecked": true, "captionStatus": "auto-generated", "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["claim-level review; full transcript unavailable"] },
+    { "id": "video:sefacuh-beginner-guide-2025", "type": "video", "title": "LA MEJOR GUIA COMPLETA PARA PRINCIPIANTES 2025 - RISE OF KINGDOMS", "language": "es", "researchStatus": "cross-checked", "sources": ["rok_source.txt", "research/VIDEO_AUDIT.md"], "videoSources": ["https://www.youtube.com/watch?v=WysD3bKhU94"], "transcriptChecked": true, "captionStatus": "auto-generated", "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["claim-level review; full transcript unavailable"] },
+    { "id": "video:itsleorok-best-commanders-2025", "type": "video", "title": "LOS MEJORES COMANDANTES DEL 2025 | RISE OF KINGDOMS ESPAÑOL", "language": "es", "researchStatus": "cross-checked", "sources": ["rok_source.txt", "research/VIDEO_AUDIT.md"], "videoSources": ["https://www.youtube.com/watch?v=4ataeBtgiYM"], "transcriptChecked": true, "captionStatus": "auto-generated", "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["claim-level review; full transcript unavailable"] },
+    { "id": "video:itsleorok-legendary-commanders-feb-2025", "type": "video", "title": "MEJORES COMANDANTES LEGENDARIOS FEBRERO 2025 | RISE OF KINGDOMS ESPAÑOL", "language": "es", "researchStatus": "cross-checked", "sources": ["rok_source.txt", "research/VIDEO_AUDIT.md"], "videoSources": ["https://www.youtube.com/watch?v=qcDNkza2Spg"], "transcriptChecked": true, "captionStatus": "auto-generated", "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["claim-level review; full transcript unavailable"] },
+    { "id": "video:tarinboy-kvk1-guide", "type": "video", "title": "GUIA Y ANALISIS MAS COMPLETO DE LOS MEJORES COMANDANTES PARA KVK 1 EN RISE OF KINGDOMS", "language": "es", "researchStatus": "cross-checked", "sources": ["rok_source.txt", "research/VIDEO_AUDIT.md"], "videoSources": ["https://www.youtube.com/watch?v=ZJQeJKVeEQA"], "transcriptChecked": true, "captionStatus": "auto-generated", "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["claim-level review; full transcript unavailable"] },
+    { "id": "video:rok-gpy-kvk1-kvk2-commanders-2025", "type": "video", "title": "Toàn bộ BÍ KÍP PHÁT TRIỂN CHỈ HUY ở KVK 1 - KVK 2", "language": "vi", "researchStatus": "cross-checked", "sources": ["rok_source.txt", "research/VIDEO_AUDIT.md"], "videoSources": ["https://www.youtube.com/watch?v=Wdis57IPPU8"], "transcriptChecked": true, "captionStatus": "auto-generated", "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["claim-level review; full transcript unavailable"] },
+    { "id": "video:rok-f2p-infantry-2025", "type": "video", "title": "Lối Chơi Bộ Binh & Những Vị Tướng Đáng Đầu Tư Ở Thời Điểm Hiện Tại", "language": "vi", "researchStatus": "cross-checked", "sources": ["rok_source.txt", "research/VIDEO_AUDIT.md"], "videoSources": ["https://www.youtube.com/watch?v=pSC1WMtNlgk"], "transcriptChecked": true, "captionStatus": "auto-generated", "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["claim-level review; full transcript unavailable"] },
+    { "id": "video:rok-vietnam-armaments-2025", "type": "video", "title": "Hướng Dẫn Hệ Thống Vũ Trang Nên Lấy Những Đội Hình Nào 2025", "language": "vi", "researchStatus": "cross-checked", "sources": ["rok_source.txt", "research/VIDEO_AUDIT.md"], "videoSources": ["https://www.youtube.com/watch?v=4iuw9hOaQ_c"], "transcriptChecked": true, "captionStatus": "auto-generated", "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["claim-level review; full transcript unavailable", "official-status label not independently verified"] },
+    { "id": "video:rok-f2p-five-marches-2025", "type": "video", "title": "Đội Hình 5 Đạo Gây Sát Thương Diện Rộng Mạnh Nhất Meta! KvK 3", "language": "vi", "researchStatus": "cross-checked", "sources": ["rok_source.txt", "research/VIDEO_AUDIT.md"], "videoSources": ["https://www.youtube.com/watch?v=0YZFWSVzDvg"], "transcriptChecked": true, "captionStatus": "auto-generated", "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["claim-level review; full transcript unavailable", "must remain scoped to KvK3"] },
+
+    { "id": "channel:chisgule-gaming", "type": "channel", "title": "Chisgule Gaming", "language": ["en"], "researchStatus": "not-started", "sources": [], "videoSources": ["chisgule-commander-pairs-2025"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["canonical channel URL", "logo and provenance", "verified description"] },
+    { "id": "channel:musagaming", "type": "channel", "title": "MusaGaming", "language": ["en"], "researchStatus": "not-started", "sources": [], "videoSources": ["musagaming-pre-kvk-2025"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["canonical channel URL", "logo and provenance", "verified description"] },
+    { "id": "channel:sefacuh-warrior-rok", "type": "channel", "title": "Sefacuh Warrior Rok", "language": ["es"], "researchStatus": "not-started", "sources": [], "videoSources": ["sefacuh-beginner-guide-2025"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["canonical channel URL", "logo and provenance", "verified description"] },
+    { "id": "channel:itsleorok", "type": "channel", "title": "ItsLeoRoK", "language": ["es"], "researchStatus": "not-started", "sources": [], "videoSources": ["itsleorok-best-commanders-2025", "itsleorok-legendary-commanders-feb-2025"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["canonical channel URL", "logo and provenance", "verified description"] },
+    { "id": "channel:tarinboy", "type": "channel", "title": "Tarinboy", "language": ["es"], "researchStatus": "not-started", "sources": [], "videoSources": ["tarinboy-kvk1-guide"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["canonical channel URL", "logo and provenance", "verified description"] },
+    { "id": "channel:rok-vietnam-official", "type": "channel", "title": "Rise Of Kingdoms Việt Nam Official", "language": ["vi"], "researchStatus": "not-started", "sources": [], "videoSources": ["rok-vietnam-armaments-2025"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["canonical channel URL", "official status verification", "logo and provenance", "verified description"] },
+    { "id": "channel:rok-f2p", "type": "channel", "title": "RoK F2P", "language": ["vi"], "researchStatus": "not-started", "sources": [], "videoSources": ["rok-f2p-infantry-2025", "rok-f2p-five-marches-2025"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["canonical channel URL", "logo and provenance", "verified description"] },
+    { "id": "channel:rok-gpy", "type": "channel", "title": "RoK GPY", "language": ["vi"], "researchStatus": "not-started", "sources": [], "videoSources": ["rok-gpy-kvk1-kvk2-commanders-2025"], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "not-started", "vi": "not-started", "es": "not-started" }, "qaStatus": "blocked", "missingInformation": ["canonical channel URL", "logo and provenance", "verified description"] },
+
+    { "id": "resource:rise-of-kingdoms-official", "type": "resource", "title": "Rise of Kingdoms — Official Site", "language": "multilingual", "researchStatus": "cross-checked", "sources": ["https://rok.lilith.com/", "https://www.lilith.com/en/"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["logo and provenance", "periodic link check"] },
+    { "id": "resource:rise-of-kingdoms-community", "type": "resource", "title": "Rise of Kingdoms Community", "language": "multilingual", "researchStatus": "sources-found", "sources": ["https://forum-global.lilithgame.com/?forumId=2"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["logo and provenance", "section-level inspection", "periodic link check"] },
+    { "id": "resource:rise-of-kingdoms-guides", "type": "resource", "title": "Rise of Kingdoms Guides", "language": "multilingual", "researchStatus": "cross-checked", "sources": ["https://riseofkingdomsguides.com/"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["logo and provenance", "periodic link check"] },
+    { "id": "resource:metarok", "type": "resource", "title": "MetaRoK", "language": "multilingual", "researchStatus": "cross-checked", "sources": ["https://meta-rok.com/tierlist/field/"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["logo and provenance", "dated methodology/freshness signal", "periodic link check"] },
+    { "id": "resource:codex-helper", "type": "resource", "title": "Codex Helper", "language": "multilingual", "researchStatus": "cross-checked", "sources": ["https://codexhelper.com/"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["logo and provenance", "periodic link check"] },
+    { "id": "resource:the-rok-nut-academy", "type": "resource", "title": "The RoK Nut Academy", "language": "multilingual", "researchStatus": "blocked", "sources": ["https://sites.google.com/view/theroknut-academy/"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["fetcher could not inspect current contents", "content scope verification", "logo decision", "manual link check"] },
+    { "id": "resource:rok-wiki-commander-guide", "type": "resource", "title": "Rise of Kingdoms Wiki — Commander Guide", "language": "multilingual", "researchStatus": "sources-found", "sources": ["https://riseofkingdoms.fandom.com/wiki/Commander_Guide", "https://riseofkingdoms.fandom.com/wiki/Commanders"], "videoSources": [], "transcriptChecked": false, "imageAvailable": false, "translationStatus": { "en": "drafted", "vi": "translated", "es": "translated" }, "qaStatus": "blocked", "missingInformation": ["target guide blocked by robots", "logo and provenance", "manual link check"] }
+  ]
+}

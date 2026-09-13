@@ -1,0 +1,8 @@
+{
+  "id": "mehmed",
+  "name": "Mehmed II", "slug": "mehmed", "rarity": "Legendary", "civilization": "Ottoman Empire",
+  "specialties": ["Leadership", "Conquering", "Skill"], "tags": ["Skill damage", "City rally", "Mixed troops"],
+  "bestUses": ["City rallies", "Early skill-damage secondary", "Mixed troops"],
+  "description": { "en": "A gold-key legendary whose leadership and skill-damage kit is strongest in city rallies; low-spend accounts should avoid universal-sculpture investment.", "vi": "Tướng huyền thoại từ rương vàng, mạnh nhất khi rally thành nhờ bộ kỹ năng lãnh đạo và sát thương kỹ năng; tài khoản ít nạp không nên dùng tượng vạn năng.", "es": "Un legendario de cofre dorado cuyo kit de liderazgo y daño de habilidad destaca al reunir contra ciudades; las cuentas de bajo gasto deberían evitar esculturas universales." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/mehmed-ii/", "type": "community-guide" }, { "name": "Rise of Kingdoms Wiki", "url": "https://riseofkingdoms.fandom.com/wiki/Commanders", "type": "community-wiki" }], "verifiedAt": "2026-08-30"
+}

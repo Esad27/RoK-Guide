@@ -1,0 +1,17 @@
+[
+  { "id": "chisgule-gaming", "name": "Chisgule Gaming", "url": "https://www.youtube.com/@Chisgule", "channelId": "UChqXRquQhtswoAqlt3ayyXA", "logo": "/images/channels/chisgule-gaming.jpg", "languages": ["en"] },
+  { "id": "musagaming", "name": "MusaGaming", "url": "https://www.youtube.com/@MusaGaming-gg", "channelId": "UC7SztA4Y-yqQ1DAY4HUA__g", "logo": "/images/channels/musagaming.jpg", "languages": ["en"] },
+  { "id": "sefacuh-warrior-rok", "name": "Séfa", "url": "https://www.youtube.com/@Sefayt7", "channelId": "UC7GQn90pLDkb8goCQdriYeg", "logo": "/images/channels/sefacuh-warrior-rok.jpg", "languages": ["es"] },
+  { "id": "itsleorok", "name": "ItsLeo", "url": "https://www.youtube.com/@ItsLeoRoK", "channelId": "UC3I5xneqQ1mIF5fBFuXdEUA", "logo": "/images/channels/itsleorok.jpg", "languages": ["es"] },
+  { "id": "tarinboy", "name": "Tarinboy", "url": "https://www.youtube.com/@tarinboy17", "channelId": "UCujrIOgQ1vIpFNuX-Bu0QZA", "logo": "/images/channels/tarinboy.jpg", "languages": ["es"] },
+  { "id": "rok-vietnam-official", "name": "Rise Of Kingdoms Việt Nam Official", "url": "https://www.youtube.com/@RiseOfKingdomsVi%E1%BB%87tNamOfficial", "channelId": "UC_nrfF89ggVKfcADzkq6lsw", "logo": "/images/channels/rok-vietnam-official.jpg", "languages": ["vi"] },
+  { "id": "rok-f2p", "name": "Rok F2P", "url": "https://www.youtube.com/@RokF2P", "channelId": "UCCgGfyDSS21ElAdhq_Q-4yQ", "logo": "/images/channels/rok-f2p.jpg", "languages": ["vi"] },
+  { "id": "rok-gpy", "name": "Rok GPY", "url": "https://www.youtube.com/@RokGPYY", "channelId": "UCDkTbFAfGwKO7hZXyyIvd4w", "logo": "/images/channels/rok-gpy.jpg", "languages": ["vi"] },
+  { "id": "omniarch", "name": "Omniarch", "url": "https://www.youtube.com/@OmniarchOfficial", "channelId": "UCjGAKIGlQM0DbcET7iXFBng", "logo": "/images/channels/omniarch.jpg", "languages": ["en"] },
+  { "id": "empire-build-academy", "name": "The Empire Build Academy Gaming", "url": "https://www.youtube.com/@BuilldYourEmpire", "channelId": "UCRIcPrQ9_Eqswu0yVbNbFzQ", "logo": "/images/channels/empire-build-academy.jpg", "languages": ["en"] },
+  { "id": "wardaddy-chadski", "name": "WarDaddyChadski", "url": "https://www.youtube.com/@WarDaddyChadski", "channelId": "UCqccGABEKdAyBf8O9fDoHCw", "logo": "/images/channels/wardaddy-chadski.jpg", "languages": ["en"] },
+  { "id": "maffu", "name": "Maffu", "url": "https://www.youtube.com/@MaffuROK", "channelId": "UCWPO4DkViMdkPiXwJRvdNnw", "logo": "/images/channels/maffu.jpg", "languages": ["en"] },
+  { "id": "suricata-dr", "name": "Suricata DR", "url": "https://www.youtube.com/@SuricataDR", "channelId": "UCclEdM2IW9sJ-ubwyY8ElZg", "logo": "/images/channels/suricata-dr.jpg", "languages": ["es"] },
+  { "id": "theleonidas0", "name": "TheLeonidas0", "url": "https://www.youtube.com/@theleonidas0", "channelId": "UCpecdvTEaTeEn1ANNuG9-IQ", "logo": "/images/channels/theleonidas0.jpg", "languages": ["es"] },
+  { "id": "efrain-found-love", "name": "EfrainFoundLove", "url": "https://www.youtube.com/@EfrainFoundLove", "channelId": "UCuhzlfT7DHjRjcJsuf_VQng", "logo": "/images/channels/efrain-found-love.jpg", "languages": ["es"] }
+]

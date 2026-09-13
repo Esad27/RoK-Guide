@@ -1,0 +1,9 @@
+{
+  "id": "pelagius",
+  "name": "Pelagius",
+  "slug": "pelagius", "rarity": "Epic", "civilization": "Spain", "troopType": "cavalry",
+  "specialties": ["Cavalry", "Garrison", "Skill"], "tags": ["Rage", "Sustain", "Early game"],
+  "bestUses": ["Early open field", "Early cavalry", "Early garrison"],
+  "description": { "en": "A flexible early epic cavalry commander combining direct skill damage, rage restoration, cavalry stats and a small sustain effect.", "vi": "Chỉ huy kỵ binh sử thi linh hoạt đầu game, kết hợp sát thương kỹ năng, hồi nộ, chỉ số kỵ binh và khả năng duy trì nhẹ.", "es": "Un épico de caballería flexible para el inicio, con daño de habilidad, recuperación de furia, estadísticas de caballería y algo de supervivencia." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/pelagius/", "type": "community-guide" }], "verifiedAt": "2026-08-30"
+}

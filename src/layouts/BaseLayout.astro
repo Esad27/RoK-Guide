@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+import type { Locale } from '../i18n';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Seo from '../components/Seo.astro';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description?: string;
+  canonical?: string;
+  alternates?: boolean;
+  noIndex?: boolean;
+  languagePath?: string;
+  image?: string;
+  schemaType?: 'WebPage' | 'Article';
+  modifiedTime?: string;
+}
+
+const { locale, title, description, canonical, alternates, noIndex, languagePath, image, schemaType, modifiedTime } = Astro.props;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <Seo title={title} description={description} canonical={canonical} locale={locale} alternates={alternates} noIndex={noIndex} image={image} schemaType={schemaType} modifiedTime={modifiedTime} />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0a0d" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3e9d2" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script is:inline>
+      try {
+        const stored = localStorage.getItem('rok-theme');
+        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', stored === 'light' || stored === 'dark' ? stored : preferred);
+      } catch {}
+    </script>
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <Header locale={locale} languagePath={languagePath} />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>

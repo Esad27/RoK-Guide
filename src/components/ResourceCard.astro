@@ -1,0 +1,40 @@
+---
+import type { Resource } from '../data/types';
+import type { Locale } from '../i18n';
+import { useTranslations } from '../i18n';
+
+interface Props {
+  resource: Resource;
+  locale: Locale;
+}
+
+const { resource, locale } = Astro.props;
+const t = useTranslations(locale);
+const description = resource.description[locale] ?? resource.description.en;
+const href = resource.localizedUrls?.[locale] ?? resource.url;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="flex flex-col gap-2 rounded-xl border border-line bg-surface p-4 transition-colors hover:border-gold/50 hover:bg-surface-hover"
+  data-resource-card
+  data-filterable
+  data-category={resource.category}
+>
+  <div class="flex items-center gap-3">
+    {
+      resource.logo ? (
+        <img src={resource.logo} alt="" loading="lazy" class="h-8 w-8 shrink-0 rounded object-contain" />
+      ) : (
+        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded border border-gold/40 text-gold-light" aria-hidden="true">
+          ↗
+        </span>
+      )
+    }
+    <span class="font-display font-semibold text-text-primary">{resource.name}</span>
+  </div>
+  {description && <p class="text-sm text-text-muted">{description}</p>}
+  <span class="text-xs uppercase tracking-wide text-gold">{t('common.externalLink')}</span>
+</a>

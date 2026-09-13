@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CommandersIndexPage from '../../components/pages/CommandersIndexPage.astro';
+import { useTranslations } from '../../i18n';
+
+const locale = 'en' as const;
+const t = useTranslations(locale);
+---
+
+<BaseLayout locale={locale} title={`${t('commanders.title')} | ${t('site.name')}`} description={t('commanders.subtitle')} canonical="/commanders">
+  <CommandersIndexPage locale={locale} />
+</BaseLayout>

@@ -1,0 +1,112 @@
+---
+import type { Locale } from '../../i18n';
+import { useTranslations } from '../../i18n';
+import { getCommander, getPairingsFor } from '../../data/loaders';
+import CommanderPortrait from '../CommanderPortrait.astro';
+import RatingStars from '../RatingStars.astro';
+import TagBadge from '../TagBadge.astro';
+import PairingCard from '../PairingCard.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import SourcesList from '../SourcesList.astro';
+import { taxonomyLabel } from '../../data/taxonomy';
+
+interface Props {
+  locale: Locale;
+  slug: string;
+}
+
+const { locale, slug } = Astro.props;
+const t = useTranslations(locale);
+
+const commander = getCommander(slug)!;
+const pairings = getPairingsFor(commander.id);
+const description = commander.description?.[locale] ?? commander.description?.en;
+
+const infoLabels = {
+  en: { rarity: 'Rarity', civilization: 'Civilization', specialties: 'Specialties', role: 'Role', acquisition: 'Acquisition', skillOrder: 'Skill Order' },
+  vi: { rarity: 'Độ hiếm', civilization: 'Nền văn minh', specialties: 'Chuyên môn', role: 'Vai trò', acquisition: 'Cách nhận', skillOrder: 'Thứ tự kỹ năng' },
+  es: { rarity: 'Rareza', civilization: 'Civilización', specialties: 'Especialidades', role: 'Rol', acquisition: 'Obtención', skillOrder: 'Orden de habilidades' },
+}[locale];
+const infoFields: { label: string; value?: string }[] = [
+  { label: infoLabels.rarity, value: commander.rarity ? taxonomyLabel(commander.rarity, locale) : undefined },
+  { label: infoLabels.civilization, value: commander.civilization ? taxonomyLabel(commander.civilization, locale) : undefined },
+  { label: infoLabels.specialties, value: commander.specialties?.map((value) => taxonomyLabel(value, locale)).join(' · ') },
+  { label: infoLabels.role, value: commander.role },
+  { label: infoLabels.acquisition, value: commander.acquisition },
+  { label: infoLabels.skillOrder, value: commander.skillOrder },
+].filter((f) => Boolean(f.value));
+
+const troopTypeLabel: Record<string, string> = {
+  infantry: t('commanders.filterInfantry'),
+  cavalry: t('commanders.filterCavalry'),
+  archer: t('commanders.filterArcher'),
+};
+---
+
+<div class="mx-auto max-w-5xl px-4 py-10">
+  <Breadcrumbs
+    locale={locale}
+    crumbs={[
+      { label: t('nav.commanders'), href: '/commanders' },
+      { label: commander.name },
+    ]}
+  />
+
+  <div class="flex flex-col items-center gap-4 border-b border-line pb-8 text-center sm:flex-row sm:items-start sm:text-left">
+    <CommanderPortrait name={commander.name} image={commander.image} size="lg" />
+    <div class="flex flex-1 flex-col items-center gap-2 sm:items-start">
+      <h1 class="font-display text-3xl font-bold text-text-primary">{commander.name}</h1>
+      <RatingStars rating={commander.rating} />
+      <div class="flex flex-wrap justify-center gap-2 sm:justify-start">
+        {commander.troopType && <TagBadge tone="neutral">{troopTypeLabel[commander.troopType]}</TagBadge>}
+        {commander.rarity && <TagBadge tone="gold">{taxonomyLabel(commander.rarity, locale)}</TagBadge>}
+        {(commander.tags ?? []).map((tag) => <TagBadge tone="gold">{taxonomyLabel(tag, locale)}</TagBadge>)}
+      </div>
+      {description && <p class="max-w-2xl text-text-muted">{description}</p>}
+    </div>
+  </div>
+
+  {
+    infoFields.length > 0 && (
+      <section class="mt-8">
+        <h2 class="mb-3 font-display text-xl font-semibold text-text-primary">{t('commanders.information')}</h2>
+        <dl class="grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2">
+          {infoFields.map((f) => (
+            <div class="flex justify-between border-b border-line py-2 text-sm">
+            <dt class="text-text-muted">{f.label}</dt>
+              <dd class="font-medium text-text-primary">{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    )
+  }
+
+  {
+    commander.bestUses && commander.bestUses.length > 0 && (
+      <section class="mt-8">
+        <h2 class="mb-3 font-display text-xl font-semibold text-text-primary">{t('commanders.bestUses')}</h2>
+        <div class="flex flex-wrap gap-2">
+          {commander.bestUses.map((use) => (
+            <TagBadge tone="neutral">{taxonomyLabel(use, locale)}</TagBadge>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    pairings.length > 0 && (
+      <section class="mt-8">
+        <h2 class="mb-3 font-display text-xl font-semibold text-text-primary">{t('commanders.bestPairings')}</h2>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {pairings.map((p) => (
+            <PairingCard pairing={p} locale={locale} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <SourcesList sources={commander.sources} locale={locale} />
+</div>

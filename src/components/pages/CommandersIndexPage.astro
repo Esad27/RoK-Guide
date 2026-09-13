@@ -1,0 +1,72 @@
+---
+import type { Locale } from '../../i18n';
+import { useTranslations } from '../../i18n';
+import { getCommanders } from '../../data/loaders';
+import CommanderCard from '../CommanderCard.astro';
+import FilterBar from '../FilterBar.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const commanders = [...getCommanders()].sort((a, b) => a.name.localeCompare(b.name));
+
+const troopFilterOptions = [
+  { value: 'all', label: t('commanders.filterAll') },
+  { value: 'infantry', label: t('commanders.filterInfantry') },
+  { value: 'cavalry', label: t('commanders.filterCavalry') },
+  { value: 'archer', label: t('commanders.filterArcher') },
+];
+---
+
+<div class="mx-auto max-w-7xl px-4 py-10">
+  <h1 class="font-display text-3xl font-bold text-text-primary">{t('commanders.title')}</h1>
+  <p class="mt-2 max-w-2xl text-text-muted">{t('commanders.subtitle')}</p>
+
+  <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <FilterBar target="[data-commander-grid]" attr="troop-type" options={troopFilterOptions} label={t('commanders.filterAll')} />
+    <input
+      type="search"
+      id="commander-search"
+      placeholder={t('commanders.searchPlaceholder')}
+      class="w-full rounded-lg border border-line bg-surface px-4 py-2 text-text-primary placeholder:text-text-muted focus:border-gold outline-none sm:w-64"
+    />
+  </div>
+
+  <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5" data-commander-grid>
+    {commanders.map((c) => <CommanderCard commander={c} locale={locale} />)}
+  </div>
+  <p class="mt-6 hidden text-center text-text-muted" data-no-results>{t('common.noResults')}</p>
+</div>
+
+<script>
+  const searchInput = document.getElementById('commander-search') as HTMLInputElement | null;
+  const grid = document.querySelector<HTMLElement>('[data-commander-grid]');
+  const noResults = document.querySelector<HTMLElement>('[data-no-results]');
+
+  function updateNoResults() {
+    if (!grid || !noResults) return;
+    const visible = [...grid.children].some((el) => !el.classList.contains('hidden'));
+    noResults.classList.toggle('hidden', visible);
+  }
+
+  if (searchInput && grid) {
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      [...grid.querySelectorAll<HTMLElement>('[data-commander-card]')].forEach((card) => {
+        const name = card.dataset.name ?? '';
+        const matchesSearch = !q || name.includes(q);
+        card.classList.toggle('hidden', !matchesSearch);
+      });
+      updateNoResults();
+    });
+  }
+
+  const observer = grid ? new MutationObserver(updateNoResults) : null;
+  if (grid && observer) {
+    observer.observe(grid, { attributes: true, subtree: true, attributeFilter: ['class'] });
+  }
+</script>

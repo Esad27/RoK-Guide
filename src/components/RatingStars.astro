@@ -1,0 +1,24 @@
+---
+interface Props {
+  rating?: number;
+  max?: number;
+  label?: string;
+  showEmpty?: boolean;
+}
+
+const { rating, max = 5, label, showEmpty = true } = Astro.props;
+const filledStars = typeof rating === 'number' ? Math.max(0, Math.min(max, Math.round(rating))) : 0;
+const starCount = showEmpty ? max : filledStars;
+---
+
+{
+  typeof rating === 'number' && (
+    <span class="inline-flex items-center gap-0.5" role="img" aria-label={label ?? `${rating} out of ${max} stars`}>
+      {Array.from({ length: starCount }).map((_, i) => (
+        <span class={i < Math.round(rating) ? 'star' : 'star-empty'} aria-hidden="true">
+          ★
+        </span>
+      ))}
+    </span>
+  )
+}

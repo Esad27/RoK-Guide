@@ -1,0 +1,149 @@
+---
+import type { Locale } from '../../i18n';
+import { useTranslations } from '../../i18n';
+import { getPairing, getCommander } from '../../data/loaders';
+import CommanderPortrait from '../CommanderPortrait.astro';
+import RatingStars from '../RatingStars.astro';
+import TagBadge from '../TagBadge.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import VideoCard from '../VideoCard.astro';
+import VideoModal from '../VideoModal.astro';
+import SourcesList from '../SourcesList.astro';
+import { getVideos } from '../../data/loaders';
+
+interface Props {
+  locale: Locale;
+  id: string;
+}
+
+const { locale, id } = Astro.props;
+const t = useTranslations(locale);
+
+const pairing = getPairing(id)!;
+
+const primary = getCommander(pairing.primary);
+const secondary = getCommander(pairing.secondary);
+const alternatives = (pairing.primaryAlternatives ?? [])
+  .map((cid) => getCommander(cid))
+  .filter((c): c is NonNullable<typeof c> => Boolean(c));
+const primaryNames = [primary?.name, ...alternatives.map((c) => c.name)].filter(Boolean).join(' / ');
+
+const why = pairing.why?.[locale] ?? pairing.why?.en;
+const strengths = pairing.strengths?.[locale] ?? pairing.strengths?.en;
+const weaknesses = pairing.weaknesses?.[locale] ?? pairing.weaknesses?.en;
+const video = pairing.videoId ? getVideos().find((v) => v.id === pairing.videoId) : undefined;
+
+const troopTypeLabel: Record<string, string> = {
+  infantry: t('commanders.filterInfantry'),
+  cavalry: t('commanders.filterCavalry'),
+  archer: t('commanders.filterArcher'),
+};
+
+const tagLabel: Record<string, Record<Locale, string>> = {
+  'f2p-favorite': { en: 'F2P Favorite', vi: 'Ưa thích cho F2P', es: 'Favorito F2P' },
+  recommended: { en: 'Recommended', vi: 'Khuyến nghị', es: 'Recomendado' },
+  spender: { en: 'Spender', vi: 'Người nạp', es: 'Gastador' },
+  'broken-dmg': { en: 'BrokenDMG', vi: 'BrokenDMG', es: 'BrokenDMG' },
+};
+const minimumLabel: Record<Locale, string> = {
+  en: 'minimum',
+  vi: 'tối thiểu',
+  es: 'mínimo',
+};
+const localizeSkill = (value?: string) => value?.replace('(minimum)', `(${minimumLabel[locale]})`);
+---
+
+<div class="mx-auto max-w-4xl px-4 py-10">
+  <Breadcrumbs
+    locale={locale}
+    crumbs={[
+      { label: t('nav.pairings'), href: '/pairings' },
+      { label: `${primaryNames} + ${secondary?.name ?? pairing.secondary}` },
+    ]}
+  />
+
+  <div class="flex flex-col items-center gap-4 border-b border-line pb-8 text-center">
+    <div class="flex items-center gap-4">
+      <CommanderPortrait name={primary?.name ?? pairing.primary} image={primary?.image} size="lg" />
+      <span class="font-display text-3xl text-gold-light" aria-hidden="true">+</span>
+      <CommanderPortrait name={secondary?.name ?? pairing.secondary} image={secondary?.image} size="lg" />
+    </div>
+    <h1 class="font-display text-2xl font-bold text-text-primary sm:text-3xl">
+      {primaryNames} + {secondary?.name ?? pairing.secondary}
+    </h1>
+    <RatingStars rating={pairing.rating} showEmpty={false} />
+    <div class="flex flex-wrap justify-center gap-2">
+      <TagBadge tone="neutral">{troopTypeLabel[pairing.troopType]}</TagBadge>
+      {(pairing.tags ?? []).map((tag) => <TagBadge tone="gold">{tagLabel[tag]?.[locale] ?? tag}</TagBadge>)}
+    </div>
+  </div>
+
+  <section class="mt-8">
+    <h2 class="mb-3 font-display text-xl font-semibold text-text-primary">{t('pairings.pairingInfo')}</h2>
+    <dl class="grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2">
+      <div class="flex justify-between border-b border-line py-2 text-sm">
+        <dt class="text-text-muted">{t('pairings.filterTroopType')}</dt>
+        <dd class="font-medium text-text-primary">{troopTypeLabel[pairing.troopType]}</dd>
+      </div>
+      {
+        pairing.skills?.primary && (
+          <div class="flex justify-between border-b border-line py-2 text-sm">
+            <dt class="text-text-muted">{primaryNames}</dt>
+            <dd class="font-medium text-text-primary">{localizeSkill(pairing.skills.primary)}</dd>
+          </div>
+        )
+      }
+      {
+        pairing.skills?.secondary && (
+          <div class="flex justify-between border-b border-line py-2 text-sm">
+            <dt class="text-text-muted">{secondary?.name ?? pairing.secondary}</dt>
+            <dd class="font-medium text-text-primary">{localizeSkill(pairing.skills.secondary)}</dd>
+          </div>
+        )
+      }
+    </dl>
+  </section>
+
+  {
+    why && (
+      <section class="mt-8">
+        <h2 class="mb-2 font-display text-xl font-semibold text-text-primary">{t('pairings.why')}</h2>
+        <p class="text-text-muted">{why}</p>
+      </section>
+    )
+  }
+
+  {
+    strengths && strengths.length > 0 && (
+      <section class="mt-8">
+        <h2 class="mb-2 font-display text-xl font-semibold text-text-primary">{t('pairings.strengths')}</h2>
+        <ul class="list-inside list-disc space-y-1 text-text-muted">
+          {strengths.map((s) => <li>{s}</li>)}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    weaknesses && weaknesses.length > 0 && (
+      <section class="mt-8">
+        <h2 class="mb-2 font-display text-xl font-semibold text-text-primary">{t('pairings.weaknesses')}</h2>
+        <ul class="list-inside list-disc space-y-1 text-text-muted">
+          {weaknesses.map((w) => <li>{w}</li>)}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    video && (
+      <section class="mt-8 max-w-md">
+        <h2 class="mb-3 font-display text-xl font-semibold text-text-primary">{t('pairings.videoGuide')}</h2>
+        <VideoCard video={video} locale={locale} />
+        <VideoModal locale={locale} />
+      </section>
+    )
+  }
+
+  <SourcesList sources={pairing.sources} locale={locale} />
+</div>

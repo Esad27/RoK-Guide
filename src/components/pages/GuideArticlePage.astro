@@ -1,0 +1,174 @@
+---
+import { render } from 'astro:content';
+import type { Locale } from '../../i18n';
+import { useTranslations } from '../../i18n';
+import { getGuideForLocale } from '../../lib/guides';
+import { getChannel, getVideos } from '../../data/loaders';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import VideoCard from '../VideoCard.astro';
+import VideoModal from '../VideoModal.astro';
+import GuideResearchBrief from '../GuideResearchBrief.astro';
+
+interface Props {
+  locale: Locale;
+  section: 'battle-guide' | 'kvk-guide';
+  category: string;
+}
+
+const { locale, section, category } = Astro.props;
+const t = useTranslations(locale);
+
+const result = (await getGuideForLocale(section, category, locale))!;
+const { entry, isFallback } = result;
+const { Content } = await render(entry);
+
+const sectionLabel = section === 'kvk-guide' ? t('nav.kvkGuide') : t('nav.battleGuide');
+const sectionHref = section === 'kvk-guide' ? '/kvk-guide' : '/battle-guide';
+const video = entry.data.videoId ? getVideos().find((v) => v.id === entry.data.videoId) : undefined;
+const allVideos = getVideos();
+const matchingVideos = (language: Locale) => allVideos.filter(
+  (candidate) =>
+    candidate.language === language &&
+    candidate.id !== video?.id &&
+    (candidate.placements?.includes(category) ||
+      (category === 'rally-and-garrison' &&
+        (candidate.placements?.includes('rally') || candidate.placements?.includes('garrison'))))
+);
+const relatedVideos = [...matchingVideos(locale), ...(locale === 'en' ? [] : matchingVideos('en'))]
+  .filter((candidate, index, candidates) => candidates.findIndex((item) => item.id === candidate.id) === index)
+  .slice(0, 3);
+const researchedVideoSources = [video, ...relatedVideos]
+  .filter((candidate): candidate is NonNullable<typeof candidate> => Boolean(candidate))
+  .map((candidate) => ({
+    name: `${getChannel(candidate.channel)?.name ?? candidate.channel} — ${candidate.title}`,
+    url: candidate.url,
+    type: 'youtube-video',
+  }));
+const foundationalSources = [
+  ...(section === 'kvk-guide'
+    ? [{ name: 'Rise of Kingdoms Wiki — Lost Kingdom', url: 'https://riseofkingdoms.fandom.com/wiki/Lost_Kingdom', type: 'community-wiki' }]
+    : []),
+  ...((category === 'hospital-management' || category === 'open-field')
+    ? [{ name: 'Rise of Kingdoms Wiki — Hospital', url: 'https://riseofkingdoms.fandom.com/wiki/Buildings/Hospital', type: 'community-wiki' }]
+    : []),
+  ...((category === 'rally' || category === 'garrison' || category === 'rally-and-garrison')
+    ? [{ name: 'Rise of Kingdoms Wiki — Rally', url: 'https://riseofkingdoms.fandom.com/wiki/Rally', type: 'community-wiki' }]
+    : []),
+];
+const displayedSources = [...foundationalSources, ...(entry.data.sources ?? []), ...researchedVideoSources]
+  .filter((source, index, sources) => sources.findIndex((candidate) => candidate.url === source.url) === index);
+const lastVerified = ['2026-08-31', entry.data.lastVerified, video?.verifiedAt, ...relatedVideos.map((candidate) => candidate.verifiedAt)]
+  .filter((date): date is string => Boolean(date))
+  .sort()
+  .at(-1);
+const relatedVideosHeading: Record<Locale, string> = {
+  en: 'Related researched videos',
+  es: 'Videos investigados relacionados',
+  vi: 'Video nghiên cứu liên quan',
+};
+---
+
+<article class="mx-auto max-w-3xl px-4 py-10">
+  <Breadcrumbs
+    locale={locale}
+    crumbs={[
+      { label: sectionLabel, href: sectionHref },
+      { label: entry.data.title },
+    ]}
+  />
+
+  {
+    isFallback && (
+      <p class="mb-4 rounded-lg border border-gold/30 bg-gold/10 px-4 py-2 text-sm text-gold-light">
+        {t('common.fallbackNotice')}
+      </p>
+    )
+  }
+
+  <h1 class="font-display text-3xl font-bold text-text-primary">{entry.data.title}</h1>
+
+  {
+    video && (
+      <div class="mt-6 max-w-md">
+        <VideoCard video={video} locale={locale} />
+      </div>
+    )
+  }
+
+  <div class="prose-guide mt-6 max-w-none text-text-primary">
+    <Content />
+  </div>
+
+  <GuideResearchBrief locale={locale} section={section} category={category} />
+
+  {
+    relatedVideos.length > 0 && (
+      <section class="mt-10" aria-labelledby="related-guide-videos">
+        <h2 id="related-guide-videos" class="font-display text-xl font-semibold text-text-primary">
+          {relatedVideosHeading[locale]}
+        </h2>
+        <div class="mt-4 grid gap-4 sm:grid-cols-2">
+          {relatedVideos.map((relatedVideo) => <VideoCard video={relatedVideo} locale={locale} />)}
+        </div>
+      </section>
+    )
+  }
+
+  {(video || relatedVideos.length > 0) && <VideoModal locale={locale} />}
+
+  {
+    displayedSources.length > 0 && (
+      <aside class="mt-10 border-t border-line pt-6" aria-labelledby="guide-sources-heading">
+        <h2 id="guide-sources-heading" class="font-display text-xl font-semibold text-text-primary">
+          {t('common.sourcesHeading')}
+        </h2>
+        {lastVerified && (
+          <p class="mt-1 text-xs text-text-muted">
+            <time datetime={lastVerified}>{lastVerified}</time>
+          </p>
+        )}
+        <ul class="mt-3 space-y-2">
+          {displayedSources.map((source) => (
+            <li>
+              <a class="text-gold underline hover:text-gold-light" href={source.url} target="_blank" rel="noopener noreferrer">
+                {source.name}
+              </a>
+              <span class="ml-2 text-xs text-text-muted">({source.type})</span>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    )
+  }
+</article>
+
+<style>
+  .prose-guide :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .prose-guide :global(p) {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .prose-guide :global(ul) {
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+    list-style: disc;
+    color: var(--text-muted);
+  }
+  .prose-guide :global(li) {
+    margin-bottom: 0.4rem;
+  }
+  .prose-guide :global(a) {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+  .prose-guide :global(a:hover) {
+    color: var(--gold-light);
+  }
+</style>

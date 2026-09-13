@@ -1,0 +1,158 @@
+[
+  {
+    "id": "sun-tzu-bjorn-ironside", "situations": ["early-game", "open-field", "f2p"],
+    "why": { "en": "Sun Tzu supplies frequent area damage and rage while Björn adds infantry stats and a skill-damage vulnerability. With this owner-specified order, Björn's debuff is applied after Sun Tzu's active skill, so the next skill cycle benefits more than the first.", "vi": "Sun Tzu tạo sát thương diện rộng và hồi nộ thường xuyên; Björn bổ sung chỉ số bộ binh cùng hiệu ứng khiến mục tiêu chịu thêm sát thương kỹ năng. Theo thứ tự chủ–phụ này, debuff của Björn xuất hiện sau kỹ năng Sun Tzu nên vòng kỹ năng kế tiếp hưởng lợi nhiều hơn vòng đầu.", "es": "Sun Tzu aporta daño de área y furia frecuente; Björn añade estadísticas de infantería y vulnerabilidad al daño de habilidad. Con este orden indicado por el propietario, el perjuicio de Björn llega después de la activa de Sun Tzu, por lo que beneficia más al ciclo siguiente." },
+    "strengths": { "en": ["Low-cost epic infantry march with AoE and rage."], "vi": ["Đạo bộ binh sử thi ít tốn, có AoE và hồi nộ."], "es": ["Marcha épica de infantería barata, con área y furia."] },
+    "weaknesses": { "en": ["The reversed Björn-primary order has cleaner first-cycle skill sequencing."], "vi": ["Đảo Björn làm chủ sẽ có thứ tự kỹ năng vòng đầu sạch hơn."], "es": ["El orden inverso con Björn primario secuencia mejor el primer ciclo."] }, "videoId": "chisgule-commander-pairs-2025"
+  },
+  {
+    "id": "charles-martel-pyrrhos", "situations": ["early-game", "open-field", "defensive-infantry"],
+    "why": { "en": "Charles brings the primary talents, a shield and infantry durability; Pyrrhus adds another defensive infantry kit without requiring mixed troops.", "vi": "Charles cung cấp talent chủ tướng, khiên và độ bền bộ binh; Pyrrhus bổ sung thêm bộ kỹ năng phòng thủ mà không cần trộn quân.", "es": "Charles aporta talentos de primario, escudo y resistencia de infantería; Pyrrhus suma otro kit defensivo sin exigir tropas mixtas." },
+    "strengths": { "en": ["High early-season durability."], "vi": ["Độ bền cao ở mùa đầu."], "es": ["Alta resistencia en temporadas iniciales."] },
+    "weaknesses": { "en": ["Defense-heavy pairing has limited chase pressure and modest burst."], "vi": ["Cặp thiên thủ, truy đuổi kém và burst vừa phải."], "es": ["Pareja muy defensiva, con poca persecución y explosión moderada."] }
+  },
+  {
+    "id": "pyrrhos-richard", "situations": ["early-game", "open-field", "defensive-infantry"],
+    "why": { "en": "Pyrrhus keeps infantry and defensive talents on the primary while Richard adds healing, damage reduction and a multi-target slow from the secondary slot.", "vi": "Pyrrhus giữ talent bộ binh/phòng thủ ở vị trí chủ; Richard thêm hồi phục, giảm sát thương và làm chậm nhiều mục tiêu ở vị trí phụ.", "es": "Pyrrhus conserva los talentos de infantería y defensa como primario; Richard añade curación, reducción de daño y ralentización múltiple como secundario." },
+    "strengths": { "en": ["Sustained, forgiving infantry frontline."], "vi": ["Tuyến đầu bộ binh bền và dễ dùng."], "es": ["Primera línea de infantería sostenida y tolerante."] },
+    "weaknesses": { "en": ["Healing increases resource and hospital pressure; anti-heal reduces value."], "vi": ["Hồi phục tăng áp lực tài nguyên/bệnh viện; chống hồi máu làm giảm giá trị."], "es": ["La curación presiona recursos y Hospital; el antiheal reduce su valor."] }
+  },
+  {
+    "id": "sun-tzu-charles-martel", "situations": ["early-game", "open-field", "infantry"],
+    "why": { "en": "Sun Tzu drives rage and area skill damage as primary, while Charles supplies a shield and infantry durability that help the visible primary stay in range longer.", "vi": "Sun Tzu làm chủ để tạo nộ và AoE; Charles cung cấp khiên cùng độ bền bộ binh, giúp chủ tướng lộ diện đứng trong tầm lâu hơn.", "es": "Sun Tzu genera furia y daño de área como primario, mientras Charles aporta escudo y resistencia para mantenerlo en alcance más tiempo." },
+    "strengths": { "en": ["Balanced epic damage with gold-key durability."], "vi": ["Cân bằng sát thương sử thi và độ bền từ tướng rương vàng."], "es": ["Daño épico equilibrado con resistencia de cofre dorado."] },
+    "weaknesses": { "en": ["Charles's primary talent trees are not used in the secondary slot."], "vi": ["Talent chủ tướng của Charles không hoạt động khi làm phụ."], "es": ["Los talentos de Charles no funcionan desde el puesto secundario."] }
+  },
+  {
+    "id": "sun-tzu-pyrrhos", "situations": ["early-game", "open-field", "infantry"],
+    "why": { "en": "Sun Tzu offers the rage-focused primary option; Björn is the owner-listed alternative when skill vulnerability is preferred. Pyrrhus contributes defensive infantry skills from behind either primary.", "vi": "Sun Tzu là lựa chọn chủ thiên hồi nộ; Björn là phương án thay thế theo dữ liệu chủ sở hữu khi cần hiệu ứng tăng sát thương kỹ năng nhận vào. Pyrrhus bổ sung kỹ năng bộ binh phòng thủ phía sau cả hai.", "es": "Sun Tzu ofrece la opción primaria de furia; Björn es la alternativa indicada por el propietario cuando se prefiere vulnerabilidad de habilidad. Pyrrhus aporta defensa de infantería detrás de cualquiera." },
+    "strengths": { "en": ["Two valid epic-primary routes around the same defensive secondary."], "vi": ["Hai hướng chủ tướng sử thi dùng chung một tướng phụ phòng thủ."], "es": ["Dos rutas de primario épico con el mismo secundario defensivo."] },
+    "weaknesses": { "en": ["The two primary choices play differently and should not be treated as identical."], "vi": ["Hai lựa chọn chủ vận hành khác nhau, không nên xem là giống hệt."], "es": ["Los dos primarios se juegan distinto y no deben tratarse como equivalentes."] }, "videoId": "chisgule-commander-pairs-2025"
+  },
+  {
+    "id": "sun-tzu-perikles", "situations": ["early-game", "open-field", "f2p"],
+    "why": { "en": "Sun Tzu supplies the damage and rage engine; Pericles adds an inexpensive infantry support and shielding layer for a new account.", "vi": "Sun Tzu đảm nhiệm sát thương và động cơ hồi nộ; Pericles thêm lớp hỗ trợ/khiên bộ binh rẻ cho tài khoản mới.", "es": "Sun Tzu aporta daño y motor de furia; Pericles añade apoyo y escudo de infantería barato para una cuenta nueva." },
+    "strengths": { "en": ["Accessible all-epic early march."], "vi": ["Đạo toàn sử thi, dễ tiếp cận đầu game."], "es": ["Marcha inicial accesible y totalmente épica."] },
+    "weaknesses": { "en": ["Pericles is an early bridge, not a long-term field investment."], "vi": ["Pericles là cầu nối đầu game, không phải đầu tư open field lâu dài."], "es": ["Pericles es una transición inicial, no una inversión duradera de campo."] }
+  },
+  {
+    "id": "richard-yi-seong-gye", "situations": ["kvk1", "open-field", "aoe"],
+    "why": { "en": "Richard's visible tank profile protects Yi Seong-Gye, whose secondary skills add large skill damage and, at expertise, circular AoE.", "vi": "Richard đứng ngoài chịu đòn để che Yi Seong-Gye; kỹ năng tướng phụ bổ sung sát thương kỹ năng lớn và AoE hình tròn khi chuyên môn.", "es": "El perfil resistente visible de Richard protege a Yi Seong-Gye, que añade gran daño de habilidad y área circular al obtener la pericia." },
+    "strengths": { "en": ["Durability hides a high-value AoE secondary."], "vi": ["Độ bền che giấu tướng phụ AoE giá trị cao."], "es": ["La resistencia oculta un secundario de área valioso."] },
+    "weaknesses": { "en": ["Slow march and expensive legendary investment."], "vi": ["Hành quân chậm và đầu tư hai tướng huyền thoại tốn kém."], "es": ["Marcha lenta e inversión legendaria costosa."] }
+  },
+  {
+    "id": "eulji-mundeok-sun-tzu", "situations": ["early-game", "open-field", "f2p"],
+    "why": { "en": "Eulji's defense reduction lands before Sun Tzu's secondary active skill, creating a clean damage window; both support a full infantry march.", "vi": "Giảm phòng thủ của Eulji được áp dụng trước kỹ năng phụ Sun Tzu, tạo cửa sổ sát thương rõ ràng; cả hai đều hỗ trợ đạo full bộ binh.", "es": "La reducción de defensa de Eulji llega antes de la activa secundaria de Sun Tzu, creando una ventana limpia; ambos apoyan una marcha completa de infantería." },
+    "strengths": { "en": ["Coherent epic skill order and troop type."], "vi": ["Thứ tự kỹ năng và loại quân đồng bộ ở mức sử thi."], "es": ["Orden de habilidades y tipo de tropa coherentes y épicos."] },
+    "weaknesses": { "en": ["Less durable than legendary-tank primaries."], "vi": ["Kém bền hơn chủ tướng tank huyền thoại."], "es": ["Menos resistente que un primario tanque legendario."] }
+  },
+  {
+    "id": "richard-mehmed", "situations": ["early-game", "open-field", "skill-damage"],
+    "why": { "en": "Richard provides the durable primary and keeps Mehmed's identity hidden; Mehmed contributes troop capacity and skill-damage support without requiring a specific troop type.", "vi": "Richard làm chủ tướng bền bỉ và che tên Mehmed; Mehmed bổ sung sức chứa quân cùng hỗ trợ sát thương kỹ năng mà không bắt buộc một loại quân cụ thể.", "es": "Richard aporta el primario resistente y oculta a Mehmed; Mehmed suma capacidad y apoyo de daño de habilidad sin exigir un tipo de tropa concreto." },
+    "strengths": { "en": ["Usable partial legendary skill targets from the owner sheet."], "vi": ["Dùng được với mốc kỹ năng huyền thoại chưa hoàn chỉnh theo bảng chủ sở hữu."], "es": ["Utilizable con objetivos parciales de habilidades legendarias de la hoja del propietario."] },
+    "weaknesses": { "en": ["Mehmed's city-attacking skills do little for ordinary field combat."], "vi": ["Kỹ năng đánh thành của Mehmed ít giá trị trong open field thông thường."], "es": ["Las habilidades contra ciudades de Mehmed aportan poco en campo abierto normal."] }
+  },
+  {
+    "id": "richard-aethelflaed", "situations": ["early-game", "open-field", "support"],
+    "why": { "en": "Richard slows multiple targets and absorbs pressure; Æthelflæd follows with broad debuffs, and her expertise rewards attacking slowed targets.", "vi": "Richard làm chậm nhiều mục tiêu và chịu áp lực; Æthelflæd nối tiếp bằng debuff diện rộng, còn chuyên môn của bà tăng lợi ích khi đánh mục tiêu bị chậm.", "es": "Richard ralentiza varios objetivos y absorbe presión; Æthelflæd sigue con amplias debilitaciones y su pericia recompensa atacar objetivos ralentizados." },
+    "strengths": { "en": ["Strong support value in grouped fights."], "vi": ["Giá trị hỗ trợ cao trong giao tranh đông."], "es": ["Gran valor de apoyo en combates agrupados."] },
+    "weaknesses": { "en": ["Low finishing pressure and a slow visible march."], "vi": ["Khả năng kết liễu thấp và đạo chủ tướng chậm."], "es": ["Poca presión para rematar y marcha visible lenta."] }
+  },
+  {
+    "id": "richard-sun-tzu", "situations": ["early-game", "open-field", "infantry"],
+    "why": { "en": "Richard supplies sustain and defensive debuffs while Sun Tzu adds repeatable area damage, rage and skill-damage support from the secondary slot.", "vi": "Richard cung cấp khả năng duy trì và debuff phòng thủ; Sun Tzu thêm AoE lặp lại, hồi nộ và hỗ trợ sát thương kỹ năng ở vị trí phụ.", "es": "Richard aporta aguante y perjuicios defensivos; Sun Tzu añade área repetible, furia y apoyo al daño de habilidad desde el puesto secundario." },
+    "strengths": { "en": ["Forgiving early infantry march with AoE."], "vi": ["Đạo bộ binh đầu game dễ dùng, có AoE."], "es": ["Marcha temprana de infantería tolerante y con área."] },
+    "weaknesses": { "en": ["Slow and vulnerable to hospital pressure or anti-heal."], "vi": ["Chậm và dễ chịu áp lực bệnh viện/chống hồi máu."], "es": ["Lenta y vulnerable a presión hospitalaria o antiheal."] }
+  },
+  {
+    "id": "charles-martel-aethelflaed", "situations": ["early-game", "open-field", "support"],
+    "why": { "en": "Charles gives the march a shield and infantry durability; Æthelflæd adds multi-target debuffs and support damage without needing primary talents.", "vi": "Charles tạo khiên và độ bền bộ binh; Æthelflæd bổ sung debuff đa mục tiêu và sát thương hỗ trợ mà không cần talent chủ tướng.", "es": "Charles aporta escudo y resistencia de infantería; Æthelflæd añade perjuicios multiobjetivo y daño de apoyo sin necesitar talentos de primario." },
+    "strengths": { "en": ["Durable carrier for a targeted support commander."], "vi": ["Chủ tướng bền để che một tướng hỗ trợ hay bị tập trung."], "es": ["Portador resistente para una comandante de apoyo muy enfocada."] },
+    "weaknesses": { "en": ["Æthelflæd prefers mixed troops for one passive, which conflicts with Charles's infantry focus."], "vi": ["Một nội tại Æthelflæd thích quân hỗn hợp, xung đột với trọng tâm full bộ của Charles."], "es": ["Una pasiva de Æthelflæd prefiere tropas mixtas, en conflicto con el enfoque de infantería de Charles."] }
+  },
+  {
+    "id": "charles-martel-yi-seong-gye", "situations": ["kvk1", "open-field", "aoe"],
+    "why": { "en": "Charles's shield and infantry stats keep the primary standing while Yi Seong-Gye supplies heavy skill damage and expertised circular AoE as a hidden secondary.", "vi": "Khiên và chỉ số bộ binh của Charles giữ chủ tướng đứng vững; Yi Seong-Gye ẩn phía sau cung cấp sát thương kỹ năng lớn và AoE tròn khi chuyên môn.", "es": "El escudo y las estadísticas de Charles mantienen al primario en pie; Yi Seong-Gye aporta gran daño y área circular con pericia como secundario oculto." },
+    "strengths": { "en": ["Combines frontline durability with high AoE threat."], "vi": ["Kết hợp độ bền tuyến đầu với đe dọa AoE cao."], "es": ["Combina resistencia frontal con gran amenaza de área."] },
+    "weaknesses": { "en": ["Yi Seong-Gye's archer-specific bonuses are wasted in full infantry."], "vi": ["Bonus riêng cho cung của Yi Seong-Gye bị lãng phí trong đạo full bộ."], "es": ["Las bonificaciones de arquero de Yi Seong-Gye se pierden con infantería completa."] }
+  },
+  {
+    "id": "charles-martel-sun-tzu", "situations": ["early-game", "open-field", "infantry"],
+    "why": { "en": "Charles serves as the defensive infantry primary; Sun Tzu supplies rage, area damage and a troop-agnostic skill-damage passive from behind him.", "vi": "Charles làm chủ bộ binh phòng thủ; Sun Tzu phía sau bổ sung nộ, AoE và nội tại sát thương kỹ năng không phụ thuộc loại quân.", "es": "Charles actúa como primario defensivo de infantería; Sun Tzu añade furia, área y una pasiva de daño de habilidad independiente de la tropa." },
+    "strengths": { "en": ["Clean infantry identity and good early accessibility."], "vi": ["Bản sắc full bộ rõ ràng và khá dễ tiếp cận đầu game."], "es": ["Identidad clara de infantería y buena accesibilidad inicial."] },
+    "weaknesses": { "en": ["Less rage than Sun Tzu primary and less burst than AoE legendary secondaries."], "vi": ["Ít nộ hơn Sun Tzu làm chủ và burst thấp hơn tướng phụ AoE huyền thoại."], "es": ["Menos furia que Sun Tzu primario y menos explosión que secundarios legendarios de área."] }
+  },
+  {
+    "id": "sun-tzu-yi-seong-gye", "situations": ["kvk1", "open-field", "aoe"],
+    "why": { "en": "Sun Tzu's rage engine cycles Yi Seong-Gye's powerful secondary active skill quickly, and both reward grouped targets with area damage.", "vi": "Động cơ hồi nộ của Sun Tzu giúp kỹ năng chủ động mạnh của Yi Seong-Gye quay nhanh; cả hai đều hưởng lợi khi mục tiêu tập trung nhờ AoE.", "es": "El motor de furia de Sun Tzu acelera la potente activa secundaria de Yi Seong-Gye; ambos castigan grupos con daño de área." },
+    "strengths": { "en": ["Very high early area-damage ceiling."], "vi": ["Trần sát thương diện rộng đầu game rất cao."], "es": ["Techo muy alto de daño de área temprano."] },
+    "weaknesses": { "en": ["Visible Sun Tzu is focus-prone, and full infantry wastes YSG's archer bonuses."], "vi": ["Sun Tzu lộ diện dễ bị focus; full bộ làm phí bonus cung của YSG."], "es": ["Sun Tzu visible atrae foco y la infantería desperdicia bonos de arquero de YSG."] }
+  },
+  {
+    "id": "bjorn-ironside-sun-tzu", "situations": ["early-game", "open-field", "f2p"],
+    "why": { "en": "Björn's active skill lands first and increases skill damage taken; Sun Tzu then fires as secondary into that window while adding rage and area pressure.", "vi": "Kỹ năng Björn tung trước và tăng sát thương kỹ năng mục tiêu phải chịu; Sun Tzu sau đó đánh vào đúng cửa sổ này, đồng thời thêm nộ và áp lực AoE.", "es": "La activa de Björn llega primero y aumenta el daño de habilidad recibido; Sun Tzu dispara después dentro de esa ventana y añade furia y presión de área." },
+    "strengths": { "en": ["Clear skill sequencing with two accessible epics."], "vi": ["Thứ tự kỹ năng rõ ràng với hai tướng sử thi dễ nâng."], "es": ["Secuencia clara con dos épicos accesibles."] },
+    "weaknesses": { "en": ["Björn's conquering skill has limited value in ordinary open field."], "vi": ["Kỹ năng Chinh Phục của Björn ít giá trị trong open field thường."], "es": ["La habilidad de Conquista de Björn aporta poco en campo abierto normal."] }, "videoId": "chisgule-commander-pairs-2025"
+  },
+  {
+    "id": "minamoto-cao-cao", "situations": ["early-game", "open-field", "pve", "spender"],
+    "why": { "en": "Minamoto leads with single-target burst and cavalry talents; Cao Cao adds cavalry attack, mobility, target debuffs and sustain. Both are purchase-sensitive investments.", "vi": "Minamoto dẫn với burst đơn mục tiêu và talent kỵ; Cao Cao thêm công kỵ, cơ động, debuff mục tiêu và duy trì. Cả hai đều phụ thuộc mức chi tiêu.", "es": "Minamoto lidera con explosión a un objetivo y talentos de caballería; Cao Cao añade ataque, movilidad, perjuicios y aguante. Ambos dependen del gasto." },
+    "strengths": { "en": ["Fast early cavalry with strong single-target and PvE output."], "vi": ["Đạo kỵ đầu game nhanh, mạnh đơn mục tiêu và PvE."], "es": ["Caballería temprana rápida, fuerte a un objetivo y en PvE."] },
+    "weaknesses": { "en": ["Expensive to complete and lacks area damage."], "vi": ["Tốn kém để hoàn thiện và thiếu AoE."], "es": ["Costosa de completar y sin daño de área."] }
+  },
+  {
+    "id": "minamoto-aethelflaed", "situations": ["early-game", "open-field", "pve"],
+    "why": { "en": "Minamoto supplies cavalry speed and single-target burst; Æthelflæd adds multi-target debuffs and peacekeeping value from the secondary slot.", "vi": "Minamoto cung cấp tốc kỵ và burst đơn mục tiêu; Æthelflæd thêm debuff đa mục tiêu cùng giá trị đánh đơn vị trung lập ở vị trí phụ.", "es": "Minamoto aporta velocidad de caballería y explosión a un objetivo; Æthelflæd añade perjuicios múltiples y utilidad PvE como secundaria." },
+    "strengths": { "en": ["Adds support coverage to a narrow cavalry nuker."], "vi": ["Bổ sung phạm vi hỗ trợ cho một tướng kỵ nuke đơn mục tiêu."], "es": ["Añade cobertura de apoyo a un nuker de caballería estrecho."] },
+    "weaknesses": { "en": ["Full cavalry does not activate Æthelflæd's mixed-troop passive bonus."], "vi": ["Full kỵ không kích hoạt bonus nội tại quân hỗn hợp của Æthelflæd."], "es": ["La caballería completa no activa la bonificación de tropas mixtas de Æthelflæd."] }
+  },
+  {
+    "id": "minamoto-mehmed", "situations": ["early-game", "open-field", "skill-damage"],
+    "why": { "en": "Minamoto gives the march cavalry talents and early burst; Mehmed adds skill-damage amplification and a second nuke that works with cavalry despite his leadership identity.", "vi": "Minamoto cung cấp talent kỵ và burst đầu game; Mehmed thêm tăng sát thương kỹ năng cùng một lần nuke thứ hai vẫn hoạt động với kỵ dù mang hệ Lãnh Đạo.", "es": "Minamoto aporta talentos de caballería y explosión temprana; Mehmed suma amplificación y una segunda descarga que funciona con caballería pese a su identidad de Liderazgo." },
+    "strengths": { "en": ["High early single-target skill pressure at partial skill targets."], "vi": ["Áp lực kỹ năng đơn mục tiêu cao đầu game ở mốc kỹ năng một phần."], "es": ["Alta presión de habilidad temprana con objetivos parciales."] },
+    "weaknesses": { "en": ["Mehmed's city-specific skills and cavalry mismatch limit field efficiency."], "vi": ["Kỹ năng riêng đánh thành và lệch hệ kỵ của Mehmed làm giảm hiệu suất open field."], "es": ["Las habilidades urbanas y la falta de especialización de caballería de Mehmed limitan el campo."] }
+  },
+  {
+    "id": "pelagius-minamoto", "situations": ["early-game", "open-field", "low-spend"],
+    "why": { "en": "Pelagius provides accessible cavalry talents, rage and sustain as primary; even a low-skill Minamoto adds meaningful early single-target damage from secondary.", "vi": "Pelagius cung cấp talent kỵ dễ nâng, hồi nộ và duy trì ở vị trí chủ; Minamoto kỹ năng thấp vẫn thêm sát thương đơn mục tiêu đáng kể ở đầu game.", "es": "Pelagius aporta talentos accesibles, furia y aguante como primario; incluso un Minamoto de pocas habilidades añade daño temprano relevante." },
+    "strengths": { "en": ["Practical bridge for a low spender with limited Minamoto investment."], "vi": ["Cầu nối thực tế cho người ít nạp chỉ đầu tư Minamoto hạn chế."], "es": ["Transición práctica para bajo gasto con inversión limitada en Minamoto."] },
+    "weaknesses": { "en": ["Low-skill Minamoto has limited longevity and no AoE."], "vi": ["Minamoto kỹ năng thấp ít bền giá trị và không có AoE."], "es": ["Minamoto con pocas habilidades dura poco y no tiene área."] }
+  },
+  {
+    "id": "baibars-pelagius", "situations": ["early-game", "open-field", "f2p"],
+    "why": { "en": "Baibars brings fan-shaped area damage and a large slow; Pelagius adds rage, cavalry stats and light sustain to an all-epic march.", "vi": "Baibars mang AoE hình quạt và giảm tốc mạnh; Pelagius thêm nộ, chỉ số kỵ và hồi phục nhẹ cho đạo toàn sử thi.", "es": "Baibars aporta área frontal y gran ralentización; Pelagius añade furia, estadísticas de caballería y algo de aguante a una marcha épica." },
+    "strengths": { "en": ["Accessible cavalry coverage for grouped early fights."], "vi": ["Đạo kỵ dễ tiếp cận cho giao tranh nhóm đầu game."], "es": ["Cobertura de caballería accesible para peleas agrupadas iniciales."] },
+    "weaknesses": { "en": ["Low durability under focus and weaker single-target pressure."], "vi": ["Độ bền thấp khi bị focus và áp lực đơn mục tiêu yếu hơn."], "es": ["Poca resistencia bajo foco y menor presión a un objetivo."] }
+  },
+  {
+    "id": "el-cid-yi-seong-gye", "situations": ["kvk1", "open-field", "archer"],
+    "why": { "en": "El Cid leads a full archer march and applies brief single-target control; Yi Seong-Gye then supplies the much larger secondary nuke and expertised area coverage.", "vi": "El Cid dẫn đạo full cung và khống chế đơn mục tiêu ngắn; Yi Seong-Gye sau đó cung cấp cú nuke phụ lớn hơn nhiều cùng AoE khi chuyên môn.", "es": "El Cid lidera arqueros completos y aplica control breve; Yi Seong-Gye aporta después una descarga mucho mayor y área con pericia." },
+    "strengths": { "en": ["Full archer synergy with control plus high skill damage."], "vi": ["Đồng bộ full cung với khống chế và sát thương kỹ năng cao."], "es": ["Sinergia completa de arqueros con control y gran daño de habilidad."] },
+    "weaknesses": { "en": ["El Cid is a visible, lower-value legendary primary and can attract focus."], "vi": ["El Cid là chủ tướng huyền thoại giá trị thấp hơn và dễ bị focus."], "es": ["El Cid es un primario legendario visible de menor valor y puede atraer foco."] }
+  },
+  {
+    "id": "thutmose-yi-seong-gye", "situations": ["early-game", "open-field", "archer", "anti-heal"],
+    "why": { "en": "Thutmose gives the archer primary anti-heal and support utility; Yi Seong-Gye adds skill amplification and area damage while retaining full archer compatibility.", "vi": "Thutmose làm chủ cung với giảm hồi máu và hỗ trợ; Yi Seong-Gye thêm khuếch đại kỹ năng và AoE mà vẫn giữ tương thích full cung.", "es": "Thutmose aporta anti-curación y apoyo como primario arquero; Yi Seong-Gye añade amplificación y área manteniendo compatibilidad total de arqueros." },
+    "strengths": { "en": ["Targets healing-heavy early marches without sacrificing troop synergy."], "vi": ["Đánh vào đạo hồi phục mạnh đầu game mà không hy sinh đồng bộ loại quân."], "es": ["Ataca marchas tempranas de mucha curación sin perder sinergia de tropa."] },
+    "weaknesses": { "en": ["Anti-heal is situational and the march remains focus-prone."], "vi": ["Giảm hồi máu mang tính tình huống và đạo vẫn dễ bị focus."], "es": ["El antiheal es situacional y la marcha sigue atrayendo foco."] }, "videoId": "chisgule-commander-pairs-2025"
+  },
+  {
+    "id": "yi-seong-gye-mehmed", "situations": ["early-game", "open-field", "skill-damage"],
+    "why": { "en": "Yi Seong-Gye leads with archer and skill talents; Mehmed follows with another nuke and skill-damage support that does not require a particular troop type.", "vi": "Yi Seong-Gye dẫn bằng talent cung/kỹ năng; Mehmed nối tiếp với một cú nuke khác và hỗ trợ sát thương kỹ năng không bắt buộc loại quân.", "es": "Yi Seong-Gye lidera con talentos de arquero y habilidad; Mehmed sigue con otra descarga y apoyo de daño sin exigir tropa concreta." },
+    "strengths": { "en": ["Large stacked skill-damage output."], "vi": ["Sát thương kỹ năng cộng dồn lớn."], "es": ["Gran daño de habilidad acumulado."] },
+    "weaknesses": { "en": ["YSG is exposed as primary and Mehmed contributes no archer-specific durability."], "vi": ["YSG lộ diện làm chủ và Mehmed không thêm độ bền riêng cho cung."], "es": ["YSG queda expuesto y Mehmed no aporta resistencia específica de arqueros."] }
+  },
+  {
+    "id": "hermann-el-cid", "situations": ["early-game", "open-field", "archer", "control"],
+    "why": { "en": "Hermann removes rage and silences before El Cid adds another brief control skill, creating a single-target disruption chain in a full archer march.", "vi": "Hermann giảm nộ và câm lặng trước; El Cid thêm một kỹ năng khống chế ngắn khác, tạo chuỗi phá nhịp đơn mục tiêu trong đạo full cung.", "es": "Hermann reduce furia y silencia antes de que El Cid añada otro control breve, encadenando interrupción a un objetivo con arqueros completos." },
+    "strengths": { "en": ["Accessible primary with repeated single-target disruption."], "vi": ["Chủ tướng dễ nâng với khống chế đơn mục tiêu lặp lại."], "es": ["Primario accesible con interrupción repetida a un objetivo."] },
+    "weaknesses": { "en": ["Fragile and lacks multi-target damage."], "vi": ["Mỏng và thiếu sát thương đa mục tiêu."], "es": ["Frágil y sin daño multiobjetivo."] }
+  },
+  {
+    "id": "kusunoki-yi-seong-gye", "situations": ["early-game", "open-field", "archer", "aoe"],
+    "why": { "en": "Kusunoki provides accessible archer talents, a cleanse and fan AoE; Yi Seong-Gye adds major skill amplification and wider area pressure from secondary.", "vi": "Kusunoki cung cấp talent cung dễ nâng, giải hiệu ứng và AoE hình quạt; Yi Seong-Gye thêm khuếch đại kỹ năng lớn cùng áp lực diện rộng hơn ở vị trí phụ.", "es": "Kusunoki aporta talentos accesibles, limpieza y área frontal; Yi Seong-Gye añade gran amplificación y presión de área más amplia como secundario." },
+    "strengths": { "en": ["Full archer AoE march with control-effect removal."], "vi": ["Đạo full cung AoE có khả năng xóa hiệu ứng khống chế."], "es": ["Marcha completa de arqueros con área y limpieza de control."] },
+    "weaknesses": { "en": ["Low durability and heavy reliance on an expertised YSG."], "vi": ["Độ bền thấp và phụ thuộc nhiều vào YSG chuyên môn."], "es": ["Poca resistencia y fuerte dependencia de YSG con pericia."] }
+  }
+]

@@ -1,0 +1,87 @@
+---
+import type { Pairing } from '../data/types';
+import type { Locale } from '../i18n';
+import { useTranslations, localizedPath } from '../i18n';
+import { getCommander } from '../data/loaders';
+import CommanderPortrait from './CommanderPortrait.astro';
+import RatingStars from './RatingStars.astro';
+import TagBadge from './TagBadge.astro';
+
+interface Props {
+  pairing: Pairing;
+  locale: Locale;
+}
+
+const { pairing, locale } = Astro.props;
+const t = useTranslations(locale);
+
+const primary = getCommander(pairing.primary);
+const secondary = getCommander(pairing.secondary);
+const alternatives = (pairing.primaryAlternatives ?? [])
+  .map((id) => getCommander(id))
+  .filter((c): c is NonNullable<typeof c> => Boolean(c));
+
+const primaryNames = [primary?.name, ...alternatives.map((c) => c.name)].filter(Boolean).join(' / ');
+
+const tagTone: Record<string, 'gold' | 'red' | 'neutral'> = {
+  'f2p-favorite': 'gold',
+  recommended: 'gold',
+  spender: 'red',
+  'broken-dmg': 'red',
+};
+
+const tagLabel: Record<string, string> = {
+  'f2p-favorite': 'F2P Favorite',
+  recommended: 'Recommended',
+  spender: 'Spender',
+  'broken-dmg': 'BrokenDMG',
+};
+
+const minimumLabel: Record<Locale, string> = {
+  en: 'minimum',
+  vi: 'tối thiểu',
+  es: 'mínimo',
+};
+const localizeSkill = (value?: string) => value?.replace('(minimum)', `(${minimumLabel[locale]})`);
+---
+
+<a
+  href={localizedPath(locale, `/pairings/${pairing.id}`)}
+  class="flex flex-col gap-3 rounded-xl border border-line bg-surface p-4 transition-colors hover:border-gold/50 hover:bg-surface-hover"
+  data-pairing-card
+  data-filterable
+  data-troop-type={pairing.troopType}
+  data-tags={(pairing.tags ?? []).join(',')}
+>
+  <div class="flex items-center gap-3">
+    <CommanderPortrait name={primary?.name ?? pairing.primary} image={primary?.image} size="sm" />
+    <span class="font-display text-xl text-gold-light" aria-hidden="true">+</span>
+    <CommanderPortrait name={secondary?.name ?? pairing.secondary} image={secondary?.image} size="sm" />
+  </div>
+  <div class="flex flex-wrap items-center justify-between gap-2">
+    <span class="font-display font-semibold text-text-primary">
+      {primaryNames} + {secondary?.name ?? pairing.secondary}
+    </span>
+    <RatingStars rating={pairing.rating} showEmpty={false} />
+  </div>
+  {
+    (pairing.skills?.primary || pairing.skills?.secondary) && (
+      <div class="grid grid-cols-1 gap-1 rounded-lg border border-line bg-bg-primary/40 px-3 py-2 text-xs text-text-muted sm:grid-cols-2">
+        {pairing.skills?.primary && (
+          <span>
+            {primaryNames}: <strong class="font-semibold text-gold-light">{localizeSkill(pairing.skills.primary)}</strong>
+          </span>
+        )}
+        {pairing.skills?.secondary && (
+          <span>
+            {secondary?.name ?? pairing.secondary}: <strong class="font-semibold text-gold-light">{localizeSkill(pairing.skills.secondary)}</strong>
+          </span>
+        )}
+      </div>
+    )
+  }
+  <div class="flex flex-wrap items-center gap-2">
+    <TagBadge tone="neutral">{t(`commanders.filter${pairing.troopType.charAt(0).toUpperCase()}${pairing.troopType.slice(1)}`)}</TagBadge>
+    {(pairing.tags ?? []).map((tag) => <TagBadge tone={tagTone[tag] ?? 'neutral'}>{tagLabel[tag] ?? tag}</TagBadge>)}
+  </div>
+</a>

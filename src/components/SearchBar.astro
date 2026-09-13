@@ -1,0 +1,161 @@
+---
+import type { Locale } from '../i18n';
+import { useTranslations, localizedPath } from '../i18n';
+import { getCommanders, getPairings, getPairingDisplayName } from '../data/loaders';
+import { listGuideCategories } from '../lib/guides';
+
+interface Props {
+  locale: Locale;
+  id?: string;
+}
+
+const { locale, id = 'search' } = Astro.props;
+const t = useTranslations(locale);
+
+const commanders = getCommanders();
+const pairings = getPairings();
+const kvkCategories = await listGuideCategories('kvk-guide', locale);
+const battleCategories = await listGuideCategories('battle-guide', locale);
+
+type SearchItem = { label: string; sub: string; href: string };
+
+const items: SearchItem[] = [
+  ...commanders.map((c) => ({
+    label: c.name,
+    sub: t('nav.commanders'),
+    href: localizedPath(locale, `/commanders/${c.slug}`),
+  })),
+  ...pairings.map((p) => ({
+    label: getPairingDisplayName(p),
+    sub: t('nav.pairings'),
+    href: localizedPath(locale, `/pairings/${p.id}`),
+  })),
+  ...kvkCategories.map((g) => ({
+    label: g.title,
+    sub: t('nav.kvkGuide'),
+    href: localizedPath(locale, `/kvk-guide/${g.category}`),
+  })),
+  ...battleCategories.map((g) => ({
+    label: g.title,
+    sub: t('nav.battleGuide'),
+    href: localizedPath(locale, `/battle-guide/${g.category}`),
+  })),
+];
+---
+
+<div class="relative w-full" data-search-root>
+  <label class="sr-only" for={id}>{t('common.search')}</label>
+  <input
+    id={id}
+    type="search"
+    autocomplete="off"
+    placeholder={t('home.searchPlaceholder')}
+    class="w-full rounded-lg border border-line bg-surface px-4 py-3 text-text-primary placeholder:text-text-muted focus:border-gold outline-none transition-colors"
+    data-search-input
+    role="combobox"
+    aria-autocomplete="list"
+    aria-expanded="false"
+    aria-controls={`${id}-results`}
+  />
+  <ul
+    id={`${id}-results`}
+    data-search-results
+    role="listbox"
+    class="absolute left-0 right-0 top-full z-20 mt-2 hidden max-h-80 overflow-y-auto rounded-lg border border-line bg-surface shadow-lg"
+  ></ul>
+  <script type="application/json" data-search-data set:html={JSON.stringify(items)} />
+  <p class="sr-only" aria-live="polite" data-search-status data-no-results={t('common.noResults')}></p>
+</div>
+
+<script>
+  function initSearch(root: HTMLElement) {
+    const input = root.querySelector<HTMLInputElement>('[data-search-input]');
+    const resultsEl = root.querySelector<HTMLUListElement>('[data-search-results]');
+    const dataEl = root.querySelector<HTMLScriptElement>('[data-search-data]');
+    const statusEl = root.querySelector<HTMLElement>('[data-search-status]');
+    if (!input || !resultsEl || !dataEl || !statusEl) return;
+
+    const items = JSON.parse(dataEl.textContent || '[]') as { label: string; sub: string; href: string }[];
+    const optionIdBase = input.id || 'search';
+    let activeIndex = -1;
+
+    function escapeHtml(value: string) {
+      return value.replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char] ?? char);
+    }
+
+    function closeResults() {
+      resultsEl.classList.add('hidden');
+      input.setAttribute('aria-expanded', 'false');
+      input.removeAttribute('aria-activedescendant');
+      activeIndex = -1;
+    }
+
+    function setActive(index: number) {
+      const options = Array.from(resultsEl.querySelectorAll<HTMLElement>('[role="option"]'));
+      if (!options.length) return;
+      activeIndex = (index + options.length) % options.length;
+      options.forEach((option, optionIndex) => option.setAttribute('aria-selected', String(optionIndex === activeIndex)));
+      input.setAttribute('aria-activedescendant', options[activeIndex].id);
+      options[activeIndex].scrollIntoView({ block: 'nearest' });
+    }
+
+    function render(query: string) {
+      if (!resultsEl) return;
+      const q = query.trim().toLowerCase();
+      if (!q) {
+        closeResults();
+        resultsEl.innerHTML = '';
+        statusEl.textContent = '';
+        return;
+      }
+      const matches = items.filter((item) => item.label.toLowerCase().includes(q)).slice(0, 10);
+      if (matches.length === 0) {
+        resultsEl.innerHTML = '';
+        closeResults();
+        statusEl.textContent = root.querySelector('[data-search-status]')?.getAttribute('data-no-results') ?? '';
+        return;
+      }
+      resultsEl.innerHTML = matches
+        .map(
+          (item, index) => `
+        <li role="option" id="${optionIdBase}-option-${index}" aria-selected="false">
+          <a href="${escapeHtml(item.href)}" tabindex="-1" class="flex items-center justify-between gap-3 px-4 py-2.5 hover:bg-surface-hover transition-colors aria-selected:bg-surface-hover">
+            <span class="text-text-primary">${escapeHtml(item.label)}</span>
+            <span class="text-xs uppercase tracking-wide text-text-muted">${escapeHtml(item.sub)}</span>
+          </a>
+        </li>`
+        )
+        .join('');
+      resultsEl.classList.remove('hidden');
+      input.setAttribute('aria-expanded', 'true');
+      activeIndex = -1;
+      statusEl.textContent = `${matches.length}`;
+    }
+
+    input.addEventListener('input', () => render(input.value));
+    input.addEventListener('focus', () => render(input.value));
+    input.addEventListener('keydown', (event) => {
+      const options = resultsEl.querySelectorAll('[role="option"]');
+      if (event.key === 'ArrowDown' && options.length) {
+        event.preventDefault();
+        setActive(activeIndex + 1);
+      } else if (event.key === 'ArrowUp' && options.length) {
+        event.preventDefault();
+        setActive(activeIndex - 1);
+      } else if (event.key === 'Enter' && activeIndex >= 0) {
+        event.preventDefault();
+        const link = resultsEl.querySelectorAll<HTMLAnchorElement>('[role="option"] a')[activeIndex];
+        link?.click();
+      } else if (event.key === 'Escape') {
+        closeResults();
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (!root.contains(e.target as Node)) {
+        closeResults();
+      }
+    });
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-search-root]').forEach(initSearch);
+</script>

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuideArticlePage from '../../components/pages/GuideArticlePage.astro';
+import { useTranslations } from '../../i18n';
+import { battleGuideCategories } from '../../lib/paths/guidePaths';
+
+export async function getStaticPaths() {
+  return (await battleGuideCategories()).map((category) => ({ params: { category } }));
+}
+
+const locale = 'en' as const;
+const t = useTranslations(locale);
+const { category } = Astro.params;
+const title = `${t(`battleGuide.categories.${category}`)} | ${t('battleGuide.title')} | ${t('site.name')}`;
+const description = `${t(`battleGuide.categories.${category}`)}. ${t('battleGuide.subtitle')}`;
+---
+
+<BaseLayout locale={locale} title={title} description={description} canonical={`/battle-guide/${category}`} schemaType="Article">
+  <GuideArticlePage locale={locale} section="battle-guide" category={category} />
+</BaseLayout>

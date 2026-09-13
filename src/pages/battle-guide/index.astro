@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BattleGuideIndexPage from '../../components/pages/BattleGuideIndexPage.astro';
+import { useTranslations } from '../../i18n';
+
+const locale = 'en' as const;
+const t = useTranslations(locale);
+---
+
+<BaseLayout locale={locale} title={`${t('battleGuide.title')} | ${t('site.name')}`} description={t('battleGuide.subtitle')} canonical="/battle-guide">
+  <BattleGuideIndexPage locale={locale} />
+</BaseLayout>

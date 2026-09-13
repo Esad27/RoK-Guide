@@ -1,0 +1,95 @@
+[
+  {
+    "id": "rise-of-kingdoms-official",
+    "name": "Rise of Kingdoms — Official Site",
+    "url": "https://rok.lilith.com/",
+    "category": "official",
+    "description": {
+      "en": "Lilith Games' official Rise of Kingdoms website and the safest starting point for official game links.",
+      "vi": "Trang Rise of Kingdoms chính thức của Lilith Games, là điểm bắt đầu an toàn nhất để truy cập các liên kết chính thức của trò chơi.",
+      "es": "Sitio oficial de Rise of Kingdoms de Lilith Games y el punto de partida más seguro para acceder a enlaces oficiales del juego."
+    }
+  },
+  {
+    "id": "rise-of-kingdoms-community",
+    "name": "Rise of Kingdoms Community",
+    "url": "https://forum-global.lilithgame.com/?forumId=2",
+    "category": "official",
+    "description": {
+      "en": "Lilith's official community area for announcements, update notes, support posts and developer communications.",
+      "vi": "Khu vực cộng đồng chính thức của Lilith dành cho thông báo, ghi chú cập nhật, bài hỗ trợ và trao đổi từ nhà phát triển.",
+      "es": "Espacio oficial de la comunidad de Lilith para anuncios, notas de actualización, soporte y comunicaciones del equipo de desarrollo."
+    }
+  },
+  {
+    "id": "rise-of-kingdoms-guides",
+    "name": "Rise of Kingdoms Guides",
+    "url": "https://riseofkingdomsguides.com/",
+    "category": "guides",
+    "description": {
+      "en": "Broad community reference with commander and pairing guides, talent builds, equipment, progression articles, KvK material and calculators. Check dates before using meta advice.",
+      "vi": "Nguồn tham khảo cộng đồng tổng hợp về chỉ huy, ghép cặp, bảng tài năng, trang bị, phát triển tài khoản, KvK và các công cụ tính toán. Hãy kiểm tra ngày cập nhật trước khi dùng lời khuyên meta.",
+      "es": "Referencia comunitaria amplia con guías de comandantes y parejas, talentos, equipo, progresión, KvK y calculadoras. Conviene revisar la fecha antes de usar consejos de meta."
+    }
+  },
+  {
+    "id": "metarok",
+    "name": "MetaRoK",
+    "url": "https://meta-rok.com/tierlist/field/",
+    "category": "meta",
+    "description": {
+      "en": "Current-meta reference with open-field, rally, garrison, swarming and investment views plus commander and calculator tools. Treat rankings as meta opinion, not game mechanics.",
+      "vi": "Nguồn tham khảo meta với các mục ngoài trời, rally, trấn thủ, swarm và đầu tư, kèm dữ liệu chỉ huy và công cụ tính toán. Bảng xếp hạng là quan điểm meta, không phải cơ chế trò chơi.",
+      "es": "Referencia de meta con vistas de campo abierto, rally, guarnición, swarm e inversión, además de datos de comandantes y calculadoras. Sus rankings son opinión de meta, no mecánicas del juego."
+    }
+  },
+  {
+    "id": "codex-helper",
+    "name": "Codex Helper",
+    "url": "https://codexhelper.com/",
+    "category": "tools",
+    "description": {
+      "en": "A Rise of Kingdoms Discord bot and toolkit. Free features include a healing calculator and server utilities; commander guides, meta pairings and several planning tools are part of its Patreon tier.",
+      "vi": "Bot Discord và bộ công cụ cho Rise of Kingdoms. Tính năng miễn phí gồm máy tính hồi phục và tiện ích máy chủ; hướng dẫn chỉ huy, cặp meta và một số công cụ lập kế hoạch thuộc gói Patreon.",
+      "es": "Bot de Discord y conjunto de herramientas para Rise of Kingdoms. Incluye gratis una calculadora de curación y utilidades de servidor; las guías de comandantes, parejas meta y varias herramientas de planificación forman parte del nivel Patreon."
+    }
+  },
+  {
+    "id": "the-rok-nut-academy",
+    "name": "The RoK Nut Academy",
+    "url": "https://sites.google.com/view/theroknut-academy/",
+    "category": "community",
+    "description": {
+      "en": "Community academy link supplied by the project owner. Its current contents could not be fully inspected during this audit, so use it as optional further reading rather than a factual authority.",
+      "vi": "Liên kết học viện cộng đồng do chủ dự án cung cấp. Nội dung hiện tại chưa thể được kiểm tra đầy đủ trong đợt rà soát này, vì vậy chỉ nên dùng như tài liệu đọc thêm, không phải nguồn xác nhận tuyệt đối.",
+      "es": "Enlace a una academia comunitaria aportado por el propietario del proyecto. Su contenido actual no pudo revisarse por completo, por lo que debe usarse como lectura adicional y no como autoridad factual."
+    }
+  },
+  {
+    "id": "rok-wiki-commander-guide",
+    "name": "Rise of Kingdoms Wiki — Commander Guide",
+    "url": "https://riseofkingdoms.fandom.com/wiki/Commander_Guide",
+    "category": "wiki",
+    "description": {
+      "en": "Community wiki covering base commander mechanics, skills, rarity and roles. Not a current-meta source.",
+      "vi": "Wiki cộng đồng về cơ chế cơ bản của chỉ huy, kỹ năng, độ hiếm và vai trò. Không phải nguồn về meta hiện tại.",
+      "es": "Wiki comunitaria sobre mecánicas base de comandantes, habilidades, rareza y roles. No es una fuente de meta actual."
+    }
+  },
+  {
+    "id": "rok-calculator",
+    "name": "RoK Calculator",
+    "url": "https://rok-calculator.com/",
+    "localizedUrls": {
+      "en": "https://rok-calculator.com/",
+      "vi": "https://rok-calculator.com/",
+      "es": "https://rok-calculator.com/es/"
+    },
+    "category": "calculators",
+    "description": {
+      "en": "Calculator hub for resources, speedups, buildings, research, healing, troop training, commander EXP and equipment planning.",
+      "vi": "Bộ công cụ bằng tiếng Anh để tính tài nguyên, tăng tốc, công trình, nghiên cứu, hồi phục, huấn luyện quân, EXP chỉ huy và lập kế hoạch trang bị.",
+      "es": "Centro de calculadoras en español para recursos, aceleradores, edificios, investigación, curación, entrenamiento de tropas, EXP de comandantes y planificación de equipo."
+    }
+  }
+]

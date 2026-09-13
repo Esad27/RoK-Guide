@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import KvkGuideIndexPage from '../../../components/pages/KvkGuideIndexPage.astro';
+import { useTranslations, type Locale } from '../../../i18n';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'vi' } }, { params: { lang: 'es' } }];
+}
+
+const locale = Astro.params.lang as Locale;
+const t = useTranslations(locale);
+---
+
+<BaseLayout locale={locale} title={`${t('kvkGuide.title')} | ${t('site.name')}`} description={t('kvkGuide.subtitle')} canonical={`/${locale}/kvk-guide`}>
+  <KvkGuideIndexPage locale={locale} />
+</BaseLayout>

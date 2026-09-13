@@ -1,0 +1,72 @@
+---
+import type { Locale } from '../i18n';
+import { useTranslations, localizedPath } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const navItems = [
+  { href: '/commanders', label: t('nav.commanders') },
+  { href: '/pairings', label: t('nav.pairings') },
+  { href: '/kvk-guide', label: t('nav.kvkGuide') },
+  { href: '/battle-guide', label: t('nav.battleGuide') },
+];
+
+const guideItems = [
+  { href: '/videos', label: t('nav.videos') },
+  { href: '/resources', label: t('nav.resources') },
+  { href: '/feedback-donate', label: t('nav.feedbackDonate') },
+];
+---
+
+<footer class="mt-16 border-t border-line bg-surface">
+  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_1.4fr_0.8fr_0.8fr] lg:gap-10">
+    <aside class="border-l-2 border-gold/50 pl-4 text-xs leading-5 text-text-muted" aria-label="Legends of Titan guide information">
+      <p class="font-display text-sm font-bold tracking-wide text-gold-light">LEGENDS OF TITAN</p>
+      <p class="font-semibold text-text-primary">KINGDOM #4109</p>
+      <p class="mt-2 font-semibold text-text-primary">Clan Strategy &amp; Gameplay Guide</p>
+      <p>Prepared by <strong class="font-semibold text-text-primary">WhoScaRe</strong></p>
+      <p>Version 1.0</p>
+      <p>Last Updated: <strong class="font-semibold text-text-primary">August 31, 2026</strong></p>
+    </aside>
+    <div>
+      <p class="font-display text-lg font-bold text-gold-light">{t('site.shortName')}</p>
+      <p class="mt-2 max-w-sm text-sm text-text-muted">{t('footer.tagline')}</p>
+    </div>
+    <div>
+      <p class="mb-3 text-xs font-semibold uppercase tracking-wide text-text-muted">{t('footer.navigation')}</p>
+      <ul class="space-y-2 text-sm">
+        {
+          navItems.map((item) => (
+            <li>
+              <a href={localizedPath(locale, item.href)} class="text-text-muted hover:text-gold-light">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div>
+      <p class="mb-3 text-xs font-semibold uppercase tracking-wide text-text-muted">{t('footer.guides')}</p>
+      <ul class="space-y-2 text-sm">
+        {
+          guideItems.map((item) => (
+            <li>
+              <a href={localizedPath(locale, item.href)} class="text-text-muted hover:text-gold-light">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-line px-4 py-4 text-center text-xs text-text-muted">
+    &copy; {new Date().getFullYear()} {t('site.shortName')}
+  </div>
+</footer>

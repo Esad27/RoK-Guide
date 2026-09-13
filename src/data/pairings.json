@@ -1,0 +1,215 @@
+[
+  {
+    "id": "sun-tzu-bjorn-ironside",
+    "primary": "sun-tzu",
+    "secondary": "bjorn-ironside",
+    "rating": 3,
+    "troopType": "infantry",
+    "skills": { "primary": "5555", "secondary": "5555" },
+    "tags": ["f2p-favorite"]
+  },
+  {
+    "id": "charles-martel-pyrrhos",
+    "primary": "charles-martel",
+    "secondary": "pyrrhos",
+    "rating": 5,
+    "troopType": "infantry",
+    "skills": { "primary": "5511", "secondary": "5555" }
+  },
+  {
+    "id": "pyrrhos-richard",
+    "primary": "pyrrhos",
+    "secondary": "richard",
+    "rating": 5,
+    "troopType": "infantry",
+    "skills": { "primary": "5555", "secondary": "5511" }
+  },
+  {
+    "id": "sun-tzu-charles-martel",
+    "primary": "sun-tzu",
+    "secondary": "charles-martel",
+    "rating": 4,
+    "troopType": "infantry",
+    "skills": { "primary": "5555", "secondary": "5511" },
+    "tags": ["recommended"]
+  },
+  {
+    "id": "sun-tzu-pyrrhos",
+    "primary": "sun-tzu",
+    "primaryAlternatives": ["bjorn-ironside"],
+    "secondary": "pyrrhos",
+    "rating": 4,
+    "troopType": "infantry",
+    "skills": { "primary": "5555", "secondary": "5511" }
+  },
+  {
+    "id": "sun-tzu-perikles",
+    "primary": "sun-tzu",
+    "secondary": "perikles",
+    "rating": 3,
+    "troopType": "infantry",
+    "skills": { "primary": "5555", "secondary": "5555" }
+  },
+  {
+    "id": "richard-yi-seong-gye",
+    "primary": "richard",
+    "secondary": "yi-seong-gye",
+    "rating": 5,
+    "troopType": "infantry",
+    "skills": { "primary": "5511 (minimum)", "secondary": "5555" }
+  },
+  {
+    "id": "eulji-mundeok-sun-tzu",
+    "primary": "eulji-mundeok",
+    "secondary": "sun-tzu",
+    "rating": 3,
+    "troopType": "infantry",
+    "skills": { "primary": "5555", "secondary": "5555" }
+  },
+  {
+    "id": "richard-mehmed",
+    "primary": "richard",
+    "secondary": "mehmed",
+    "rating": 4,
+    "troopType": "infantry",
+    "skills": { "primary": "5511 (minimum)", "secondary": "5511" }
+  },
+  {
+    "id": "richard-aethelflaed",
+    "primary": "richard",
+    "secondary": "aethelflaed",
+    "rating": 4,
+    "troopType": "infantry",
+    "skills": { "primary": "5511 (minimum)", "secondary": "5555" }
+  },
+  {
+    "id": "richard-sun-tzu",
+    "primary": "richard",
+    "secondary": "sun-tzu",
+    "rating": 4,
+    "troopType": "infantry",
+    "skills": { "primary": "5511 (minimum)", "secondary": "5555" }
+  },
+  {
+    "id": "charles-martel-aethelflaed",
+    "primary": "charles-martel",
+    "secondary": "aethelflaed",
+    "rating": 4,
+    "troopType": "infantry",
+    "skills": { "primary": "5511", "secondary": "5555" }
+  },
+  {
+    "id": "charles-martel-yi-seong-gye",
+    "primary": "charles-martel",
+    "secondary": "yi-seong-gye",
+    "rating": 5,
+    "troopType": "infantry",
+    "skills": { "primary": "5511", "secondary": "5555" }
+  },
+  {
+    "id": "charles-martel-sun-tzu",
+    "primary": "charles-martel",
+    "secondary": "sun-tzu",
+    "rating": 4,
+    "troopType": "infantry",
+    "skills": { "primary": "5511", "secondary": "5555" }
+  },
+  {
+    "id": "sun-tzu-yi-seong-gye",
+    "primary": "sun-tzu",
+    "secondary": "yi-seong-gye",
+    "rating": 4,
+    "troopType": "infantry",
+    "skills": { "primary": "5555", "secondary": "5555" }
+  },
+  {
+    "id": "bjorn-ironside-sun-tzu",
+    "primary": "bjorn-ironside",
+    "secondary": "sun-tzu",
+    "rating": 3,
+    "troopType": "infantry",
+    "skills": { "primary": "5555", "secondary": "5555" }
+  },
+  {
+    "id": "minamoto-cao-cao",
+    "primary": "minamoto",
+    "secondary": "cao-cao",
+    "rating": 5,
+    "troopType": "cavalry",
+    "skills": { "primary": "5555", "secondary": "5511" },
+    "tags": ["spender"]
+  },
+  {
+    "id": "minamoto-aethelflaed",
+    "primary": "minamoto",
+    "secondary": "aethelflaed",
+    "rating": 4,
+    "troopType": "cavalry",
+    "skills": { "primary": "5511", "secondary": "5111" }
+  },
+  {
+    "id": "minamoto-mehmed",
+    "primary": "minamoto",
+    "secondary": "mehmed",
+    "rating": 4,
+    "troopType": "cavalry",
+    "skills": { "primary": "5511", "secondary": "5511" }
+  },
+  {
+    "id": "pelagius-minamoto",
+    "primary": "pelagius",
+    "secondary": "minamoto",
+    "rating": 3,
+    "troopType": "cavalry",
+    "skills": { "primary": "5555", "secondary": "5111" }
+  },
+  {
+    "id": "baibars-pelagius",
+    "primary": "baibars",
+    "secondary": "pelagius",
+    "rating": 3,
+    "troopType": "cavalry",
+    "skills": { "primary": "5555", "secondary": "5555" }
+  },
+  {
+    "id": "el-cid-yi-seong-gye",
+    "primary": "el-cid",
+    "secondary": "yi-seong-gye",
+    "rating": 5,
+    "troopType": "archer",
+    "skills": { "primary": "5511", "secondary": "5555" },
+    "tags": ["broken-dmg"]
+  },
+  {
+    "id": "thutmose-yi-seong-gye",
+    "primary": "thutmose",
+    "secondary": "yi-seong-gye",
+    "rating": 4,
+    "troopType": "archer",
+    "skills": { "primary": "5111", "secondary": "5555" }
+  },
+  {
+    "id": "yi-seong-gye-mehmed",
+    "primary": "yi-seong-gye",
+    "secondary": "mehmed",
+    "rating": 4,
+    "troopType": "archer",
+    "skills": { "primary": "5555", "secondary": "5511" }
+  },
+  {
+    "id": "hermann-el-cid",
+    "primary": "hermann",
+    "secondary": "el-cid",
+    "rating": 3,
+    "troopType": "archer",
+    "skills": { "primary": "5555", "secondary": "5511" }
+  },
+  {
+    "id": "kusunoki-yi-seong-gye",
+    "primary": "kusunoki",
+    "secondary": "yi-seong-gye",
+    "rating": 3,
+    "troopType": "archer",
+    "skills": { "primary": "5555", "secondary": "5555" }
+  }
+]

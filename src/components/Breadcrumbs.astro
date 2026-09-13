@@ -1,0 +1,37 @@
+---
+import type { Locale } from '../i18n';
+import { localizedPath } from '../i18n';
+
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  locale: Locale;
+  crumbs: Crumb[];
+}
+
+const { locale, crumbs } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="mb-4 text-sm text-text-muted">
+  <ol class="flex flex-wrap items-center gap-1">
+    {
+      crumbs.map((crumb, i) => (
+        <li class="flex items-center gap-1">
+          {crumb.href ? (
+            <a href={localizedPath(locale, crumb.href)} class="hover:text-gold-light">
+              {crumb.label}
+            </a>
+          ) : (
+            <span aria-current="page" class="text-text-primary">
+              {crumb.label}
+            </span>
+          )}
+          {i < crumbs.length - 1 && <span aria-hidden="true">/</span>}
+        </li>
+      ))
+    }
+  </ol>
+</nav>

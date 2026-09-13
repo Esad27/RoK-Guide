@@ -1,0 +1,9 @@
+{
+  "id": "el-cid",
+  "name": "El Cid",
+  "slug": "el-cid", "rarity": "Legendary", "civilization": "Spain", "troopType": "archer",
+  "specialties": ["Archer", "Versatility", "Skill"], "tags": ["Silence", "Single target", "Gold key"],
+  "bestUses": ["Early archer march", "Single-target control", "Secondary commander"],
+  "description": { "en": "An older gold-key archer legendary valued mainly for brief single-target control; universal sculptures are generally better reserved for harder-to-obtain commanders.", "vi": "Tướng cung huyền thoại đời đầu từ rương vàng, chủ yếu có giá trị nhờ khống chế đơn mục tiêu ngắn; thường không nên dùng tượng vạn năng cho ông.", "es": "Un legendario arquero antiguo de cofre dorado, útil sobre todo por su control breve a un objetivo; normalmente conviene reservar las esculturas universales para opciones más difíciles de obtener." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/el-cid/", "type": "community-guide" }], "verifiedAt": "2026-08-30"
+}

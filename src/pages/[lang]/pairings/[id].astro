@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PairingDetailPage from '../../../components/pages/PairingDetailPage.astro';
+import { useTranslations, type Locale } from '../../../i18n';
+import { getPairing, getPairingDisplayName } from '../../../data/loaders';
+import { pairingIds } from '../../../lib/paths/pairingPaths';
+
+export function getStaticPaths() {
+  const langs = ['vi', 'es'];
+  return langs.flatMap((lang) => pairingIds().map((id) => ({ params: { lang, id } })));
+}
+
+const locale = Astro.params.lang as Locale;
+const t = useTranslations(locale);
+const { id } = Astro.params;
+const pairing = getPairing(id);
+const title = pairing ? `${getPairingDisplayName(pairing)} ${t('seo.pairingSuffix')} | ${t('site.name')}` : t('site.name');
+const description = pairing?.why?.[locale] ?? pairing?.why?.en;
+---
+
+<BaseLayout locale={locale} title={title} description={description} canonical={`/${locale}/pairings/${id}`} schemaType="Article">
+  <PairingDetailPage locale={locale} id={id} />
+</BaseLayout>

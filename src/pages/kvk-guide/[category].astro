@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuideArticlePage from '../../components/pages/GuideArticlePage.astro';
+import { useTranslations } from '../../i18n';
+import { kvkGuideCategories } from '../../lib/paths/guidePaths';
+
+export async function getStaticPaths() {
+  return (await kvkGuideCategories()).map((category) => ({ params: { category } }));
+}
+
+const locale = 'en' as const;
+const t = useTranslations(locale);
+const { category } = Astro.params;
+const title = `${t(`kvkGuide.categories.${category}`)} | ${t('kvkGuide.title')} | ${t('site.name')}`;
+const description = `${t(`kvkGuide.categories.${category}`)}. ${t('kvkGuide.subtitle')}`;
+---
+
+<BaseLayout locale={locale} title={title} description={description} canonical={`/kvk-guide/${category}`} schemaType="Article">
+  <GuideArticlePage locale={locale} section="kvk-guide" category={category} />
+</BaseLayout>

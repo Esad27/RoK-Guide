@@ -1,0 +1,8 @@
+{
+  "id": "pyrrhos",
+  "name": "Pyrrhus", "slug": "pyrrhos", "rarity": "Legendary", "civilization": "Greece", "troopType": "infantry",
+  "specialties": ["Infantry", "Versatility", "Defense"], "tags": ["Shield", "Defense", "Gold key"],
+  "bestUses": ["Early open field", "Defensive infantry", "Secondary commander"],
+  "description": { "en": "A defensive legendary infantry commander obtainable through recurring non-universal sources; universal legendary sculptures are usually better saved for scarcer commanders.", "vi": "Tướng bộ binh huyền thoại thiên thủ, có thể nhận từ nhiều nguồn lặp lại; thường nên dành tượng huyền thoại vạn năng cho tướng hiếm hơn.", "es": "Un legendario defensivo de infantería disponible mediante fuentes recurrentes; normalmente es mejor guardar las esculturas legendarias universales para comandantes más escasos." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/pyrrhus-talent-tree-build-and-guide/", "type": "community-guide" }, { "name": "Ode to Greece update summary", "url": "https://riseofkingdomsguides.com/rise-of-kingdoms-1-0-71ode-to-greece-update/", "type": "update-summary" }], "verifiedAt": "2026-08-30"
+}

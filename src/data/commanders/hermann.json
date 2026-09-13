@@ -1,0 +1,9 @@
+{
+  "id": "hermann",
+  "name": "Hermann",
+  "slug": "hermann", "rarity": "Epic", "civilization": "Germany", "troopType": "archer",
+  "specialties": ["Archer", "Garrison", "Skill"], "tags": ["Silence", "Rage reduction", "Early game"],
+  "bestUses": ["Open field", "Single-target control", "Early archer march"],
+  "description": { "en": "An epic archer controller whose active skill removes rage and silences one target; useful early, but vulnerable when exposed in crowded field fights.", "vi": "Chỉ huy cung sử thi thiên khống chế, có thể giảm nộ và câm lặng một mục tiêu; hữu ích đầu game nhưng dễ bị tập trung trong giao tranh đông.", "es": "Un arquero épico de control cuya activa reduce furia y silencia a un objetivo; útil al inicio, pero frágil si queda expuesto en combates masivos." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/hermann/", "type": "community-guide" }], "verifiedAt": "2026-08-30"
+}

@@ -1,0 +1,17 @@
+---
+interface Props {
+  tone?: 'gold' | 'red' | 'neutral';
+}
+
+const { tone = 'gold' } = Astro.props;
+
+const toneClasses: Record<string, string> = {
+  gold: 'border-gold/40 text-gold-light bg-gold/10',
+  red: 'border-red/40 text-red bg-red/10',
+  neutral: 'border-line text-text-muted bg-surface-hover',
+};
+---
+
+<span class={`inline-block rounded-full border px-2.5 py-0.5 text-xs font-medium ${toneClasses[tone]}`}>
+  <slot />
+</span>

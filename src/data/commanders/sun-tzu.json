@@ -1,0 +1,9 @@
+{
+  "id": "sun-tzu",
+  "name": "Sun Tzu",
+  "slug": "sun-tzu", "rarity": "Epic", "civilization": "China", "troopType": "infantry",
+  "specialties": ["Infantry", "Garrison", "Skill"], "tags": ["AoE", "Rage", "Skill damage"],
+  "bestUses": ["Open field", "Early infantry", "AoE barbarian chaining"],
+  "description": { "en": "A high-value epic infantry commander whose multi-target active skill returns rage and whose passive kit improves skill damage and survivability.", "vi": "Chỉ huy bộ binh sử thi giá trị cao; kỹ năng chủ động đa mục tiêu hồi nộ, còn nội tại tăng sát thương kỹ năng và độ bền.", "es": "Un épico de infantería de gran valor: su activa multiobjetivo recupera furia y sus pasivas mejoran el daño de habilidad y la resistencia." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/sun-tzu/", "type": "community-guide" }, { "name": "Rise of Kingdoms Wiki", "url": "https://riseofkingdoms.fandom.com/wiki/Civilizations", "type": "community-wiki" }], "verifiedAt": "2026-08-30"
+}

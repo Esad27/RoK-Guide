@@ -1,0 +1,37 @@
+---
+import type { Commander } from '../data/types';
+import type { Locale } from '../i18n';
+import { useTranslations, localizedPath } from '../i18n';
+import CommanderPortrait from './CommanderPortrait.astro';
+import RatingStars from './RatingStars.astro';
+
+interface Props {
+  commander: Commander;
+  locale: Locale;
+}
+
+const { commander, locale } = Astro.props;
+const t = useTranslations(locale);
+
+const troopTypeLabel: Record<string, string> = {
+  infantry: t('commanders.filterInfantry'),
+  cavalry: t('commanders.filterCavalry'),
+  archer: t('commanders.filterArcher'),
+};
+---
+
+<a
+  href={localizedPath(locale, `/commanders/${commander.slug}`)}
+  class="group flex flex-col items-center gap-3 rounded-xl border border-line bg-surface p-3 text-center transition-colors hover:border-gold/50 hover:bg-surface-hover"
+  data-commander-card
+  data-filterable
+  data-troop-type={commander.troopType ?? ''}
+  data-name={commander.name.toLowerCase()}
+>
+  <CommanderPortrait name={commander.name} image={commander.image} size="md" variant="card" />
+  <span class="font-display text-base font-semibold text-text-primary group-hover:text-gold-light">
+    {commander.name}
+  </span>
+  <RatingStars rating={commander.rating} />
+  {commander.troopType && <span class="text-xs uppercase tracking-wide text-text-muted">{troopTypeLabel[commander.troopType]}</span>}
+</a>

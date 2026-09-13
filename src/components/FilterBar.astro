@@ -1,0 +1,76 @@
+---
+interface FilterOption {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  target: string;
+  attr: string;
+  options: FilterOption[];
+  label?: string;
+}
+
+const { target, attr, options, label } = Astro.props;
+---
+
+<div class="flex flex-wrap items-center gap-2" data-filter-bar data-target={target} data-attr={attr} role="group" aria-label={label}>
+  {
+    options.map((opt, i) => (
+      <button
+        type="button"
+        class="rounded-full border border-line px-3 py-1.5 text-sm text-text-muted transition-colors hover:border-gold/50 hover:text-text-primary aria-pressed:border-gold aria-pressed:bg-gold/10 aria-pressed:text-gold-light"
+        data-filter-value={opt.value}
+        aria-pressed={i === 0 ? 'true' : 'false'}
+      >
+        {opt.label}
+      </button>
+    ))
+  }
+</div>
+
+<script>
+  type FilterState = Record<string, string>;
+  const stateByTarget = new Map<string, FilterState>();
+
+  function applyFilters(target: string) {
+    const container = document.querySelector(target);
+    if (!container) return;
+    const state = stateByTarget.get(target) ?? {};
+    const items = container.querySelectorAll<HTMLElement>('[data-filterable]');
+    items.forEach((item) => {
+      const matches = Object.entries(state).every(([attr, value]) => {
+        if (value === 'all') return true;
+        const itemValue = item.dataset[attr] ?? '';
+        if (itemValue.includes(',')) return itemValue.split(',').includes(value);
+        return itemValue === value;
+      });
+      item.classList.toggle('hidden', !matches);
+    });
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-filter-bar]').forEach((bar) => {
+    const target = bar.dataset.target;
+    const attr = bar.dataset.attr;
+    if (!target || !attr) return;
+
+    const camelAttr = attr.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+    const current = stateByTarget.get(target) ?? {};
+    const activeBtn = bar.querySelector<HTMLButtonElement>('[aria-pressed="true"]');
+    current[camelAttr] = activeBtn?.dataset.filterValue ?? 'all';
+    stateByTarget.set(target, current);
+
+    bar.querySelectorAll<HTMLButtonElement>('[data-filter-value]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        bar.querySelectorAll('[data-filter-value]').forEach((b) => b.setAttribute('aria-pressed', 'false'));
+        btn.setAttribute('aria-pressed', 'true');
+        const state = stateByTarget.get(target) ?? {};
+        state[camelAttr] = btn.dataset.filterValue ?? 'all';
+        stateByTarget.set(target, state);
+        applyFilters(target);
+      });
+    });
+  });
+
+  stateByTarget.forEach((_, target) => applyFilters(target));
+</script>

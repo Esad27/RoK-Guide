@@ -1,0 +1,31 @@
+---
+import type { Locale } from '../../i18n';
+import { useTranslations } from '../../i18n';
+import { listGuideCategories } from '../../lib/guides';
+import GuideCard from '../GuideCard.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const categories = await listGuideCategories('battle-guide', locale);
+---
+
+<div class="mx-auto max-w-5xl px-4 py-10">
+  <h1 class="font-display text-3xl font-bold text-text-primary">{t('battleGuide.title')}</h1>
+  <p class="mt-2 max-w-2xl text-text-muted">{t('battleGuide.subtitle')}</p>
+
+  <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+    {
+      categories.map((c) => (
+        <GuideCard
+          title={t(`battleGuide.categories.${c.category}`)}
+          href={`/battle-guide/${c.category}`}
+          locale={locale}
+        />
+      ))
+    }
+  </div>
+</div>

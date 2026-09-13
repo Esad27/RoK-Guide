@@ -1,0 +1,21 @@
+---
+import type { Locale } from '../i18n';
+import { localizedPath } from '../i18n';
+
+interface Props {
+  title: string;
+  href: string;
+  locale: Locale;
+  eyebrow?: string;
+}
+
+const { title, href, locale, eyebrow } = Astro.props;
+---
+
+<a
+  href={localizedPath(locale, href)}
+  class="flex flex-col gap-1 rounded-xl border border-line bg-surface p-4 transition-colors hover:border-gold/50 hover:bg-surface-hover"
+>
+  {eyebrow && <span class="text-xs uppercase tracking-wide text-gold">{eyebrow}</span>}
+  <span class="font-display font-semibold text-text-primary">{title}</span>
+</a>

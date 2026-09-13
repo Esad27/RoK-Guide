@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import KvkGuideIndexPage from '../../components/pages/KvkGuideIndexPage.astro';
+import { useTranslations } from '../../i18n';
+
+const locale = 'en' as const;
+const t = useTranslations(locale);
+---
+
+<BaseLayout locale={locale} title={`${t('kvkGuide.title')} | ${t('site.name')}`} description={t('kvkGuide.subtitle')} canonical="/kvk-guide">
+  <KvkGuideIndexPage locale={locale} />
+</BaseLayout>

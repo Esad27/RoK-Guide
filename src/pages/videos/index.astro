@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import VideosPage from '../../components/pages/VideosPage.astro';
+import { useTranslations } from '../../i18n';
+
+const locale = 'en' as const;
+const t = useTranslations(locale);
+---
+
+<BaseLayout locale={locale} title={`${t('videos.title')} | ${t('site.name')}`} description={t('videos.subtitle')} canonical="/videos">
+  <VideosPage locale={locale} />
+</BaseLayout>

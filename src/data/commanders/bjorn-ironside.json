@@ -1,0 +1,8 @@
+{
+  "id": "bjorn-ironside",
+  "name": "Björn Ironside", "slug": "bjorn-ironside", "rarity": "Epic", "civilization": "Vikings", "troopType": "infantry",
+  "specialties": ["Infantry", "Conquering", "Skill"], "tags": ["Skill vulnerability", "Early game"],
+  "bestUses": ["Open field", "Early-game infantry", "Primary commander"],
+  "description": { "en": "A readily developed epic infantry primary whose active skill makes affected enemies take more skill damage, enabling skill-heavy secondaries.", "vi": "Chỉ huy bộ binh sử thi dễ nâng cấp; kỹ năng chủ động khiến mục tiêu chịu thêm sát thương kỹ năng, phù hợp với tướng phụ thiên về kỹ năng.", "es": "Un primario épico de infantería fácil de desarrollar; su habilidad activa aumenta el daño de habilidad que reciben los objetivos y potencia a secundarios de daño." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/bjorn-ironside-talent-tree-builds-and-pairs/", "type": "community-guide" }, { "name": "Rise of Kingdoms Wiki", "url": "https://riseofkingdoms.fandom.com/wiki/Category%3ACommander_Epic", "type": "community-wiki" }], "verifiedAt": "2026-08-30"
+}

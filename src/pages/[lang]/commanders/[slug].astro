@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CommanderDetailPage from '../../../components/pages/CommanderDetailPage.astro';
+import { useTranslations, type Locale } from '../../../i18n';
+import { getCommander } from '../../../data/loaders';
+import { commanderSlugs } from '../../../lib/paths/commanderPaths';
+
+export function getStaticPaths() {
+  const langs = ['vi', 'es'];
+  return langs.flatMap((lang) => commanderSlugs().map((slug) => ({ params: { lang, slug } })));
+}
+
+const locale = Astro.params.lang as Locale;
+const t = useTranslations(locale);
+const { slug } = Astro.params;
+const commander = getCommander(slug);
+const title = commander ? `${commander.name} ${t('seo.commanderGuideSuffix')} | ${t('site.name')}` : t('site.name');
+const description = commander?.description?.[locale] ?? commander?.description?.en;
+---
+
+<BaseLayout locale={locale} title={title} description={description} canonical={`/${locale}/commanders/${slug}`} image={commander?.image} schemaType="Article" modifiedTime={commander?.verifiedAt}>
+  <CommanderDetailPage locale={locale} slug={slug} />
+</BaseLayout>

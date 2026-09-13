@@ -1,0 +1,51 @@
+---
+import type { Locale } from '../../i18n';
+import { useTranslations } from '../../i18n';
+import { getVideosByLanguage } from '../../data/loaders';
+import VideoCard from '../VideoCard.astro';
+import VideoModal from '../VideoModal.astro';
+import FilterBar from '../FilterBar.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const localeVideos = getVideosByLanguage(locale);
+const isFallback = localeVideos.length === 0 && locale !== 'en';
+const videos = isFallback ? getVideosByLanguage('en') : localeVideos;
+
+const categoryOptions = [
+  { value: 'all', label: t('videos.filterAll') },
+  { value: 'guides', label: t('videos.filterGuides') },
+  { value: 'commanders', label: t('videos.filterCommanders') },
+  { value: 'kvk', label: t('videos.filterKvk') },
+  { value: 'battle', label: t('videos.filterBattle') },
+  { value: 'tips', label: t('videos.filterTips') },
+];
+---
+
+<div class="mx-auto max-w-7xl px-4 py-10">
+  <h1 class="font-display text-3xl font-bold text-text-primary">{t('videos.title')}</h1>
+  <p class="mt-2 max-w-2xl text-text-muted">{t('videos.subtitle')}</p>
+
+  {
+    isFallback && (
+      <p class="mt-4 rounded-lg border border-gold/30 bg-gold/10 px-4 py-2 text-sm text-gold-light">
+        {t('common.fallbackNotice')}
+      </p>
+    )
+  }
+
+  <div class="mt-6">
+    <FilterBar target="[data-video-grid]" attr="category" options={categoryOptions} label={t('videos.filterAll')} />
+  </div>
+
+  <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" data-video-grid>
+    {videos.map((v) => <VideoCard video={v} locale={locale} />)}
+  </div>
+</div>
+
+<VideoModal locale={locale} />

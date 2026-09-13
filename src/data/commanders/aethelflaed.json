@@ -1,0 +1,8 @@
+{
+  "id": "aethelflaed",
+  "name": "Æthelflæd", "slug": "aethelflaed", "rarity": "Legendary", "civilization": "Britain",
+  "specialties": ["Leadership", "Peacekeeping", "Support"], "tags": ["Debuff", "PvE", "AoE"],
+  "bestUses": ["Open field support", "Barbarians", "Barbarian forts"],
+  "description": { "en": "An accessible legendary support commander whose area debuffs and peacekeeping tools remain useful to early-game and F2P accounts.", "vi": "Một chỉ huy hỗ trợ huyền thoại dễ tiếp cận, hữu ích cho người chơi đầu game và F2P nhờ hiệu ứng giảm chỉ số diện rộng cùng khả năng đánh đơn vị trung lập.", "es": "Una comandante legendaria de apoyo accesible, útil para cuentas de inicio y F2P por sus debilitaciones en área y sus herramientas contra unidades neutrales." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/aethelflaed/", "type": "community-guide" }, { "name": "Rise of Kingdoms Wiki", "url": "https://riseofkingdoms.fandom.com/wiki/Commander_Guide", "type": "community-wiki" }], "verifiedAt": "2026-08-30"
+}

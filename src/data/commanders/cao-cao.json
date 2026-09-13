@@ -1,0 +1,9 @@
+{
+  "id": "cao-cao",
+  "name": "Cao Cao",
+  "slug": "cao-cao", "rarity": "Legendary", "civilization": "China", "troopType": "cavalry",
+  "specialties": ["Cavalry", "Peacekeeping", "Mobility"], "tags": ["Mobility", "Single target", "PvE"],
+  "bestUses": ["Fast marches", "Barbarians", "Early-game cavalry"],
+  "description": { "en": "A fast legendary cavalry commander with single-target damage, attack and speed debuffs, and peacekeeping utility; investment value is strongest in younger kingdoms.", "vi": "Chỉ huy kỵ binh huyền thoại tốc độ cao, có sát thương đơn mục tiêu, giảm công và giảm tốc; giá trị đầu tư nổi bật hơn ở vương quốc trẻ.", "es": "Un legendario de caballería muy veloz, con daño a un objetivo, reducción de ataque y velocidad y utilidad PvE; su inversión rinde más en reinos jóvenes." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/cao-cao/", "type": "community-guide" }, { "name": "Rise of Kingdoms Wiki", "url": "https://riseofkingdoms.fandom.com/wiki/Commanders/Cao_Cao", "type": "community-wiki" }], "verifiedAt": "2026-08-30"
+}

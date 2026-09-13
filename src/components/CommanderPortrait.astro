@@ -1,0 +1,38 @@
+---
+interface Props {
+  name: string;
+  image?: string;
+  size?: 'sm' | 'md' | 'lg';
+  variant?: 'avatar' | 'card';
+}
+
+const { name, image, size = 'md', variant = 'avatar' } = Astro.props;
+
+const sizeClasses: Record<string, string> = {
+  sm: 'w-16 h-16 text-xl',
+  md: 'w-24 h-24 text-3xl',
+  lg: 'w-40 h-40 text-5xl',
+};
+
+const initial = name.trim().charAt(0).toUpperCase();
+const containerClass = variant === 'card'
+  ? 'h-48 w-full rounded-lg border border-gold/30 bg-surface-hover sm:h-56'
+  : `rounded-full border-2 border-gold/50 bg-surface-hover ${sizeClasses[size]}`;
+const imageClass = variant === 'card'
+  ? 'h-full w-full object-contain object-bottom p-2'
+  : 'h-full w-full object-contain object-center p-1';
+---
+
+<div
+  class={`relative flex shrink-0 items-center justify-center overflow-hidden ${containerClass}`}
+>
+  {
+    image ? (
+      <img src={image} alt={name} loading="lazy" class={imageClass} />
+    ) : (
+      <span class="font-display font-semibold text-gold-light" aria-hidden="true">
+        {initial}
+      </span>
+    )
+  }
+</div>

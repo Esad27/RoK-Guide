@@ -1,0 +1,9 @@
+{
+  "id": "charles-martel",
+  "name": "Charles Martel",
+  "slug": "charles-martel", "rarity": "Legendary", "civilization": "France", "troopType": "infantry",
+  "specialties": ["Infantry", "Garrison", "Defense"], "tags": ["Shield", "Defense", "Counterattack"],
+  "bestUses": ["Open field", "Early garrison", "Infantry frontline"],
+  "description": { "en": "A defensive legendary infantry commander whose shield, infantry stats and counterattack tools make him durable in early field and garrison roles.", "vi": "Chỉ huy bộ binh huyền thoại thiên thủ; khiên, chỉ số bộ binh và phản công giúp ông bền bỉ trong giao tranh và đồn trú giai đoạn đầu.", "es": "Un legendario defensivo de infantería; su escudo, estadísticas de infantería y contraataque lo hacen resistente en campo y guarnición temprana." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/charles-martel/", "type": "community-guide" }, { "name": "Rise of Kingdoms Wiki", "url": "https://riseofkingdoms.fandom.com/wiki/Commander_Guide", "type": "community-wiki" }], "verifiedAt": "2026-08-30"
+}

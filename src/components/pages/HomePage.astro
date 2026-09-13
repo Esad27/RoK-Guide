@@ -1,0 +1,128 @@
+---
+import type { Locale } from '../../i18n';
+import { useTranslations, localizedPath } from '../../i18n';
+import { getCommander, getPairings, getVideos, getChannels, getResources } from '../../data/loaders';
+import { listGuideCategories } from '../../lib/guides';
+import SearchBar from '../SearchBar.astro';
+import CommanderCard from '../CommanderCard.astro';
+import PairingCard from '../PairingCard.astro';
+import GuideCard from '../GuideCard.astro';
+import VideoCard from '../VideoCard.astro';
+import VideoModal from '../VideoModal.astro';
+import ChannelCard from '../ChannelCard.astro';
+import ResourceCard from '../ResourceCard.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const featuredCommanderSlugs = ['sun-tzu', 'bjorn-ironside', 'charles-martel', 'yi-seong-gye', 'minamoto'];
+const popularCommanders = featuredCommanderSlugs
+  .map((slug) => getCommander(slug))
+  .filter((c): c is NonNullable<typeof c> => Boolean(c));
+
+const allPairings = getPairings();
+const popularPairings = allPairings.filter((p) => (p.tags ?? []).length > 0).slice(0, 6);
+
+const kvkCategories = await listGuideCategories('kvk-guide', locale);
+const battleCategories = await listGuideCategories('battle-guide', locale);
+const featuredGuides = [
+  ...kvkCategories.slice(0, 2).map((g) => ({ ...g, href: `/kvk-guide/${g.category}`, eyebrow: t('nav.kvkGuide') })),
+  ...battleCategories.slice(0, 2).map((g) => ({ ...g, href: `/battle-guide/${g.category}`, eyebrow: t('nav.battleGuide') })),
+];
+
+const featuredVideos = getVideos().filter((v) => v.featured);
+const channels = getChannels();
+const resources = getResources();
+---
+
+<section class="border-b border-line bg-bg px-4 py-8 sm:py-10" aria-labelledby="legends-of-titan-guide">
+  <div class="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-gold/30 bg-surface p-6 shadow-lg sm:p-9">
+    <div class="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-gold-light via-gold to-gold-dark" aria-hidden="true"></div>
+    <div class="relative">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-gold">Legends of Titan</p>
+      <h1 id="legends-of-titan-guide" class="font-display text-2xl font-bold text-text-primary sm:text-3xl">
+        {t('home.guideIntroTitle')}
+      </h1>
+      <div class="mt-5 space-y-4 text-sm leading-7 text-text-muted sm:text-base">
+        <p>{t('home.guideIntroParagraph1')}</p>
+        <p>{t('home.guideIntroParagraph2')}</p>
+        <p>{t('home.guideIntroParagraph3')}</p>
+      </div>
+      <p class="mt-6 font-display text-base font-semibold text-gold-light">— WhoScaRe</p>
+    </div>
+  </div>
+</section>
+
+<section class="border-b border-line bg-surface">
+  <div class="mx-auto flex max-w-4xl flex-col items-center gap-6 px-4 py-16 text-center sm:py-24">
+    <h2 class="font-display text-3xl font-bold leading-tight text-text-primary sm:text-5xl">
+      <span class="block">{t('home.heroTitle1')}</span>
+      <span class="block text-gold-light">{t('home.heroTitle2')}</span>
+    </h2>
+    <p class="max-w-2xl text-base text-text-muted sm:text-lg">{t('home.heroSubtitle')}</p>
+    <div class="w-full max-w-xl">
+      <SearchBar locale={locale} id="home-search" />
+    </div>
+  </div>
+</section>
+
+<div class="mx-auto flex max-w-7xl flex-col gap-16 px-4 py-12">
+  <section aria-labelledby="popular-commanders">
+    <div class="mb-4 flex items-center justify-between">
+      <h2 id="popular-commanders" class="font-display text-2xl font-semibold text-text-primary">{t('home.popularCommanders')}</h2>
+      <a href={localizedPath(locale, '/commanders')} class="text-sm font-medium text-gold hover:text-gold-light">{t('common.viewAll')}</a>
+    </div>
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+      {popularCommanders.map((c) => <CommanderCard commander={c} locale={locale} />)}
+    </div>
+  </section>
+
+  <section aria-labelledby="popular-pairings">
+    <div class="mb-4 flex items-center justify-between">
+      <h2 id="popular-pairings" class="font-display text-2xl font-semibold text-text-primary">{t('home.popularPairings')}</h2>
+      <a href={localizedPath(locale, '/pairings')} class="text-sm font-medium text-gold hover:text-gold-light">{t('common.viewAll')}</a>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {popularPairings.map((p) => <PairingCard pairing={p} locale={locale} />)}
+    </div>
+  </section>
+
+  <section aria-labelledby="latest-guides">
+    <div class="mb-4 flex items-center justify-between">
+      <h2 id="latest-guides" class="font-display text-2xl font-semibold text-text-primary">{t('home.latestGuides')}</h2>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {featuredGuides.map((g) => <GuideCard title={g.title} href={g.href} locale={locale} eyebrow={g.eyebrow} />)}
+    </div>
+  </section>
+
+  <section aria-labelledby="featured-videos">
+    <div class="mb-4 flex items-center justify-between">
+      <h2 id="featured-videos" class="font-display text-2xl font-semibold text-text-primary">{t('home.featuredVideos')}</h2>
+      <a href={localizedPath(locale, '/videos')} class="text-sm font-medium text-gold hover:text-gold-light">{t('common.viewAll')}</a>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {featuredVideos.map((v) => <VideoCard video={v} locale={locale} />)}
+    </div>
+  </section>
+
+  <section aria-labelledby="top-channels">
+    <h2 id="top-channels" class="mb-4 font-display text-2xl font-semibold text-text-primary">{t('home.topChannels')}</h2>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {channels.map((c) => <ChannelCard channel={c} locale={locale} />)}
+    </div>
+  </section>
+
+  <section aria-labelledby="important-resources">
+    <h2 id="important-resources" class="mb-4 font-display text-2xl font-semibold text-text-primary">{t('home.importantResources')}</h2>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {resources.map((r) => <ResourceCard resource={r} locale={locale} />)}
+    </div>
+  </section>
+</div>
+
+<VideoModal locale={locale} />

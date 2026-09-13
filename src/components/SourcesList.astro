@@ -1,0 +1,30 @@
+---
+import type { Source } from '../data/types';
+import type { Locale } from '../i18n';
+import { useTranslations } from '../i18n';
+
+interface Props {
+  sources?: Source[];
+  locale: Locale;
+}
+
+const { sources, locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+{
+  sources && sources.length > 0 && (
+    <section class="mt-8 border-t border-line pt-4">
+      <h2 class="mb-2 font-display text-lg font-semibold text-text-primary">{t('common.sourcesHeading')}</h2>
+      <ul class="list-inside list-disc space-y-1 text-sm text-text-muted">
+        {sources.map((source) => (
+          <li>
+            <a href={source.url} target="_blank" rel="noopener noreferrer" class="text-gold hover:text-gold-light">
+              {source.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

@@ -1,0 +1,85 @@
+---
+import type { Video } from '../data/types';
+import type { Locale } from '../i18n';
+import { useTranslations } from '../i18n';
+import { getChannel } from '../data/loaders';
+
+interface Props {
+  video: Video;
+  locale: Locale;
+}
+
+const { video, locale } = Astro.props;
+const t = useTranslations(locale);
+const channel = getChannel(video.channel);
+const thumbnail = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
+const minutes = Math.floor(video.durationSeconds / 60);
+const seconds = String(video.durationSeconds % 60).padStart(2, '0');
+const captionLabel = video.captionStatus === 'manual'
+  ? t('videos.manualCaptions')
+  : video.captionStatus === 'auto-generated'
+    ? t('videos.autoCaptions')
+    : undefined;
+---
+
+<article
+  class="group flex flex-col overflow-hidden rounded-xl border border-line bg-surface text-left transition-colors hover:border-gold/50"
+  data-filterable
+  data-category={video.category}
+  data-language={video.language}
+>
+  <button
+    type="button"
+    class="text-left"
+    data-video-trigger
+    data-youtube-id={video.youtubeId}
+    data-video-title={video.title}
+    aria-label={`${t('common.watchVideo')}: ${video.title}`}
+  >
+    <span class="relative block aspect-video w-full overflow-hidden bg-surface-hover">
+      <img
+        src={thumbnail}
+        alt={video.title}
+        loading="lazy"
+        class="h-full w-full object-cover transition-transform group-hover:scale-105"
+      />
+      <span
+        class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition-opacity group-hover:opacity-100"
+        aria-hidden="true"
+      >
+        <span class="flex h-12 w-12 items-center justify-center rounded-full bg-red/90 text-white shadow-lg">▶</span>
+      </span>
+    </span>
+    <span class="block px-3 pt-3">
+      <span class="line-clamp-2 font-medium text-text-primary">{video.title}</span>
+    </span>
+  </button>
+  <span class="flex flex-col gap-1 p-3">
+    {
+      channel && (
+        <span class="flex min-w-0 items-center gap-2">
+          {channel.logo && (
+            <img src={channel.logo} alt="" loading="lazy" class="h-8 w-8 shrink-0 rounded-full object-cover" />
+          )}
+          {channel.url ? (
+            <a
+              href={channel.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="min-w-0 truncate text-xs text-text-muted transition-colors hover:text-gold-light"
+            >
+              {channel.name} ↗
+            </a>
+          ) : (
+            <span class="min-w-0 truncate text-xs text-text-muted">{channel.name}</span>
+          )}
+        </span>
+      )
+    }
+    <span class="mt-1 flex flex-wrap gap-1.5 text-[0.68rem] uppercase tracking-wide text-text-muted">
+      <span class="rounded border border-line px-1.5 py-0.5">{video.language.toUpperCase()}</span>
+      <span class="rounded border border-line px-1.5 py-0.5">{minutes}:{seconds}</span>
+      {captionLabel && <span class="rounded border border-gold/30 px-1.5 py-0.5 text-gold-light">{captionLabel}</span>}
+    </span>
+  </span>
+</article>

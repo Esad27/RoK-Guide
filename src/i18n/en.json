@@ -1,0 +1,161 @@
+{
+  "site": {
+    "name": "Rise of Kingdoms Commander Guide",
+    "shortName": "RoK Commander Guide"
+  },
+  "seo": {
+    "titleBrand": "RoK Guide",
+    "commanderGuideSuffix": "Guide & Pairings",
+    "pairingSuffix": "Pairing"
+  },
+  "nav": {
+    "home": "Home",
+    "commanders": "Commanders",
+    "pairings": "Pairings",
+    "kvkGuide": "KvK Guide",
+    "battleGuide": "Battle Guide",
+    "videos": "Videos",
+    "resources": "Resources",
+    "feedbackDonate": "Feedback & Donate"
+  },
+  "theme": {
+    "dark": "Dark",
+    "light": "Light",
+    "toggle": "Toggle color theme"
+  },
+  "common": {
+    "viewAll": "View All",
+    "viewCommander": "View Commander",
+    "viewPairing": "View Pairing",
+    "readGuide": "Read Guide",
+    "watchVideo": "Watch Video",
+    "loadMore": "Load More",
+    "externalLink": "Opens an external site in a new tab",
+    "fallbackNotice": "English version shown — not yet available in this language.",
+    "sourcesHeading": "Sources & Further Reading",
+    "noResults": "No results found.",
+    "close": "Close",
+    "search": "Search",
+    "backTo": "Back to"
+  },
+  "home": {
+    "guideIntroTitle": "Legends of Titan — Guide",
+    "guideIntroParagraph1": "This guide was created to provide Legends of Titan members with clear, practical and reliable information they can apply directly in the game.",
+    "guideIntroParagraph2": "The goal is not to make topics unnecessarily complicated, but to present the most effective strategies, important mechanics and key points to watch in an organized and easy-to-understand way. This allows both new players and experienced members to benefit from the guide.",
+    "guideIntroParagraph3": "Game updates, individual lineups and different scenarios may cause some strategies to change over time. Treat this guide not as a fixed set of rules, but as a strong foundation and reference resource.",
+    "heroTitle1": "Master Commanders",
+    "heroTitle2": "Dominate the Kingdom",
+    "heroSubtitle": "Commander guides, pairings, battle strategies and useful Rise of Kingdoms resources in one place.",
+    "searchPlaceholder": "Search commanders, pairings, guides...",
+    "popularCommanders": "Popular Commanders",
+    "popularPairings": "Commander Pairings",
+    "latestGuides": "Latest Guides",
+    "featuredVideos": "Featured Videos",
+    "topChannels": "Top YouTube Channels",
+    "importantResources": "Important Resources"
+  },
+  "commanders": {
+    "title": "Commanders",
+    "subtitle": "Browse commanders and find the best options for your strategy.",
+    "searchPlaceholder": "Search commanders...",
+    "filterAll": "All",
+    "filterInfantry": "Infantry",
+    "filterCavalry": "Cavalry",
+    "filterArcher": "Archer",
+    "sortName": "Name",
+    "sortRating": "Rating",
+    "bestPairings": "Best Pairings",
+    "bestUses": "Best Uses",
+    "information": "Commander Information",
+    "skills": "Skills",
+    "talents": "Talents",
+    "equipment": "Recommended Equipment",
+    "tips": "Tips"
+  },
+  "pairings": {
+    "title": "Commander Pairings",
+    "subtitle": "Find the best commander combinations for your situation.",
+    "filterTroopType": "Troop Type",
+    "filterSituation": "Situation",
+    "filterInvestment": "F2P / Spender",
+    "filterRating": "Rating",
+    "pairingInfo": "Pairing Information",
+    "why": "Why This Pairing?",
+    "strengths": "Strengths",
+    "weaknesses": "Weaknesses",
+    "bestUses": "Best Uses",
+    "videoGuide": "Video Guide"
+  },
+  "kvkGuide": {
+    "title": "KvK Guide",
+    "subtitle": "Educational strategy guides for Kingdom versus Kingdom (KvK) and the Lost Kingdom.",
+    "categories": {
+      "preparation": "Preparation",
+      "zones-and-passes": "Zones & Passes",
+      "open-field": "Open Field",
+      "rally-and-garrison": "Rally & Garrison",
+      "resource-management": "Resource Management",
+      "hospital-management": "Hospital Management"
+    }
+  },
+  "battleGuide": {
+    "title": "Battle Guide",
+    "subtitle": "Learn how to fight effectively in every combat scenario.",
+    "categories": {
+      "open-field": "Open Field",
+      "rally": "Rally",
+      "garrison": "Garrison",
+      "march-management": "March Management"
+    }
+  },
+  "videos": {
+    "title": "Videos",
+    "subtitle": "Watch the best Rise of Kingdoms guides and tutorials.",
+    "filterAll": "All Videos",
+    "filterGuides": "Guides",
+    "filterCommanders": "Commanders",
+    "filterKvk": "KvK",
+    "filterBattle": "Battle",
+    "filterTips": "Tips",
+    "autoCaptions": "Auto captions",
+    "manualCaptions": "Captions"
+  },
+  "resources": {
+    "title": "Resources",
+    "subtitle": "Useful Rise of Kingdoms websites, calculators, community tools and reference guides.",
+    "filterAll": "All Resources",
+    "filterOfficial": "Official",
+    "filterGuides": "Guides",
+    "filterMeta": "Meta",
+    "filterTools": "Tools",
+    "filterWiki": "Wiki",
+    "filterCommunity": "Community",
+    "filterCalculators": "Calculators",
+    "filterEvents": "Event Information"
+  },
+  "feedbackDonate": {
+    "title": "Feedback & Donate",
+    "subtitle": "Share your suggestions or support the continued development of the Legends of Titan guide.",
+    "feedbackTitle": "Send Feedback",
+    "feedbackDescription": "Report incorrect information, suggest a new guide or tell us how the site can be improved.",
+    "formPending": "Google Form link will be added soon",
+    "openForm": "Open feedback form",
+    "donateTitle": "Support the Guide",
+    "donateDescription": "Donations help us maintain and expand this independent community guide.",
+    "supportedAssets": "Supported assets",
+    "network": "Network",
+    "walletAddress": "Deposit address",
+    "copyAddress": "Copy address",
+    "copied": "Address copied",
+    "minimumDeposit": "Minimum deposit",
+    "minimumDepositValue": "More than 0.01 USDT",
+    "warningNft": "Do not send NFTs to this address.",
+    "warningSanctions": "Do not transact with sanctioned entities."
+  },
+  "footer": {
+    "tagline": "Independent Rise of Kingdoms commander guide. Not affiliated with Lilith Games.",
+    "navigation": "Navigation",
+    "guides": "Guides",
+    "followUs": "Follow Us"
+  }
+}

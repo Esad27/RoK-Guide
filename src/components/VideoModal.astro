@@ -1,0 +1,100 @@
+---
+import type { Locale } from '../i18n';
+import { useTranslations } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<div
+  id="video-modal"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4"
+  role="dialog"
+  aria-modal="true"
+  aria-label={t('common.watchVideo')}
+  data-video-modal-label={t('common.watchVideo')}
+  data-video-modal
+>
+  <div class="relative w-full max-w-3xl">
+    <button
+      type="button"
+      class="absolute -top-10 right-0 rounded-full px-3 py-1 text-sm text-white/80 hover:text-white"
+      data-video-modal-close
+      aria-label={t('common.close')}
+    >
+      {t('common.close')} ✕
+    </button>
+    <div class="aspect-video w-full overflow-hidden rounded-lg bg-black" data-video-modal-frame></div>
+  </div>
+</div>
+
+<script>
+  function setup() {
+    const modal = document.querySelector<HTMLElement>('[data-video-modal]');
+    const frame = modal?.querySelector<HTMLElement>('[data-video-modal-frame]');
+    const closeBtn = modal?.querySelector<HTMLElement>('[data-video-modal-close]');
+    if (!modal || !frame || !closeBtn) return;
+    let returnFocus: HTMLElement | null = null;
+
+    function open(youtubeId: string, title: string, trigger: HTMLElement) {
+      if (!modal || !frame) return;
+      returnFocus = trigger;
+      const iframe = document.createElement('iframe');
+      iframe.className = 'h-full w-full';
+      iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(youtubeId)}?autoplay=1`;
+      iframe.title = title;
+      iframe.loading = 'lazy';
+      iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      frame.replaceChildren(iframe);
+      const baseLabel = modal.dataset.videoModalLabel ?? 'Video';
+      modal.setAttribute('aria-label', title ? `${baseLabel}: ${title}` : baseLabel);
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      closeBtn?.focus();
+    }
+
+    function close() {
+      if (!modal || !frame) return;
+      frame.innerHTML = '';
+      modal.setAttribute('aria-label', modal.dataset.videoModalLabel ?? 'Video');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+      returnFocus?.focus();
+      returnFocus = null;
+    }
+
+    document.addEventListener('click', (e) => {
+      const trigger = (e.target as HTMLElement)?.closest<HTMLElement>('[data-video-trigger]');
+      if (trigger) {
+        const youtubeId = trigger.dataset.youtubeId;
+        const title = trigger.dataset.videoTitle ?? '';
+        if (youtubeId) open(youtubeId, title, trigger);
+      }
+    });
+
+    closeBtn.addEventListener('click', close);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (modal.classList.contains('hidden')) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        close();
+      }
+      if (e.key === 'Tab') {
+        e.preventDefault();
+        closeBtn.focus();
+      }
+    });
+  }
+
+  setup();
+</script>

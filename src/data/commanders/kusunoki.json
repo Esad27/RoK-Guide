@@ -1,0 +1,8 @@
+{
+  "id": "kusunoki",
+  "name": "Kusunoki Masashige", "slug": "kusunoki", "rarity": "Epic", "civilization": "Japan", "troopType": "archer",
+  "specialties": ["Archer", "Garrison", "Skill"], "tags": ["AoE", "Cleanse", "Early game"],
+  "bestUses": ["Open field", "Early archer march", "Early garrison"],
+  "description": { "en": "An early epic archer whose active skill removes negative and control effects before dealing fan-shaped area damage.", "vi": "Chỉ huy cung sử thi đầu game; kỹ năng chủ động xóa hiệu ứng bất lợi và khống chế trước khi gây sát thương diện quạt.", "es": "Un arquero épico inicial cuya habilidad activa elimina efectos negativos y de control antes de infligir daño en área frontal." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/kusunoki-masashige/", "type": "community-guide" }, { "name": "Rise of Kingdoms Wiki", "url": "https://riseofkingdoms.fandom.com/wiki/Commanders", "type": "community-wiki" }], "verifiedAt": "2026-08-30"
+}

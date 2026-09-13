@@ -1,0 +1,8 @@
+{
+  "id": "yi-seong-gye",
+  "name": "Yi Seong-Gye", "slug": "yi-seong-gye", "rarity": "Legendary", "civilization": "Korea", "troopType": "archer",
+  "specialties": ["Archer", "Garrison", "Skill"], "tags": ["AoE", "Skill damage", "Wheel of Fortune"],
+  "bestUses": ["Open field", "AoE barbarian chaining", "Skill-damage secondary"],
+  "description": { "en": "An early legendary archer prized for circular area damage after expertise and a large skill-damage bonus. He is often hidden as a secondary because visible primaries attract focus.", "vi": "Tướng cung huyền thoại đầu game nổi bật với sát thương diện tròn sau chuyên môn và tăng sát thương kỹ năng lớn; thường được giấu ở vị trí tướng phụ để tránh bị tập trung.", "es": "Un arquero legendario temprano, apreciado por su daño circular tras la pericia y su gran bonificación de daño de habilidad; suele ocultarse como secundario para evitar el foco enemigo." },
+  "sources": [{ "name": "Rise of Kingdoms Wiki", "url": "https://riseofkingdoms.fandom.com/wiki/Commanders/Yi_Seong-Gye", "type": "community-wiki" }, { "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/yi-seong-gye/", "type": "community-guide" }], "verifiedAt": "2026-08-30"
+}

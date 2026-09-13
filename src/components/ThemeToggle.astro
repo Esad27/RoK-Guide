@@ -1,0 +1,55 @@
+---
+import type { Locale } from '../i18n';
+import { useTranslations } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<button
+  type="button"
+  data-theme-toggle
+  class="flex items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-sm text-text-muted transition-colors hover:border-gold/50 hover:text-text-primary"
+  aria-label={t('theme.toggle')}
+>
+  <span data-theme-icon aria-hidden="true">🌙</span>
+  <span data-theme-label>{t('theme.dark')}</span>
+</button>
+
+<script define:vars={{ darkLabel: t('theme.dark'), lightLabel: t('theme.light') }}>
+  function currentTheme() {
+    const selected = document.documentElement.getAttribute('data-theme');
+    if (selected === 'light' || selected === 'dark') return selected;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function updateButton(btn) {
+    const icon = btn.querySelector('[data-theme-icon]');
+    const label = btn.querySelector('[data-theme-label]');
+    const theme = currentTheme();
+    if (icon) icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+    if (label) label.textContent = theme === 'dark' ? darkLabel : lightLabel;
+  }
+
+  function updateButtons() {
+    document.querySelectorAll('[data-theme-toggle]').forEach(updateButton);
+  }
+
+  document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+    updateButton(btn);
+    if (btn.dataset.themeToggleReady === 'true') return;
+    btn.dataset.themeToggleReady = 'true';
+    btn.addEventListener('click', () => {
+      const next = currentTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('rok-theme', next);
+      } catch {}
+      updateButtons();
+    });
+  });
+</script>

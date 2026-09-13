@@ -1,0 +1,8 @@
+{
+  "id": "minamoto",
+  "name": "Minamoto no Yoshitsune", "slug": "minamoto", "rarity": "Legendary", "civilization": "Japan", "troopType": "cavalry",
+  "specialties": ["Cavalry", "Peacekeeping", "Skill"], "tags": ["Single target", "PvE", "Paid acquisition"],
+  "bestUses": ["Barbarian forts", "Early open field", "Early cavalry rallies"],
+  "description": { "en": "A purchase-gated legendary cavalry nuker with strong early single-target and barbarian damage. His value is concentrated in early seasons and PvE unless further supported.", "vi": "Tướng kỵ binh huyền thoại cần nạp để sở hữu, mạnh về sát thương đơn mục tiêu và đánh man rợ đầu game; giá trị chủ yếu nằm ở mùa đầu và PvE.", "es": "Un legendario de caballería ligado a compras, con gran daño inicial a un objetivo y contra bárbaros; su valor se concentra en las primeras temporadas y en PvE." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/minamoto-no-yoshitsune/", "type": "community-guide" }, { "name": "Rise of Kingdoms Wiki", "url": "https://riseofkingdoms.fandom.com/wiki/Items/Commander_Sculpture", "type": "community-wiki" }], "verifiedAt": "2026-08-30"
+}

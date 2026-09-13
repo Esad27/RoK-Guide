@@ -1,0 +1,50 @@
+---
+import type { Locale } from '../../i18n';
+import { useTranslations } from '../../i18n';
+import { getPairings } from '../../data/loaders';
+import PairingCard from '../PairingCard.astro';
+import FilterBar from '../FilterBar.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const pairings = [...getPairings()].sort((a, b) => b.rating - a.rating);
+
+const troopFilterOptions = [
+  { value: 'all', label: t('commanders.filterAll') },
+  { value: 'infantry', label: t('commanders.filterInfantry') },
+  { value: 'cavalry', label: t('commanders.filterCavalry') },
+  { value: 'archer', label: t('commanders.filterArcher') },
+];
+
+const investmentFilterOptions = [
+  { value: 'all', label: t('commanders.filterAll') },
+  { value: 'f2p-favorite', label: 'F2P' },
+  { value: 'spender', label: 'Spender' },
+  { value: 'recommended', label: 'Recommended' },
+];
+---
+
+<div class="mx-auto max-w-7xl px-4 py-10">
+  <h1 class="font-display text-3xl font-bold text-text-primary">{t('pairings.title')}</h1>
+  <p class="mt-2 max-w-2xl text-text-muted">{t('pairings.subtitle')}</p>
+
+  <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+    <div>
+      <p class="mb-1.5 text-xs uppercase tracking-wide text-text-muted">{t('pairings.filterTroopType')}</p>
+      <FilterBar target="[data-pairing-grid]" attr="troop-type" options={troopFilterOptions} label={t('pairings.filterTroopType')} />
+    </div>
+    <div>
+      <p class="mb-1.5 text-xs uppercase tracking-wide text-text-muted">{t('pairings.filterInvestment')}</p>
+      <FilterBar target="[data-pairing-grid]" attr="tags" options={investmentFilterOptions} label={t('pairings.filterInvestment')} />
+    </div>
+  </div>
+
+  <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" data-pairing-grid>
+    {pairings.map((p) => <PairingCard pairing={p} locale={locale} />)}
+  </div>
+</div>

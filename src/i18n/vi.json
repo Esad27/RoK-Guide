@@ -1,0 +1,161 @@
+{
+  "site": {
+    "name": "Cẩm Nang Chỉ Huy Rise of Kingdoms",
+    "shortName": "RoK Commander Guide"
+  },
+  "seo": {
+    "titleBrand": "Cẩm Nang RoK",
+    "commanderGuideSuffix": "Hướng Dẫn & Cặp Ghép",
+    "pairingSuffix": "Ghép Cặp"
+  },
+  "nav": {
+    "home": "Trang Chủ",
+    "commanders": "Chỉ Huy",
+    "pairings": "Ghép Cặp",
+    "kvkGuide": "Hướng Dẫn KvK",
+    "battleGuide": "Hướng Dẫn Chiến Đấu",
+    "videos": "Video",
+    "resources": "Tài Nguyên",
+    "feedbackDonate": "Phản Hồi & Ủng Hộ"
+  },
+  "theme": {
+    "dark": "Tối",
+    "light": "Sáng",
+    "toggle": "Chuyển đổi giao diện màu"
+  },
+  "common": {
+    "viewAll": "Xem Tất Cả",
+    "viewCommander": "Xem Chỉ Huy",
+    "viewPairing": "Xem Cặp Ghép",
+    "readGuide": "Đọc Hướng Dẫn",
+    "watchVideo": "Xem Video",
+    "loadMore": "Xem Thêm",
+    "externalLink": "Mở trang bên ngoài trong tab mới",
+    "fallbackNotice": "Hiển thị bản tiếng Anh — chưa có bản tiếng Việt.",
+    "sourcesHeading": "Nguồn Tham Khảo",
+    "noResults": "Không tìm thấy kết quả.",
+    "close": "Đóng",
+    "search": "Tìm Kiếm",
+    "backTo": "Quay lại"
+  },
+  "home": {
+    "guideIntroTitle": "Legends of Titan — Hướng Dẫn",
+    "guideIntroParagraph1": "Hướng dẫn này được biên soạn nhằm cung cấp cho các thành viên Legends of Titan những thông tin rõ ràng, thực tế và đáng tin cậy, có thể áp dụng trực tiếp trong trò chơi.",
+    "guideIntroParagraph2": "Mục tiêu không phải là làm cho các chủ đề trở nên phức tạp một cách không cần thiết, mà là trình bày những chiến thuật hiệu quả nhất, các cơ chế quan trọng và những điểm cốt lõi cần lưu ý theo cách có hệ thống, dễ hiểu. Nhờ đó, cả người chơi mới lẫn thành viên giàu kinh nghiệm đều có thể tận dụng hướng dẫn này.",
+    "guideIntroParagraph3": "Do các bản cập nhật trò chơi, đội hình cá nhân và những tình huống khác nhau, một số chiến thuật có thể thay đổi theo thời gian. Vì vậy, hãy xem hướng dẫn này như một nền tảng vững chắc và nguồn tham khảo, thay vì một bộ quy tắc bất biến.",
+    "heroTitle1": "Làm Chủ Chỉ Huy",
+    "heroTitle2": "Thống Trị Vương Quốc",
+    "heroSubtitle": "Hướng dẫn chỉ huy, ghép cặp, chiến thuật chiến đấu và các tài nguyên hữu ích cho Rise of Kingdoms, tất cả trong một nơi.",
+    "searchPlaceholder": "Tìm chỉ huy, cặp ghép, hướng dẫn...",
+    "popularCommanders": "Chỉ Huy Phổ Biến",
+    "popularPairings": "Cặp Ghép Chỉ Huy",
+    "latestGuides": "Hướng Dẫn Mới Nhất",
+    "featuredVideos": "Video Nổi Bật",
+    "topChannels": "Kênh YouTube Hàng Đầu",
+    "importantResources": "Tài Nguyên Quan Trọng"
+  },
+  "commanders": {
+    "title": "Chỉ Huy",
+    "subtitle": "Duyệt qua các chỉ huy và tìm lựa chọn tốt nhất cho chiến thuật của bạn.",
+    "searchPlaceholder": "Tìm chỉ huy...",
+    "filterAll": "Tất Cả",
+    "filterInfantry": "Bộ Binh",
+    "filterCavalry": "Kỵ Binh",
+    "filterArcher": "Cung Binh",
+    "sortName": "Tên",
+    "sortRating": "Đánh Giá",
+    "bestPairings": "Cặp Ghép Tốt Nhất",
+    "bestUses": "Ứng Dụng Tốt Nhất",
+    "information": "Thông Tin Chỉ Huy",
+    "skills": "Kỹ Năng",
+    "talents": "Bảng Tài Năng",
+    "equipment": "Trang Bị Đề Xuất",
+    "tips": "Mẹo"
+  },
+  "pairings": {
+    "title": "Cặp Ghép Chỉ Huy",
+    "subtitle": "Tìm tổ hợp chỉ huy tốt nhất cho từng tình huống.",
+    "filterTroopType": "Loại Binh",
+    "filterSituation": "Tình Huống",
+    "filterInvestment": "F2P / Nạp Tiền",
+    "filterRating": "Đánh Giá",
+    "pairingInfo": "Thông Tin Cặp Ghép",
+    "why": "Vì Sao Ghép Cặp Này?",
+    "strengths": "Điểm Mạnh",
+    "weaknesses": "Điểm Yếu",
+    "bestUses": "Ứng Dụng Tốt Nhất",
+    "videoGuide": "Video Hướng Dẫn"
+  },
+  "kvkGuide": {
+    "title": "Hướng Dẫn KvK",
+    "subtitle": "Hướng dẫn chiến thuật cho mọi giai đoạn của mùa KvK.",
+    "categories": {
+      "preparation": "Chuẩn Bị",
+      "zones-and-passes": "Khu Vực & Cửa Ải",
+      "open-field": "Giao Tranh Ngoài Trời",
+      "rally-and-garrison": "Tập Kích & Trấn Thủ",
+      "resource-management": "Quản Lý Tài Nguyên",
+      "hospital-management": "Quản Lý Bệnh Viện"
+    }
+  },
+  "battleGuide": {
+    "title": "Hướng Dẫn Chiến Đấu",
+    "subtitle": "Học cách chiến đấu hiệu quả trong mọi tình huống.",
+    "categories": {
+      "open-field": "Giao Tranh Ngoài Trời",
+      "rally": "Tập Kích",
+      "garrison": "Trấn Thủ",
+      "march-management": "Quản Lý Đội Quân"
+    }
+  },
+  "videos": {
+    "title": "Video",
+    "subtitle": "Xem những hướng dẫn Rise of Kingdoms hay nhất.",
+    "filterAll": "Tất Cả Video",
+    "filterGuides": "Hướng Dẫn",
+    "filterCommanders": "Chỉ Huy",
+    "filterKvk": "KvK",
+    "filterBattle": "Chiến Đấu",
+    "filterTips": "Mẹo",
+    "autoCaptions": "Phụ đề tự động",
+    "manualCaptions": "Phụ đề"
+  },
+  "resources": {
+    "title": "Tài Nguyên",
+    "subtitle": "Các trang web và công cụ hữu ích cho Rise of Kingdoms.",
+    "filterAll": "Tất Cả Tài Nguyên",
+    "filterOfficial": "Chính Thức",
+    "filterGuides": "Hướng Dẫn",
+    "filterMeta": "Meta",
+    "filterTools": "Công Cụ",
+    "filterWiki": "Wiki",
+    "filterCommunity": "Cộng Đồng",
+    "filterCalculators": "Máy Tính",
+    "filterEvents": "Thông Tin Sự Kiện"
+  },
+  "feedbackDonate": {
+    "title": "Phản Hồi & Ủng Hộ",
+    "subtitle": "Chia sẻ đề xuất hoặc hỗ trợ việc tiếp tục phát triển cẩm nang Legends of Titan.",
+    "feedbackTitle": "Gửi Phản Hồi",
+    "feedbackDescription": "Báo cáo thông tin chưa chính xác, đề xuất hướng dẫn mới hoặc cho chúng tôi biết cách cải thiện trang web.",
+    "formPending": "Liên kết Google Form sẽ sớm được bổ sung",
+    "openForm": "Mở biểu mẫu phản hồi",
+    "donateTitle": "Ủng Hộ Cẩm Nang",
+    "donateDescription": "Khoản ủng hộ giúp chúng tôi duy trì và mở rộng cẩm nang cộng đồng độc lập này.",
+    "supportedAssets": "Tài sản được hỗ trợ",
+    "network": "Mạng lưới",
+    "walletAddress": "Địa chỉ nạp",
+    "copyAddress": "Sao chép địa chỉ",
+    "copied": "Đã sao chép địa chỉ",
+    "minimumDeposit": "Số tiền nạp tối thiểu",
+    "minimumDepositValue": "Lớn hơn 0,01 USDT",
+    "warningNft": "Không gửi NFT đến địa chỉ này.",
+    "warningSanctions": "Không giao dịch với các thực thể bị trừng phạt."
+  },
+  "footer": {
+    "tagline": "Cẩm nang chỉ huy Rise of Kingdoms độc lập. Không liên kết với Lilith Games.",
+    "navigation": "Điều Hướng",
+    "guides": "Hướng Dẫn",
+    "followUs": "Theo Dõi Chúng Tôi"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "id": "baibars",
+  "name": "Baibars",
+  "slug": "baibars", "rarity": "Epic", "civilization": "Arabia", "troopType": "cavalry",
+  "specialties": ["Cavalry", "Conquering", "Skill"], "tags": ["AoE", "Slow", "Early game"],
+  "bestUses": ["Open field", "Large fights", "Early-game cavalry"],
+  "description": { "en": "An early-game epic cavalry commander built around multi-target skill damage and a strong march-speed slow.", "vi": "Chỉ huy kỵ binh sử thi đầu game, nổi bật với sát thương kỹ năng đa mục tiêu và hiệu ứng giảm tốc hành quân mạnh.", "es": "Un comandante épico de caballería para el inicio, centrado en daño de habilidad a varios objetivos y una fuerte reducción de velocidad de marcha." },
+  "sources": [{ "name": "Rise of Kingdoms Guides", "url": "https://riseofkingdomsguides.com/talent-tree/baibars/", "type": "community-guide" }], "verifiedAt": "2026-08-30"
+}
