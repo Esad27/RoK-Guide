@@ -40,8 +40,7 @@ The website is statically generated with Astro and deployed using **Firebase Hos
 
 ## AI assistance
 
-**OpenAI ChatGPT and OpenAI Codex** were used as AI assistants during planning, research, content organization, development, and debugging. The direction of the project, source selection, and final decisions remain the responsibility of the project owner.
-
+**OpenAI Codex** were used as AI assistants during planning, research, content organization, development, and debugging.
 ## Getting started
 
 Make sure [Node.js](https://nodejs.org/) is installed, then run:
